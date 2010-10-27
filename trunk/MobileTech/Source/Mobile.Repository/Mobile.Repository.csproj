@@ -60,12 +60,12 @@
   <ItemGroup>
     <Compile Include="CompanyRepository.cs" />
     <Compile Include="ICompanyRepository.cs" />
-    <Compile Include="IRepositoryBase.cs" />
-    <Compile Include="ISessionManager.cs" />
-    <Compile Include="OperationLocalStorage.cs" />
+    <Compile Include="Base\IRepositoryBase.cs" />
+    <Compile Include="Base\ISessionManager.cs" />
+    <Compile Include="Base\OperationLocalStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryBase.cs" />
-    <Compile Include="SessionManager.cs" />
+    <Compile Include="Base\RepositoryBase.cs" />
+    <Compile Include="Base\SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">

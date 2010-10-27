@@ -74,6 +74,12 @@
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Web.Extensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -93,7 +99,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProductService.cs" />
+    <Compile Include="Admin\AdminSite.Master.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSite.Master.designer.cs">
+      <DependentUpon>AdminSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -102,9 +135,23 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="IProductService.cs" />
+    <Compile Include="ProductService.svc.cs">
+      <DependentUpon>ProductService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSite.Master.cs">
+      <DependentUpon>ProductSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductSite.Master.designer.cs">
+      <DependentUpon>ProductSite.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">
+      <Project>{92A9B3C4-B76C-45BC-8868-04435E677F12}</Project>
+      <Name>Mobile.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mobile.DomainObjects\Mobile.DomainObjects.csproj">
       <Project>{35167456-C6A1-4455-B747-ED01C48A8804}</Project>
       <Name>Mobile.DomainObjects</Name>
@@ -118,6 +165,16 @@
     <Content Include="Configuration\Deployment.config" />
     <Content Include="Configuration\Spring.config" />
     <Content Include="Configuration\StandardComponents.config" />
+    <Content Include="ProductService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProductSite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\AdminSite.Master" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\ProductList.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
