@@ -99,18 +99,49 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminSite.Master.cs">
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrationService.svc.cs">
+      <DependentUpon>AdministrationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Share\AdminSite.Master.cs">
       <DependentUpon>AdminSite.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\AdminSite.Master.designer.cs">
+    <Compile Include="Admin\Share\AdminSite.Master.designer.cs">
       <DependentUpon>AdminSite.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Default.aspx.cs">
+    <Compile Include="Admin\Share\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Default.aspx.designer.cs">
+    <Compile Include="Admin\Share\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Login.aspx.cs">
@@ -120,12 +151,26 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ProductList.aspx.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="Admin\UserManagement\AddNewUser.aspx.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\ProductList.aspx.designer.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="Admin\UserManagement\AddNewUser.aspx.designer.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManagement\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManagement\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManagement\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManagement\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +179,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IAdministrationService.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="ProductService.svc.cs">
       <DependentUpon>ProductService.svc</DependentUpon>
@@ -171,12 +217,49 @@
     <Content Include="ProductSite.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AdminSite.Master" />
-    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Share\Default.aspx" />
     <Content Include="Admin\Login.aspx" />
-    <Content Include="Admin\ProductList.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AdministrationService.svc" />
+    <Content Include="Admin\UserManagement\UserList.aspx" />
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Logout.aspx" />
+    <Content Include="Admin\Product\ProductList.aspx" />
+    <Content Include="Admin\Styles\css\hack.css" />
+    <Content Include="Admin\Styles\css\ie6.css" />
+    <Content Include="Admin\Styles\css\ie7.css" />
+    <Content Include="Admin\Styles\css\jNice.css" />
+    <Content Include="Admin\Styles\css\layout.css" />
+    <Content Include="Admin\Styles\css\reset.css" />
+    <Content Include="Admin\Styles\css\transdmin.css" />
+    <Content Include="Admin\Styles\images\btn_left.gif" />
+    <Content Include="Admin\Styles\images\btn_right.gif" />
+    <Content Include="Admin\Styles\images\button-submit.gif" />
+    <Content Include="Admin\Styles\images\content.gif" />
+    <Content Include="Admin\Styles\images\input-shaddow-hover.gif" />
+    <Content Include="Admin\Styles\images\input-shaddow.gif" />
+    <Content Include="Admin\Styles\images\left-menu-bg.gif" />
+    <Content Include="Admin\Styles\images\select_left.gif" />
+    <Content Include="Admin\Styles\images\select_right.gif" />
+    <Content Include="Admin\Styles\images\top-menu-bg.gif" />
+    <Content Include="Admin\Styles\images\top-menu-item-bg.gif" />
+    <Content Include="Admin\Styles\images\transdmin-light.gif" />
+    <Content Include="Admin\Styles\JS\jNice.js" />
+    <Content Include="Admin\Styles\JS\jquery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Product\AddProduct.aspx" />
+    <Content Include="Admin\Share\AdminSite.Master" />
+    <Content Include="Admin\UserManagement\AddNewUser.aspx" />
+    <Content Include="Admin\UserManagement\ChangePassword.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\Service\" />
+    <Folder Include="Admin\UserControl\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
