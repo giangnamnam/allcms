@@ -13,8 +13,7 @@ namespace MobileTech.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session[MyConst.Session_Login_Status] = false;
-            
+           
         }
 
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)
@@ -23,12 +22,23 @@ namespace MobileTech.Admin
             if (Membership.ValidateUser(ctlLogin.UserName, "Passw@rd"))
             {
                 Session[MyConst.Session_Login_Status] = true;
-                Response.Redirect("Default.aspx");
+                string url = Request.QueryString["ReturnUrl"];
+                if (url != null)
+                {
+                    FormsAuthentication.RedirectFromLoginPage(ctlLogin.UserName, false);
+                }
+                else
+                {
+                    //FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
+                    Response.Redirect("Product/ProductList.aspx");
+                }
             }
             else
             {
                 Session[MyConst.Session_Login_Status] = false;
+                //Response.Write("Invalid UserID and Password");
             }
+
         }
     }
 }

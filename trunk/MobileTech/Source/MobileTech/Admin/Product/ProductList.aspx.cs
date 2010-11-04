@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace MobileTech.Admin
+namespace MobileTech.Admin.Product
 {
     public partial class ProductList : System.Web.UI.Page
     {

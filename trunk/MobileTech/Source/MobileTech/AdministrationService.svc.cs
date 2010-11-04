@@ -4,43 +4,41 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Mobile.DomainObjects;
 using Spring.Context;
 using Spring.Context.Support;
-using Mobile.Repository;
 
 namespace MobileTech
 {
-    // NOTE: If you change the class name "ProductService" here, you must also update the reference to "ProductService" in Web.config.
-    public class ProductService : IProductService
+    // NOTE: If you change the class name "AdministrationService" here, you must also update the reference to "AdministrationService" in Web.config.
+    public class AdministrationService : IAdministrationService
     {
         #region Instance
         /// <summary>
         /// Gets an instance of <see cref="type"/>
         /// </summary>
-        public static ProductService Instance
+        public static AdministrationService Instance
         {
             get
             {
                 /// An instance of Singleton wont be created until the very first 
                 /// call to the sealed class. This a CLR optimization that ensure that
                 /// we have properly lazy-loading singleton. 
-                return ProductServiceCreator.CreatorInstance;
+                return AdministrationServiceCreator.CreatorInstance;
             }
         }
 
         /// <summary>
         /// Sealed class to avoid any heritage from this helper class
         /// </summary>
-        private sealed class ProductServiceCreator
+        private sealed class AdministrationServiceCreator
         {
             // Retrieve a single instance of a Singleton
-            private static readonly ProductService mInstance = new ProductService();
+            private static readonly AdministrationService mInstance = new AdministrationService();
 
             /// <summary>
-            /// Return an instance of the class <see cref="ProductService"/>
+            /// Return an instance of the class <see cref="AdministrationService"/>
             /// </summary>
-            public static ProductService CreatorInstance
+            public static AdministrationService CreatorInstance
             {
                 get { return mInstance; }
             }
@@ -53,26 +51,15 @@ namespace MobileTech
         /// This must be present otherwise the compiler provide 
         /// a default public constructor
         /// </summary>
-        private ProductService() 
-        { 
+        private AdministrationService() 
+        {
             IApplicationContext context = ContextRegistry.GetContext();
-            context.ConfigureObject(this, "ProductService");
+            context.ConfigureObject(this, "AdministrationService");
         }
         #endregion
-       
-        #region Properties
 
-        public virtual ICompanyRepository CompanyRepository
+        public void DoWork()
         {
-            get;
-            set;
-        }
-
-        #endregion
-
-        public IList<Company> GetCompany()
-        {
-            return CompanyRepository.GetAll();
         }
     }
 }

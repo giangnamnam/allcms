@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MobileTech.Admin
+namespace MobileTech
 {
 
 
-    public partial class ProductList
+    public partial class About
     {
 
         /// <summary>
