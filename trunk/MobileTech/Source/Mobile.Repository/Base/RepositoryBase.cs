@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using NHibernate;
 using NHibernate.Linq;
@@ -68,11 +67,11 @@ namespace Mobile.Repository
         /// </code>
         /// </example>
         /// <returns>The query root.</returns>
-        protected virtual INHibernateQueryable<TQuery> NewQuery<TQuery>(params string[] expansions)
-        {
-            var query = Session.Linq<TQuery>();
-            expansions.Do(path => query.Expand(path));
-            return query;
-        }
+        //protected virtual INHibernateQueryable<TQuery> NewQuery<TQuery>(params string[] expansions)
+        //{
+        //    var query = Session.Linq<TQuery>();
+        //    expansions.Do(path => query.Expand(path));
+        //    return query;
+        //}
     }
 }

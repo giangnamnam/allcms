@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Hotel Upload Film Demo</title>
+    <title>Admin Mobile Tech</title>
     <link href="../Styles/css/transdmin.css" rel="Stylesheet" type="text/css" media="screen" />
 
     <script type="text/javascript" src="Styles/JS/jquery.js"></script>
@@ -19,16 +19,18 @@
     <div>
         <div id="wrapper">
             <ul id="mainNav">
-                <li><a href="#" class="active">Home</a></li>
                 <!-- Use the "active" class for the active menu item  -->
+                <li><a href="../Product/ProductList.aspx" class="active">Product</a></li>
+                <li><a href="../Service/AddNewUser.aspx">Service</a></li>
+                <li><a href="../Address/AddNewUser.aspx">Address</a></li>
+                <li><a href="../SiteManagement/AddNewUser.aspx">Site Management</a></li>
                 <li><a href="../UserManagement/UserList.aspx">User Management</a></li>
-                <li><a href="../UserManagement/AddNewUser.aspx">Add New User</a></li>
-                <li><a href="../UserManagement/ChangePassword.aspx">Change Password</a></li>
+                <li><a href="../UserManagement/ChangePassword.aspx" ForeColor="YellowGreen">Change Password</a></li>
                 <li class="logout">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Admin/Logout.aspx">LOGOUT</asp:HyperLink>
+                    <asp:HyperLink ID="hplLogout" runat="server" NavigateUrl="~/Admin/Logout.aspx" ForeColor="YellowGreen">Logout</asp:HyperLink>
                 </li>
             </ul>
-            <div id="containerHolder" align="left">
+            <%--<div id="containerHolder" align="left">
                 <div id="container">
                     <div id="sidebar">
                         <ul class="sideNav">
@@ -39,10 +41,11 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div id="main" style="width: 720px;">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    dpsgjdfjgfgjịô
+            </div>--%>
+             
+            <div>
+               <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
                 </asp:ContentPlaceHolder>
             </div>
         </div>
