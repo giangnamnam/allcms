@@ -10,7 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MobileTech</RootNamespace>
     <AssemblyName>MobileTech</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +44,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Atlas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly\NHibernate.dll</HintPath>
@@ -68,24 +71,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.ServiceModel">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Web.Extensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -151,13 +136,9 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UserManagement\AddNewUser.aspx.cs">
-      <DependentUpon>AddNewUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\UserManagement\AddNewUser.aspx.designer.cs">
-      <DependentUpon>AddNewUser.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Admin\UserManagement\App_Code\MembershipUserODS.cs" />
+    <Compile Include="Admin\UserManagement\App_Code\MembershipUserWrapper.cs" />
+    <Compile Include="Admin\UserManagement\App_Code\RoleDataObject.cs" />
     <Compile Include="Admin\UserManagement\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,8 +235,22 @@
   <ItemGroup>
     <Content Include="Admin\Product\AddProduct.aspx" />
     <Content Include="Admin\Share\AdminSite.Master" />
-    <Content Include="Admin\UserManagement\AddNewUser.aspx" />
     <Content Include="Admin\UserManagement\ChangePassword.aspx" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\Atlas.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasCompat.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasCompat2.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasRuntime.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasUIDragDrop.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasUIGlitz.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasUIMap.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\Atlas.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasCompat.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasCompat2.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasRuntime.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIDragDrop.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIGlitz.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIMap.js" />
+    <Content Include="Admin\UserManagement\ScriptLibrary\TextChangedBehavior.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\Service\" />

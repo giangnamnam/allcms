@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mobile.Common;
+using System.Web.Security;
 
 namespace MobileTech.Admin.Share
 {
@@ -12,11 +12,13 @@ namespace MobileTech.Admin.Share
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session[MyConst.Session_Login_Status] == null
+            if (Membership.GetUser() == null
+                || Session[MyConst.Session_Login_Status] == null
                 || (bool)Session[MyConst.Session_Login_Status] == false)
             {
                 Response.Redirect("~/Admin/Login.aspx");
             }
+            hplLogout.Text = Membership.GetUser().UserName + " - Logout";
         }
     }
 }

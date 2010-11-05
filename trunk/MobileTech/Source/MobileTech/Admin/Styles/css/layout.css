@@ -77,10 +77,15 @@ h1 span { display: none; }
 /* Container ---------------------------------------- */
 
 #containerHolder {
-	background: #eee;
-	padding: 5px;
+	
 }
-
+#containerHolder table tr td {
+	background: #f6f6f6;
+	padding: 0px 20px;
+	height: 29px;
+	line-height: 29px;
+	border-bottom: 1px solid #ddd;
+}
 
 #container {
 	background: #fff url(../img/content.gif) repeat-n left top;
@@ -144,7 +149,7 @@ h2 a:hover { text-decoration: underline; }
 
 #main {
 	width: 700px;
-	float: right;
+	float:none;
 	padding: 0 19px 0 0;
 }
 

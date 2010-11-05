@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.Security;
 using Mobile.Common;
+using System.Web.Security;
 
 namespace MobileTech.Admin
 {
@@ -29,7 +28,7 @@ namespace MobileTech.Admin
                 }
                 else
                 {
-                    //FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
+                    FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
                     Response.Redirect("Product/ProductList.aspx");
                 }
             }

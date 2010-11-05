@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Mobile.DomainObjects;
 using NHibernate;
@@ -12,8 +11,10 @@ namespace Mobile.Repository
     {
         public IList<Company> GetCompanyList()
         {
-            return NewQuery<Company>()                
-                .ToList();
+            ICriteria query = Session.CreateCriteria<Company>();
+            return query.List<Company>();
+            //return NewQuery<Company>()                
+            //    .ToList();
         }
         public bool CheckCompanyNameExisted(string companyName, int? excludeCompanyID)
         {
