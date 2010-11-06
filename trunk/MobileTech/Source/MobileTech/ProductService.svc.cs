@@ -65,12 +65,21 @@ namespace MobileTech
             get;
             set;
         }
-
+        public virtual IProductRepository ProductRepository
+        {
+            get;
+            set;
+        }
         #endregion
 
         public IList<Company> GetCompany()
         {
             return CompanyRepository.GetAll();
+        }
+
+        public IList<Product> GetProduct()
+        {
+            return ProductRepository.GetAll();
         }
     }
 }

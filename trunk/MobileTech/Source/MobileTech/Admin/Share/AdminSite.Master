@@ -21,9 +21,9 @@
             <ul id="mainNav">
                 <!-- Use the "active" class for the active menu item  -->
                 <li><a href="../Product/ProductList.aspx" class="active">Product</a></li>
-                <li><a href="../Service/AddNewUser.aspx">Service</a></li>
-                <li><a href="../Address/AddNewUser.aspx">Address</a></li>
-                <li><a href="../SiteManagement/AddNewUser.aspx">Site Management</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Address</a></li>
+                <li><a href="#">Site Management</a></li>
                 <li><a href="../UserManagement/UserList.aspx">User Management</a></li>
                 <li><a href="../UserManagement/ChangePassword.aspx" ForeColor="YellowGreen">Change Password</a></li>
                 <li class="logout">

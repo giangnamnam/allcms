@@ -10,5 +10,6 @@ namespace MobileTech
     public interface IProductService
     {
         IList<Company> GetCompany();
+        IList<Product> GetProduct();
     }
 }
