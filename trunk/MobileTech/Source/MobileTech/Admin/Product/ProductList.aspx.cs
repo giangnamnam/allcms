@@ -10,7 +10,8 @@ namespace MobileTech.Admin.Product
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            grvProductList.DataSource= ProductService.Instance.GetProduct();
+            grvProductList.DataBind();
         }
     }
 }

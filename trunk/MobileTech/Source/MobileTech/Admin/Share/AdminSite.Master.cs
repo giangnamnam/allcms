@@ -16,9 +16,12 @@ namespace MobileTech.Admin.Share
                 || Session[MyConst.Session_Login_Status] == null
                 || (bool)Session[MyConst.Session_Login_Status] == false)
             {
-                Response.Redirect("~/Admin/Login.aspx");
+                //Response.Redirect("~/Admin/Login.aspx");
             }
-            hplLogout.Text = Membership.GetUser().UserName + " - Logout";
+            else
+            {
+                hplLogout.Text = Membership.GetUser().UserName + " - Logout";
+            }
         }
     }
 }
