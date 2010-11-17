@@ -39,7 +39,7 @@ h1 span { display: none; }
 	width: 918px;
 	height: 37px;
 	padding: 6px;
-	margin: 0 0 30px 0;
+	margin: 0 0 10px 0;
 	background: url(../img/top-menu-bg.gif) no-repeat left top; 
 	/* We used a background image making the thick border and the thin one to keep the html structure simple */
 }
@@ -96,13 +96,20 @@ h1 span { display: none; }
 /* Sidebar ---------------------------------------- */
 
 #sidebar {
-	width: 179px;
+	width: 918px;
 	float: left;
 }
 
-#sidebar .sideNav { width: 110px; }
+#sidebar .sideNav { width: 918px; }
 
-#sidebar .sideNav li { border-bottom: 1px solid #ddd; width: 110px; }
+#sidebar .sideNav li 
+{ 
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	float: left;
+
+}
 
 #sidebar .sideNav li a {
 	display: block;
@@ -112,7 +119,7 @@ h1 span { display: none; }
 	height: 29px;
 	line-height: 29px;
 	padding: 0 19px;
-	width: 141px;
+	width: 120px;
 }
 
 #sidebar .sideNav li a:hover { background: #fdfcf6; }

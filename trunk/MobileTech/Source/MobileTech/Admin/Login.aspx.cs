@@ -29,7 +29,7 @@ namespace MobileTech.Admin
                 else
                 {
                     FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
-                    Response.Redirect("Product/ProductList.aspx");
+                    Response.Redirect("Product/");
                 }
             }
             else
