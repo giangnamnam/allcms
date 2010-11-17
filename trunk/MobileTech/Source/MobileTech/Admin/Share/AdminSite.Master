@@ -7,9 +7,9 @@
     <title>Admin Mobile Tech</title>
     <link href="../Styles/css/transdmin.css" rel="Stylesheet" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="Styles/JS/jquery.js"></script>
+    <%--<script type="text/javascript" src="Styles/JS/jquery.js"></script>
 
-    <script type="text/javascript" src="Styles/JS/jNice.js"></script>
+    <script type="text/javascript" src="Styles/JS/jNice.js"></script>--%>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -20,12 +20,14 @@
         <div id="wrapper">
             <ul id="mainNav">
                 <!-- Use the "active" class for the active menu item  -->
-                <li><a href="../Product/ProductList.aspx" class="active">Product</a></li>
+                <li><a href="../Product/" class="active">Product</a></li>
                 <li><a href="#">Service</a></li>
                 <li><a href="#">Address</a></li>
-                <li><a href="#">Site Management</a></li>
+                <li>
+                    <a href="../SiteManagement">Site Management</a>
+                </li>
                 <li><a href="../UserManagement/UserList.aspx">User Management</a></li>
-                <li><a href="../UserManagement/ChangePassword.aspx" ForeColor="YellowGreen">Change Password</a></li>
+                <li><a href="../UserManagement/ChangePassword.aspx">Change Password</a></li>
                 <li class="logout">
                     <asp:HyperLink ID="hplLogout" runat="server" NavigateUrl="~/Admin/Logout.aspx" ForeColor="YellowGreen">Logout</asp:HyperLink>
                 </li>
@@ -43,11 +45,11 @@
                 </div>
             </div>--%>
              
-            <div>
+            
                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     
                 </asp:ContentPlaceHolder>
-            </div>
+           
         </div>
     </div>
     </form>
