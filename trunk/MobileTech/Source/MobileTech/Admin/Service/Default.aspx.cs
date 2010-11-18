@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Mobile.DomainObjects;
 
-namespace MobileTech.Admin.SiteManagement
+namespace MobileTech.Admin.Service
 {
     public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            IList<SystemConfiguration> list = ProductService.Instance.GetSystemConfiguration();
-            if (list != null && list.Count > 0)
-            {
- 
-            }
+            grvProductList.DataSource = ProductService.Instance.GetService();
+            grvProductList.DataBind();
         }
     }
 }

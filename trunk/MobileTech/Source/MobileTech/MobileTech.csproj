@@ -96,6 +96,20 @@
     <Compile Include="AdministrationService.svc.cs">
       <DependentUpon>AdministrationService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Company\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Company\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Contact\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Contact\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,6 +129,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Product\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Service\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Service\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Share\AdminSite.Master.cs">
@@ -242,7 +263,10 @@
     <Content Include="Admin\Styles\JS\jquery.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Company\Default.aspx" />
+    <Content Include="Admin\Contact\Default.aspx" />
     <Content Include="Admin\Product\AddProduct.aspx" />
+    <Content Include="Admin\Service\Default.aspx" />
     <Content Include="Admin\Share\AdminSite.Master" />
     <Content Include="Admin\SiteManagement\Default.aspx" />
     <Content Include="Admin\UserManagement\ChangePassword.aspx" />
@@ -740,7 +764,6 @@
     <None Include="FCKeditor\_samples\py\sampleposteddata.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Service\" />
     <Folder Include="Admin\UserControl\" />
     <Folder Include="App_Data\" />
   </ItemGroup>

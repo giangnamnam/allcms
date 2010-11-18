@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.Service, Mobile.DomainObjects" table="Service" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="ServiceName" column="ServiceName" not-null="true" type="string" insert="true" update="true" />
+    <property name="ImageLink" column="ImageLink" not-null="true" type="string" insert="true" update="true" />
+    <property name="ShortContent" column="ShortContent" not-null="true" type="string" insert="true" update="true" />
+    <property name="DetailContent" column="DetailContent" not-null="true" type="string" insert="true" update="true" />
+    <property name="ServiceStaus" column="ServiceStaus" not-null="true" type="int" insert="true" update="true" />
+    
+  </class>
+</hibernate-mapping>

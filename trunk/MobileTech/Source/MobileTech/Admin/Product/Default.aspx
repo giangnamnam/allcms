@@ -6,11 +6,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="sidebar">
         <ul class="sideNav">
-            <li><a id="A1" href="../Product/Company.aspx" class="active" runat="server">Company</a></li>
-            <li><a id="A2" href="../Product/FeatureType.aspx" runat="server">Feature Type</a></li>
-            <li><a id="A3" href="../Product/ProductSpecification.aspx" runat="server">Product Specification</a></li>
-            <li><a id="A5" href="../Product/ProductColor.aspx" runat="server">Product Color</a></li>
-            <li><a id="A6" href="../Product/ProductStatus.aspx" runat="server">Product Status</a></li>
+            <li><a id="A1" href="../Company" class="active" runat="server">Company</a></li>
+            <li><a id="A2" href="#" runat="server">Feature Type</a></li>
+            <li><a id="A3" href="#" runat="server">Product Specification</a></li>
+            <li><a id="A5" href="#" runat="server">Product Color</a></li>
+            <li><a id="A6" href="#" runat="server">Product Status</a></li>
         </ul>
     </div>
    
