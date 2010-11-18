@@ -11,5 +11,9 @@ namespace MobileTech
     {
         IList<Company> GetCompany();
         IList<Product> GetProduct();
+        IList<Service> GetService();
+        IList<Contact> GetContact();
+        IList<SystemConfiguration> GetSystemConfiguration();
+        void UpdateSystemConfiguration(SystemConfiguration config);
     }
 }

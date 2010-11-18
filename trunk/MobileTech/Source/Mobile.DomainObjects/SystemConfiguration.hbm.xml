@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.SystemConfiguration, Mobile.DomainObjects" table="SystemConfiguration" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="AdminName" column="AdminName" not-null="true" type="string" insert="true" update="true" />
+    <property name="FeedbackEmail" column="FeedbackEmail" not-null="true" type="string" insert="true" update="true" />
+    <property name="About" column="About" not-null="true" type="string" insert="true" update="true" />
+  </class>
+</hibernate-mapping>

@@ -70,6 +70,24 @@ namespace MobileTech
             get;
             set;
         }
+
+        public virtual IServiceRepository ServiceRepository
+        {
+            get;
+            set;
+        }
+
+        public virtual IContactRepository ContactRepository
+        {
+            get;
+            set;
+        }
+
+        public virtual ISystemConfigurationRepository SystemConfigurationRepository
+        {
+            get;
+            set;
+        }
         #endregion
 
         public IList<Company> GetCompany()
@@ -80,6 +98,33 @@ namespace MobileTech
         public IList<Product> GetProduct()
         {
             return ProductRepository.GetAll();
+        }
+
+        public IList<Service> GetService()
+        {
+            return ServiceRepository.GetAll();
+        }
+
+        public IList<Contact> GetContact()
+        {
+            return ContactRepository.GetAll();
+        }
+
+        public IList<SystemConfiguration> GetSystemConfiguration()
+        {
+            return SystemConfigurationRepository.GetAll();
+        }
+
+        public void UpdateSystemConfiguration(SystemConfiguration config)
+        {
+            if (config.ID > 0)
+            {
+                SystemConfigurationRepository.Update(config);
+            }
+            else
+            {
+                SystemConfigurationRepository.Add(config);
+            }
         }
     }
 }

@@ -5,6 +5,6 @@
       <generator class="identity" />
     </id>
     <property name="CompanyName" column="CompanyName" not-null="true" type="string" insert="true" update="true" />
-    
+    <property name="CompanyDescription" column="CompanyDescription" not-null="true" type="string" insert="true" update="true" />
   </class>
 </hibernate-mapping>

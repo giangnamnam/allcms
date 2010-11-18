@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Mobile.DomainObjects
 {
-    public class Company
+    public class SystemConfiguration
     {
         public virtual int ID
         {
@@ -13,14 +13,20 @@ namespace Mobile.DomainObjects
             set;
         }
 
-       
-        public virtual string CompanyName
+
+        public virtual string AdminName
         {
             get;
             set;
         }
 
-        public virtual string CompanyDescription
+        public virtual string FeedbackEmail
+        {
+            get;
+            set;
+        }
+
+        public virtual string About
         {
             get;
             set;

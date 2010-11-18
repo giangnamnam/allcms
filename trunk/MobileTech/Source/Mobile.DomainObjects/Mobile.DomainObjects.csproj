@@ -38,9 +38,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="SystemConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Company.hbm.xml" />
@@ -50,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Product.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Contact.hbm.xml" />
+    <EmbeddedResource Include="Service.hbm.xml" />
+    <EmbeddedResource Include="SystemConfiguration.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
