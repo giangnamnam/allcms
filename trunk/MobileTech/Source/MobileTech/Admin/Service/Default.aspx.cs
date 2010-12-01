@@ -10,8 +10,38 @@ namespace MobileTech.Admin.Service
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grvProductList.DataSource = ProductService.Instance.GetService();
-            grvProductList.DataBind();
+            if (!IsPostBack)
+            {
+                gridProduct.CurrentPageIndex = 0;
+                BindDataGrid();
+            }
         }
-    }
+        void BindDataGrid()
+        {
+            gridProduct.DataSource = ProductService.GetService();
+            gridProduct.DataBind();
+
+        }
+        protected void gridProduct_EditCommand(object source, DataGridCommandEventArgs e)
+        {
+            Label lblID = e.Item.FindControl("lblID") as Label;
+            Response.Redirect("EditService.aspx?ID=" + lblID.Text.Trim());
+        }
+
+        protected void gridProduct_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+        {
+            gridProduct.CurrentPageIndex = e.NewPageIndex;
+            BindDataGrid();
+        }
+
+        protected void gridProduct_ItemDataBound(object sender, DataGridItemEventArgs e)
+        {
+
+
+        }
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditService.aspx");
+        }
+}
 }

@@ -6,10 +6,12 @@ using Mobile.DomainObjects;
 using Spring.Context;
 using Spring.Context.Support;
 using Mobile.Repository;
+using System.ComponentModel;
 
 namespace MobileTech
 {
     // NOTE: If you change the class name "ProductService" here, you must also update the reference to "ProductService" in Web.config.
+    [DataObject(true)]  // This attribute allows the ObjectDataSource wizard to see this class
     public class ProductService : IProductService
     {
         #region Instance
@@ -51,13 +53,13 @@ namespace MobileTech
         /// This must be present otherwise the compiler provide 
         /// a default public constructor
         /// </summary>
-        private ProductService() 
-        { 
+        private ProductService()
+        {
             IApplicationContext context = ContextRegistry.GetContext();
             context.ConfigureObject(this, "ProductService");
         }
         #endregion
-       
+
         #region Properties
 
         public virtual ICompanyRepository CompanyRepository
@@ -76,7 +78,11 @@ namespace MobileTech
             get;
             set;
         }
-
+        public virtual IAccessoriesRepository AccessoriesRepository
+        {
+            get;
+            set;
+        }
         public virtual IContactRepository ContactRepository
         {
             get;
@@ -88,35 +94,226 @@ namespace MobileTech
             get;
             set;
         }
+
+        public virtual IFeatureTypeRepository FeatureTypeRepository
+        {
+            get;
+            set;
+        }
+        public virtual IProductSpecificationRepository ProductSpecificationRepository
+        {
+            get;
+            set;
+        }
+        public virtual IProductColorRepository ProductColorRepository
+        {
+            get;
+            set;
+        }
+        public virtual IProductStatusRepository ProductStatusRepository
+        {
+            get;
+            set;
+        }
         #endregion
 
-        public IList<Company> GetCompany()
+        #region Company
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<Company> GetCompany()
         {
-            return CompanyRepository.GetAll();
+            return Instance.CompanyRepository.GetAll();
         }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateCompany(int id, string companyName, string companyDescription)
+        {
+            Company company = Instance.CompanyRepository.GetObjectByID<int>(id);
+            if (company != null)
+            {
+                company.CompanyName = companyName;
+                company.CompanyDescription = companyDescription;
+                Instance.CompanyRepository.Update(company);
+            }
 
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteCompany(int id)
+        {
+            Company company = Instance.CompanyRepository.GetObjectByID<int>(id);
+            if (company != null)
+            {
+                Instance.CompanyRepository.Delete(company);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertCompany(string companyName, string companyDescription)
+        {
+            Company company = new Company();
+            company.CompanyName = companyName;
+            company.CompanyDescription = companyDescription;
+            Instance.CompanyRepository.Add(company);
+        }
+        #endregion
+
+        #region Product
         public IList<Product> GetProduct()
         {
             return ProductRepository.GetAll();
         }
 
-        public IList<Service> GetService()
+        #endregion
+
+        #region Service
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<Service> GetService()
         {
-            return ServiceRepository.GetAll();
+            return Instance.ServiceRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static Service GetService(int id)
+        {
+            return Instance.ServiceRepository.GetObjectByID(id);
         }
 
-        public IList<Contact> GetContact()
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateService(Service service)
         {
-            return ContactRepository.GetAll();
+            if (service != null)
+            {
+                Instance.ServiceRepository.Update(service);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteService(int id)
+        {
+            Service Service = Instance.ServiceRepository.GetObjectByID<int>(id);
+            if (Service != null)
+            {
+                Instance.ServiceRepository.Delete(Service);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertService(Service service)
+        {
+            Instance.ServiceRepository.Add(service);
         }
 
-        public IList<SystemConfiguration> GetSystemConfiguration()
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static bool CheckServiceNameExisted(string serviceName, int? excludeServiceID)
         {
-            return SystemConfigurationRepository.GetAll();
+            return Instance.ServiceRepository.CheckServiceNameExisted(serviceName, excludeServiceID);
+        }
+        #endregion
+
+        #region Accessories
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<Accessories> GetAccessories()
+        {
+            return Instance.AccessoriesRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static Accessories GetAccessories(int id)
+        {
+            return Instance.AccessoriesRepository.GetObjectByID(id);
         }
 
-        public void UpdateSystemConfiguration(SystemConfiguration config)
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateAccessories(Accessories Accessories)
         {
+            if (Accessories != null)
+            {
+                Instance.AccessoriesRepository.Update(Accessories);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteAccessories(int id)
+        {
+            Accessories Accessories = Instance.AccessoriesRepository.GetObjectByID<int>(id);
+            if (Accessories != null)
+            {
+                Instance.AccessoriesRepository.Delete(Accessories);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertAccessories(Accessories Accessories)
+        {
+            Instance.AccessoriesRepository.Add(Accessories);
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static bool CheckAccessoriesNameExisted(string AccessoriesName, int? excludeAccessoriesID)
+        {
+            return Instance.AccessoriesRepository.CheckAccessoriesNameExisted(AccessoriesName, excludeAccessoriesID);
+        }
+        #endregion
+
+        #region Contact
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<Contact> GetContact()
+        {
+            return Instance.ContactRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateContact(int id, string ContactName, string ContactAddress,
+            string ContactGoogleAddress, string ContactPhone, string ContactEmail)
+        {
+            Contact contact = Instance.ContactRepository.GetObjectByID<int>(id);
+            if (contact != null)
+            {
+                contact.ContactName = ContactName;
+                contact.ContactAddress = ContactAddress;
+                contact.ContactGoogleAddress = ContactGoogleAddress;
+                contact.ContactPhone = ContactPhone;
+                contact.ContactEmail = ContactEmail;
+
+                Instance.ContactRepository.Update(contact);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteContact(int id)
+        {
+            Contact Contact = Instance.ContactRepository.GetObjectByID<int>(id);
+            if (Contact != null)
+            {
+                Instance.ContactRepository.Delete(Contact);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertContact(string ContactName, string ContactAddress,
+            string ContactGoogleAddress, string ContactPhone, string ContactEmail)
+        {
+            Contact contact = new Contact();
+            contact.ContactName = ContactName;
+            contact.ContactAddress = ContactAddress;
+            contact.ContactGoogleAddress = ContactGoogleAddress;
+            contact.ContactPhone = ContactPhone;
+            contact.ContactEmail = ContactEmail;
+            Instance.ContactRepository.Add(contact);
+        }
+        #endregion
+
+        #region SystemConfiguration
+        public SystemConfiguration GetSystemConfiguration()
+        {
+            SystemConfiguration result = new SystemConfiguration();
+            IList<SystemConfiguration> list = SystemConfigurationRepository.GetAll();
+            if (list != null && list.Count > 0)
+            {
+                result = list[0];
+            }
+            return result;
+        }
+
+        public void UpdateAbout(string about)
+        {
+            SystemConfiguration config = GetSystemConfiguration();
+            config.About = about;
             if (config.ID > 0)
             {
                 SystemConfigurationRepository.Update(config);
@@ -126,5 +323,158 @@ namespace MobileTech
                 SystemConfigurationRepository.Add(config);
             }
         }
+        #endregion
+
+        #region FeatureType
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<FeatureType> GetFeatureType()
+        {
+            return Instance.FeatureTypeRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateFeatureType(int id, string FeatureTypeName, string FeatureTypeDescription)
+        {
+            FeatureType FeatureType = Instance.FeatureTypeRepository.GetObjectByID<int>(id);
+            if (FeatureType != null)
+            {
+                FeatureType.FeatureTypeName = FeatureTypeName;
+                FeatureType.FeatureTypeDescription = FeatureTypeDescription;
+                Instance.FeatureTypeRepository.Update(FeatureType);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteFeatureType(int id)
+        {
+            FeatureType FeatureType = Instance.FeatureTypeRepository.GetObjectByID<int>(id);
+            if (FeatureType != null)
+            {
+                Instance.FeatureTypeRepository.Delete(FeatureType);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertFeatureType(string FeatureTypeName, string FeatureTypeDescription)
+        {
+            FeatureType FeatureType = new FeatureType();
+            FeatureType.FeatureTypeName = FeatureTypeName;
+            FeatureType.FeatureTypeDescription = FeatureTypeDescription;
+            Instance.FeatureTypeRepository.Add(FeatureType);
+        }
+        #endregion
+
+        #region ProductSpecification
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<ProductSpecification> GetProductSpecification()
+        {
+            return Instance.ProductSpecificationRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateProductSpecification(int id, string SpecificationName, string SpecificationDescription)
+        {
+            ProductSpecification ProductSpecification = Instance.ProductSpecificationRepository.GetObjectByID<int>(id);
+            if (ProductSpecification != null)
+            {
+                ProductSpecification.SpecificationName = SpecificationName;
+                ProductSpecification.SpecificationDescription = SpecificationDescription;
+                Instance.ProductSpecificationRepository.Update(ProductSpecification);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteProductSpecification(int id)
+        {
+            ProductSpecification ProductSpecification = Instance.ProductSpecificationRepository.GetObjectByID<int>(id);
+            if (ProductSpecification != null)
+            {
+                Instance.ProductSpecificationRepository.Delete(ProductSpecification);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertProductSpecification(string SpecificationName, string SpecificationDescription)
+        {
+            ProductSpecification ProductSpecification = new ProductSpecification();
+            ProductSpecification.SpecificationName = SpecificationName;
+            ProductSpecification.SpecificationDescription = SpecificationDescription;
+            Instance.ProductSpecificationRepository.Add(ProductSpecification);
+        }
+        #endregion
+
+        #region ProductColor
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<ProductColor> GetProductColor()
+        {
+            return Instance.ProductColorRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateProductColor(int id, string ColorName, string ColorDescription)
+        {
+            ProductColor ProductColor = Instance.ProductColorRepository.GetObjectByID<int>(id);
+            if (ProductColor != null)
+            {
+                ProductColor.ColorName = ColorName;
+                ProductColor.ColorDescription = ColorDescription;
+                Instance.ProductColorRepository.Update(ProductColor);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteProductColor(int id)
+        {
+            ProductColor ProductColor = Instance.ProductColorRepository.GetObjectByID<int>(id);
+            if (ProductColor != null)
+            {
+                Instance.ProductColorRepository.Delete(ProductColor);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertProductColor(string ColorName, string ColorDescription)
+        {
+            ProductColor ProductColor = new ProductColor();
+            ProductColor.ColorName = ColorName;
+            ProductColor.ColorDescription = ColorDescription;
+            Instance.ProductColorRepository.Add(ProductColor);
+        }
+        #endregion
+
+        #region ProductStatus
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<ProductStatus> GetProductStatus()
+        {
+            return Instance.ProductStatusRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateProductStatus(int id, string ProductStatusName, string ProductStatusDescription)
+        {
+            ProductStatus ProductStatus = Instance.ProductStatusRepository.GetObjectByID<int>(id);
+            if (ProductStatus != null)
+            {
+                ProductStatus.ProductStatusName = ProductStatusName;
+                ProductStatus.ProductStatusDescription = ProductStatusDescription;
+                Instance.ProductStatusRepository.Update(ProductStatus);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteProductStatus(int id)
+        {
+            ProductStatus ProductStatus = Instance.ProductStatusRepository.GetObjectByID<int>(id);
+            if (ProductStatus != null)
+            {
+                Instance.ProductStatusRepository.Delete(ProductStatus);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertProductStatus(string ProductStatusName, string ProductStatusDescription)
+        {
+            ProductStatus ProductStatus = new ProductStatus();
+            ProductStatus.ProductStatusName = ProductStatusName;
+            ProductStatus.ProductStatusDescription = ProductStatusDescription;
+            Instance.ProductStatusRepository.Add(ProductStatus);
+        }
+        #endregion
     }
 }

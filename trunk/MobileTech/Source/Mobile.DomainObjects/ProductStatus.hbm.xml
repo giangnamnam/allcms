@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.ProductStatus, Mobile.DomainObjects" table="ProductStatus" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="ProductStatusName" column="StatusName" not-null="true" type="string" insert="true" update="true" />
+    <property name="ProductStatusDescription" column="StatusDescription" not-null="false" type="string" insert="true" update="true" />
+  </class>
+</hibernate-mapping>

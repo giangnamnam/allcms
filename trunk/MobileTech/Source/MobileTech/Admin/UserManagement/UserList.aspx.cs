@@ -55,6 +55,7 @@ namespace MobileTech.Admin.UserManagement
                 ObjectDataSourceRoleObject.SelectParameters["UserName"].DefaultValue = userName;
                 break;
             }
+            //MembershipUtilities.MembershipUserODS.Update()
         }
 
 
@@ -114,24 +115,24 @@ namespace MobileTech.Admin.UserManagement
 
         protected void ButtonNewUser_Click(object sender, EventArgs e)
         {
-            //if (TextBoxUserName.Text.Length > 0 && TextBoxPassword.Text.Length > 0)
-            //{
-            ObjectDataSourceMembershipUser.InsertParameters["UserName"].DefaultValue = TextBoxUserName.Text; ;
-            ObjectDataSourceMembershipUser.InsertParameters["password"].DefaultValue = TextBoxPassword.Text;
-            ObjectDataSourceMembershipUser.InsertParameters["passwordQuestion"].DefaultValue = TextBoxPasswordQuestion.Text;
-            ObjectDataSourceMembershipUser.InsertParameters["passwordAnswer"].DefaultValue = TextBoxPasswordAnswer.Text;
-            ObjectDataSourceMembershipUser.InsertParameters["email"].DefaultValue = TextBoxEmail.Text;
-            ObjectDataSourceMembershipUser.InsertParameters["isApproved"].DefaultValue = CheckboxApproval.Checked == true ? "true" : "false";
+            if (TextBoxUserName.Text.Length > 0 && TextBoxPassword.Text.Length > 0)
+            {
+                ObjectDataSourceMembershipUser.InsertParameters["UserName"].DefaultValue = TextBoxUserName.Text; ;
+                ObjectDataSourceMembershipUser.InsertParameters["password"].DefaultValue = TextBoxPassword.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["passwordQuestion"].DefaultValue = TextBoxPasswordQuestion.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["passwordAnswer"].DefaultValue = TextBoxPasswordAnswer.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["email"].DefaultValue = TextBoxEmail.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["isApproved"].DefaultValue = CheckboxApproval.Checked == true ? "true" : "false";
 
-            ObjectDataSourceMembershipUser.Insert();
-            GridViewMemberUser.DataBind();
-            TextBoxUserName.Text = "";
-            TextBoxPassword.Text = "";
-            TextBoxEmail.Text = "";
-            TextBoxPasswordAnswer.Text = "";
-            TextBoxPasswordQuestion.Text = "";
-            CheckboxApproval.Checked = false;
-            //}
+                ObjectDataSourceMembershipUser.Insert();
+                GridViewMemberUser.DataBind();
+                TextBoxUserName.Text = "";
+                TextBoxPassword.Text = "";
+                TextBoxEmail.Text = "";
+                TextBoxPasswordAnswer.Text = "";
+                TextBoxPasswordQuestion.Text = "";
+                CheckboxApproval.Checked = false;
+            }
         }
 
         protected void GridViewMembership_RowDeleted(object sender, GridViewDeletedEventArgs e)

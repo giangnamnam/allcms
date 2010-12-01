@@ -5,9 +5,9 @@
       <generator class="identity" />
     </id>
     <property name="ContactName" column="ContactName" not-null="true" type="string" insert="true" update="true" />
-    <property name="ContactAddress" column="ContactAddress" not-null="true" type="string" insert="true" update="true" />
-    <property name="ContactGoogleAddress" column="ContactGoogleAddress" not-null="true" type="string" insert="true" update="true" />
-    <property name="ContactPhone" column="ContactPhone" not-null="true" type="string" insert="true" update="true" />
-    <property name="ContactEmail" column="ContactEmail" not-null="true" type="string" insert="true" update="true" />
+    <property name="ContactAddress" column="ContactAddress" not-null="false" type="string" insert="true" update="true" />
+    <property name="ContactGoogleAddress" column="ContactGoogleAddress" not-null="false" type="string" insert="true" update="true" />
+    <property name="ContactPhone" column="ContactPhone" not-null="false" type="string" insert="true" update="true" />
+    <property name="ContactEmail" column="ContactEmail" not-null="false" type="string" insert="true" update="true" />
   </class>
 </hibernate-mapping>
