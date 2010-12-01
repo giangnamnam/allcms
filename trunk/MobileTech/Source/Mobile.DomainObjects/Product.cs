@@ -31,5 +31,35 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+
+        public virtual string CommentPoint
+        {
+            get;
+            set;
+        }
+
+        public virtual string Promotions
+        {
+            get;
+            set;
+        }
+
+        public virtual string BuyStandard
+        {
+            get;
+            set;
+        }
+
+        public virtual string GoodFeature
+        {
+            get;
+            set;
+        }
+
+        public virtual DateTime? PublishDate
+        {
+            get;
+            set;
+        }
     }
 }

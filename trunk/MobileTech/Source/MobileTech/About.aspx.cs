@@ -10,7 +10,10 @@ namespace MobileTech
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                lblAbout.InnerHtml = ProductService.Instance.GetSystemConfiguration().About;
+            }
         }
     }
 }

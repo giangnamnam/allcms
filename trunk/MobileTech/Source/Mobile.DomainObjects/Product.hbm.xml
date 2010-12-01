@@ -5,7 +5,12 @@
       <generator class="identity" />
     </id>
     <property name="ProductName" column="ProductName" not-null="true" type="string" insert="true" update="true" />
-    <property name="ProductPrice" column="ProductPrice" not-null="true" type="decimal" insert="true" update="true" />
-    <property name="ProductImage" column="ProductImage" not-null="true" type="string" insert="true" update="true" />
+    <property name="ProductPrice" column="ProductPrice" not-null="false" type="decimal" insert="true" update="true" />
+    <property name="ProductImage" column="ProductImage" not-null="false" type="string" insert="true" update="true" />
+    <property name="CommentPoint" column="CommentPoint" not-null="false" type="string" insert="true" update="true" />
+    <property name="BuyStandard" column="BuyStandard" not-null="false" type="string" insert="true" update="true" />
+    <property name="GoodFeature" column="GoodFeature" not-null="false" type="string" insert="true" update="true" />
+    <property name="PublishDate" column="PublishDate" not-null="false" type="datetime" insert="true" update="true" />
+    
   </class>
 </hibernate-mapping>

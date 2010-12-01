@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.FeatureType, Mobile.DomainObjects" table="FeatureType" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="FeatureTypeName" column="FeatureTypeName" not-null="true" type="string" insert="true" update="true" />
+    <property name="FeatureTypeDescription" column="FeatureTypeDescription" not-null="false" type="string" insert="true" update="true" />
+  </class>
+</hibernate-mapping>

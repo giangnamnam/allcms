@@ -10,8 +10,27 @@ namespace MobileTech.Admin.Company
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grvProductList.DataSource = ProductService.Instance.GetCompany();
-            grvProductList.DataBind();
+            grvProductList.EditIndex = -1;
         }
-    }
+        protected void grvProductList_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        {
+
+        }
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text.Length > 0)
+            {
+                ObjectDataSourceCompany.InsertParameters["CompanyName"].DefaultValue = txtName.Text; ;
+                ObjectDataSourceCompany.InsertParameters["CompanyDescription"].DefaultValue = txtDescription.Text;
+
+
+                ObjectDataSourceCompany.Insert();
+                ObjectDataSourceCompany.Select();
+                grvProductList.DataBind();
+
+                txtName.Text = "";
+                txtDescription.Text = "";
+            }
+        }
+}
 }

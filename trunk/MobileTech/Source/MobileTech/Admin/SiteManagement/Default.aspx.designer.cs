@@ -14,13 +14,13 @@ namespace MobileTech.Admin.SiteManagement {
     public partial class Default {
         
         /// <summary>
-        /// fckDescription control.
+        /// fckAbout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FredCK.FCKeditorV2.FCKeditor fckDescription;
+        protected global::FredCK.FCKeditorV2.FCKeditor fckAbout;
         
         /// <summary>
         /// btnOK control.

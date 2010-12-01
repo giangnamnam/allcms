@@ -14,7 +14,7 @@ namespace MobileTech
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            IList<Company> list = ProductService.Instance.GetCompany();
+            
         }
     }
 }

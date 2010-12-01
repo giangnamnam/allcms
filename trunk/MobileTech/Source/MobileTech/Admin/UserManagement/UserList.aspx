@@ -48,7 +48,7 @@
                             CellPadding="1" Font-Size="Small" Width="95%" ForeColor="#333333" GridLines="None"
                             BorderColor="White">
                             <Columns>
-                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                
                                 <asp:BoundField DataField="UserName" HeaderText="UserName" ReadOnly="True" SortExpression="UserName" />
                                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                 <%--<asp:BoundField DataField="PasswordQuestion" HeaderText="PasswordQuestion" ReadOnly="True"
@@ -70,6 +70,7 @@
                                     Visible="False" ReadOnly="True" SortExpression="LastPasswordChangedDate" />
                                 <asp:BoundField DataField="ProviderName" HeaderText="ProviderName" ReadOnly="True"
                                     Visible="False" SortExpression="ProviderName" />
+                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
                             </Columns>
                             <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
                             <RowStyle BackColor="#EFF3FB" />

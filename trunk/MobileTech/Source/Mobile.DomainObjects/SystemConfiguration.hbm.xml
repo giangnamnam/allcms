@@ -4,8 +4,8 @@
     <id name="ID" type="Int32" column="ID">
       <generator class="identity" />
     </id>
-    <property name="AdminName" column="AdminName" not-null="true" type="string" insert="true" update="true" />
-    <property name="FeedbackEmail" column="FeedbackEmail" not-null="true" type="string" insert="true" update="true" />
-    <property name="About" column="About" not-null="true" type="string" insert="true" update="true" />
+    <property name="AdminName" column="AdminName" not-null="false" type="string" insert="true" update="true" />
+    <property name="FeedbackEmail" column="FeedbackEmail" not-null="false" type="string" insert="true" update="true" />
+    <property name="About" column="About" not-null="false" type="string" insert="true" update="true" />
   </class>
 </hibernate-mapping>

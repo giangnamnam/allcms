@@ -11,11 +11,19 @@ namespace MobileTech.Admin.SiteManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            IList<SystemConfiguration> list = ProductService.Instance.GetSystemConfiguration();
-            if (list != null && list.Count > 0)
+            if (!IsPostBack)
             {
- 
+                SystemConfiguration config = ProductService.Instance.GetSystemConfiguration();
+                if (config != null)
+                {
+                    fckAbout.Value = config.About;
+                }
             }
         }
-    }
+        protected void btnOK_Click(object sender, EventArgs e)
+        {
+            
+            ProductService.Instance.UpdateAbout(fckAbout.Value);
+        }
+}
 }

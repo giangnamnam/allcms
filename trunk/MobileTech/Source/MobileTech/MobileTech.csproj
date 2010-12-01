@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MobileTech</RootNamespace>
     <AssemblyName>MobileTech</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkSubset>
     </TargetFrameworkSubset>
   </PropertyGroup>
@@ -72,14 +72,29 @@
       <HintPath>..\Assembly\Spring.Data.NHibernate21.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
@@ -93,8 +108,29 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Accessory.aspx.cs">
+      <DependentUpon>Accessory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Accessory.aspx.designer.cs">
+      <DependentUpon>Accessory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministrationService.svc.cs">
       <DependentUpon>AdministrationService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Accessories\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Accessories\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Accessories\EditAccessories.aspx.cs">
+      <DependentUpon>EditAccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Accessories\EditAccessories.aspx.designer.cs">
+      <DependentUpon>EditAccessories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Company\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -110,12 +146,40 @@
     <Compile Include="Admin\Contact\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\FeatureType\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FeatureType\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductColor\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductColor\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductSpecification\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductSpecification\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductStatus\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductStatus\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Product\AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
@@ -137,6 +201,13 @@
     </Compile>
     <Compile Include="Admin\Service\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Service\EditService.aspx.cs">
+      <DependentUpon>EditService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Service\EditService.aspx.designer.cs">
+      <DependentUpon>EditService.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Share\AdminSite.Master.cs">
       <DependentUpon>AdminSite.Master</DependentUpon>
@@ -183,6 +254,13 @@
     <Compile Include="Admin\UserManagement\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -192,6 +270,13 @@
     </Compile>
     <Compile Include="IAdministrationService.cs" />
     <Compile Include="IProductService.cs" />
+    <Compile Include="Plans.aspx.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Plans.aspx.designer.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductService.svc.cs">
       <DependentUpon>ProductService.svc</DependentUpon>
     </Compile>
@@ -203,6 +288,27 @@
       <DependentUpon>ProductSite.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services.aspx.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Services.aspx.designer.cs">
+      <DependentUpon>Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UIControls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">
@@ -263,10 +369,18 @@
     <Content Include="Admin\Styles\JS\jquery.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Accessory.aspx" />
+    <Content Include="Admin\Accessories\Default.aspx" />
+    <Content Include="Admin\Accessories\EditAccessories.aspx" />
     <Content Include="Admin\Company\Default.aspx" />
     <Content Include="Admin\Contact\Default.aspx" />
+    <Content Include="Admin\FeatureType\Default.aspx" />
+    <Content Include="Admin\ProductColor\Default.aspx" />
+    <Content Include="Admin\ProductSpecification\Default.aspx" />
+    <Content Include="Admin\ProductStatus\Default.aspx" />
     <Content Include="Admin\Product\AddProduct.aspx" />
     <Content Include="Admin\Service\Default.aspx" />
+    <Content Include="Admin\Service\EditService.aspx" />
     <Content Include="Admin\Share\AdminSite.Master" />
     <Content Include="Admin\SiteManagement\Default.aspx" />
     <Content Include="Admin\UserManagement\ChangePassword.aspx" />
@@ -285,6 +399,7 @@
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIGlitz.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIMap.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\TextChangedBehavior.js" />
+    <Content Include="Contact.aspx" />
     <Content Include="FCKeditor\editor\css\behaviors\disablehandles.htc" />
     <Content Include="FCKeditor\editor\css\behaviors\hiddenfield.gif" />
     <Content Include="FCKeditor\editor\css\behaviors\hiddenfield.htc" />
@@ -703,6 +818,35 @@
     <Content Include="FCKeditor\_testcases\sampleposteddata.asp" />
     <Content Include="FCKeditor\_testcases\testcases.css" />
     <Content Include="FCKeditor\_whatsnew.html" />
+    <Content Include="Images\bgad.png" />
+    <Content Include="Images\bgFooter.jpg" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\h1.png" />
+    <Content Include="Images\h2.png" />
+    <Content Include="Images\h3.png" />
+    <Content Include="Images\h4.png" />
+    <Content Include="Images\h5.png" />
+    <Content Include="Images\header.png" />
+    <Content Include="Images\hh.png" />
+    <Content Include="Images\home-foodter.png" />
+    <Content Include="Images\img1.png" />
+    <Content Include="Images\img2.png" />
+    <Content Include="Images\img3.png" />
+    <Content Include="Images\img4.png" />
+    <Content Include="Images\img5.png" />
+    <Content Include="Images\img6.png" />
+    <Content Include="Images\lg.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\MobileWeb-Final.png" />
+    <Content Include="Images\nav.png" />
+    <Content Include="Images\title.png" />
+    <Content Include="menu.css" />
+    <Content Include="Plans.aspx" />
+    <Content Include="reset.css" />
+    <Content Include="Services.aspx" />
+    <Content Include="style.css" />
+    <Content Include="UIControls\Footer.ascx" />
+    <Content Include="UIControls\Header.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
@@ -766,6 +910,8 @@
   <ItemGroup>
     <Folder Include="Admin\UserControl\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Accessories\" />
+    <Folder Include="Images\Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
