@@ -1,4 +1,50 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="MobileTech.About" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
+    CodeFile="About.aspx.cs" Inherits="MobileTech.About" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <table id="container" style="vertical-align: middle">
+        <tr>
+            <td id="sub-nav">
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link1</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link2</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link3</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link4</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link5</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link6</a></li></ul>
+                <ul class="sub-nav-a">
+                    <li class="style-nav-a"><a href="#">link7</a></li></ul>
+            </td>
+            <td>
+                <div id="main-content">
+                    <div class="title" style="vertical-align: bottom; color: Red">
+                        Home > About
+                    </div>
+                    <div class="title" style="margin-top: 4px; vertical-align: middle">
+                        <h2>
+                            <p style="color: White; font-size: medium; vertical-align: middle"">
+                                About Us</p>
+                        </h2>
+                    </div>
+                    <div id="content-small">
+                        <div class="content-news">
+                            <label runat="server" id="lblAbout">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</asp:Content>
+<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="MobileTech.About" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,15 +75,7 @@
 								<li><a class="contact" href="Contact.aspx">Contact</a></li>
 							</ul>
 						</div>
-                    <%--<div id="nav">
-                        <span class="nav-a" style="margin-left: 25px; border-bottom: 4px solid #ff0000;"><a
-                            href=Default.aspx>home</a></span> <span class="nav-a" style="border-bottom: 4px solid #ffff05;">
-                                <a href=About.aspx>about</a></span> <span class="nav-a" style="border-bottom: 4px solid #00aeff">
-                                    <a href=Services.aspx>services</a></span> <span class="nav-a" style="border-bottom: 4px solid #55e546;
-                                        width: 120px"><a href=Accessories.aspx>accessories</a></span> <span class="nav-a" style="border-bottom: 4px solid #ff00c2">
-                                            <a href=Plans.aspx>plans</a></span> <span class="nav-a" style="border-bottom: 4px solid #ff5a00">
-                                                <a href=Contact.aspx>contact</a></span></p>
-                    </div>--%>
+                    
                 </div>
             </div>
         </div>
@@ -96,12 +134,11 @@
                     <a href="Plans.aspx">plans</a></ul>
                 <ul class="style-submenu">
                     <a href="Contact.aspx">contact</a></ul>
-                <%--<br />
-                <ul class="style-submenu">
-                    <a href="#">Design By 2010</a></ul>--%>
+                
             </div>
         </div>
     </div>
     </form>
 </body>
 </html>
+--%>
