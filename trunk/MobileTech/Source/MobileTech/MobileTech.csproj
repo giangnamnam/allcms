@@ -911,6 +911,7 @@
     <Folder Include="Admin\UserControl\" />
     <Folder Include="App_Data\" />
     <Folder Include="Images\Accessories\" />
+    <Folder Include="Images\Product\" />
     <Folder Include="Images\Service\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

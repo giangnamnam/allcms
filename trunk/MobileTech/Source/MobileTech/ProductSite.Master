@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProductSite.master.cs"
     Inherits="MobileTech.ProductSite" %>
 
+<%@ Register Src="UIControls/Footer.ascx" TagName="Footer" TagPrefix="uc1" %>
+<%@ Register Src="UIControls/Header.ascx" TagName="Header" TagPrefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -14,33 +16,15 @@
 <body>
     <form id="form1" runat="server">
     <div id="warpper">
-        <div id="content-header">
-            <div id="Div1">
-                <div id="logo">
-                    <img height="140px" src="Images/lg.png" />
-                </div>
-                <div id="hd-right">
-                    <div id="hd-flash">
-                        <img src="Images/title.png" /></div>
-                    <div class="topMenu">
-                        <ul>
-                            <li><a class="home" href="Default.aspx">Home</a></li>
-                            <li><a class="about" href="About.aspx">About</a></li>
-                            <li><a class="services" href="Services.aspx">Services</a></li>
-                            <li><a class="accessories" href="Accessories.aspx">Accessories</a></li>
-                            <li><a class="plans" href="Plans.aspx">Plans</a></li>
-                            <li><a class="contact" href="Contact.aspx">Contact</a></li>
-                        </ul>
-                    </div>
-                    
-                    
-                </div>
+        <uc2:Header ID="Header1" runat="server" />
+        <div id="container-content">
+            <div id="container">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                <uc1:Footer ID="Footer1" runat="server" />
             </div>
         </div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
     </div>
-    
     </form>
 </body>
 </html>
