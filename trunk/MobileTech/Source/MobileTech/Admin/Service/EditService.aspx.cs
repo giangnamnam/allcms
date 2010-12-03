@@ -46,6 +46,7 @@ namespace MobileTech.Admin.Service
             if (service != null)
             {
                 txtServiceName.Text = service.ServiceName;
+                txtPrice.Text = service.ServicePrice;
                 txtShortContent.Text = service.ShortContent;
                 fckDetail.Value = service.DetailContent;
             }
@@ -56,6 +57,7 @@ namespace MobileTech.Admin.Service
         void PopulateControl()
         {
             txtServiceName.Text = "";
+            txtPrice.Text = "";
             txtShortContent.Text = "";
             fckDetail.Value = "";
         }
@@ -111,6 +113,7 @@ namespace MobileTech.Admin.Service
                 {
                     Mobile.DomainObjects.Service service = new Mobile.DomainObjects.Service();
                     service.ServiceName = txtServiceName.Text;
+                    service.ServicePrice = txtPrice.Text;
                     service.ShortContent = txtShortContent.Text;
                     service.DetailContent = fckDetail.Value;
                     service.ImageLink = path;
@@ -124,6 +127,7 @@ namespace MobileTech.Admin.Service
                     if (service != null)
                     {
                         service.ServiceName = txtServiceName.Text;
+                        service.ServicePrice = txtPrice.Text;
                         service.ShortContent = txtShortContent.Text;
                         service.DetailContent = fckDetail.Value;
                         if (path.Length > 0) service.ImageLink = path;

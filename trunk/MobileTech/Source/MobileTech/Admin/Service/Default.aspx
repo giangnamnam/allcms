@@ -30,6 +30,7 @@
                 </ItemTemplate>
             </asp:TemplateColumn>
             <asp:BoundColumn DataField="ServiceName" HeaderText="Service Name"></asp:BoundColumn>
+            <asp:BoundColumn DataField="ServicePrice" HeaderText="Service Price"></asp:BoundColumn>
             <asp:BoundColumn DataField="ShortContent" HeaderText="Short Content"></asp:BoundColumn>
             <asp:EditCommandColumn ButtonType="LinkButton" UpdateText="Update" CancelText="Cancel"
                 ItemStyle-Width="70px" EditText="Edit">

@@ -19,6 +19,12 @@ namespace Mobile.DomainObjects
             set;
         }
 
+        public virtual string ServicePrice
+        {
+            get;
+            set;
+        }
+
         public virtual string ImageLink
         {
             get;

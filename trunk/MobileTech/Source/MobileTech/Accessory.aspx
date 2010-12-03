@@ -24,40 +24,49 @@
             </td>
             <td>
                 <div id="main-content">
-                    <div class="title">
+                    <div class="title" style="vertical-align: bottom; color: Red">
+                        Home > Accessories
                     </div>
-                    <div class="title" style="margin-top: 2px;">
-                    </div>
-                    <div id="content-small" style="margin-top: 2px;">
-                        
-                        <asp:DataList ID="lstProduct" DataKeyField="ID" runat="server" RepeatColumns="3" GridLines="Both" BorderWidth="8" BorderColor="Transparent"
-                            Width="500px" OnItemDataBound="lstProduct_ItemDataBound">
+                    <div id="content-small" style="margin-top: 2px; margin-left: -8px">
+                        <asp:DataList ID="lstProduct" DataKeyField="ID" runat="server" RepeatColumns="3"
+                            Width="500px" OnItemDataBound="lstProduct_ItemDataBound" CellSpacing="8">
                             <ItemTemplate>
-                                <div align="center">
-                                    <asp:Image ID="imgImage" Height="243px" Width="213px" runat="server" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.ImageLink") %>'>
-                                    </asp:Image>
+                                <div align="center" style="margin-left: 8px">
                                     <a href="Accessory.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>">
-                                        <%# DataBinder.Eval(Container, "DataItem.AccessoriesName")%></a>
+                                        <asp:Image ID="imgImage" Height="243px" Width="213px" runat="server" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.ImageLink") %>'>
+                                        </asp:Image>
+                                    </a><a href="Accessory.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="color: Green">
+                                        <%# DataBinder.Eval(Container, "DataItem.AccessoriesName")%>
+                                    </a>
+                                    <label style="color: White">
+                                        |
+                                    </label>
+                                    <label style="color: Yellow">
+                                        <%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%></label>
                                 </div>
                             </ItemTemplate>
                             <ItemStyle Width="33%" VerticalAlign="Top" />
                         </asp:DataList>
-                        <%--<div class="ct-image" style="margin-left: 0">
-                                <img src="Images/hh.png" /></div>
-                            <div class="ct-image">
-                                <img src="Images/img5.png" /></div>
-                            <div class="ct-image">
-                                <img src="Images/img6.png" /></div>--%>
-                        
-                        <asp:Panel runat="server" ID="pnlAccessoriesDetail" Visible="false">
-                            <div class="ct-image" style="margin-left: 0">
-                                <img src="Images/hh.png" /></div>
-                            <div class="ct-text">
-                                <ul class="style-ct-text">
-                                    Tran Thanh Tu<br />
-                                    Tran Thanh Tu</ul>
-                            </div>
-                        </asp:Panel>
+                        <div style="margin-top: 2px; margin-left: 8px">
+                            <asp:Panel runat="server" ID="pnlAccessoriesDetail" Visible="false">
+                                <div class="ct-image" style="margin-left: 0">
+                                    <asp:Image ID="imgImageDetail" Height="243px" Width="213px" runat="server"></asp:Image>
+                                </div>
+                                <div class="ct-text">
+                                    <strong>
+                                        <label runat="server" id="lblName" style="margin-left: 5; font-weight: bold; font-size: medium">
+                                        </label>
+                                    </strong>
+                                    <br />
+                                    <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
+                                    </label>
+                                </div>
+                                <div class="contentDetail">
+                                    <label class="style-ct-text" runat="server" id="lblDetailContent">
+                                    </label>
+                                </div>
+                            </asp:Panel>
+                        </div>
                     </div>
                 </div>
             </td>

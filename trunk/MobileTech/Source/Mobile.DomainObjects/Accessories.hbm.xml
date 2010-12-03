@@ -5,6 +5,7 @@
       <generator class="identity" />
     </id>
     <property name="AccessoriesName" column="AccessoriesName" not-null="true" type="string" insert="true" update="true" />
+    <property name="AccessoriesPrice" column="AccessoriesPrice" not-null="false" type="string" insert="true" update="true" />
     <property name="ImageLink" column="ImageLink" not-null="false" type="string" insert="true" update="true" />
     <property name="ShortContent" column="ShortContent" not-null="false" type="string" insert="true" update="true" />
     <property name="DetailContent" column="DetailContent" not-null="false" type="string" insert="true" update="true" />

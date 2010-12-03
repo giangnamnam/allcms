@@ -46,6 +46,7 @@ namespace MobileTech.Admin.Accessories
             if (Accessories != null)
             {
                 txtAccessoriesName.Text = Accessories.AccessoriesName;
+                txtPrice.Text = Accessories.AccessoriesPrice;
                 txtShortContent.Text = Accessories.ShortContent;
                 fckDetail.Value = Accessories.DetailContent;
             }
@@ -56,6 +57,7 @@ namespace MobileTech.Admin.Accessories
         void PopulateControl()
         {
             txtAccessoriesName.Text = "";
+            txtPrice.Text = "";
             txtShortContent.Text = "";
             fckDetail.Value = "";
         }
@@ -111,6 +113,7 @@ namespace MobileTech.Admin.Accessories
                 {
                     Mobile.DomainObjects.Accessories Accessories = new Mobile.DomainObjects.Accessories();
                     Accessories.AccessoriesName = txtAccessoriesName.Text;
+                    Accessories.AccessoriesPrice = txtPrice.Text;
                     Accessories.ShortContent = txtShortContent.Text;
                     Accessories.DetailContent = fckDetail.Value;
                     Accessories.ImageLink = path;
@@ -124,6 +127,7 @@ namespace MobileTech.Admin.Accessories
                     if (Accessories != null)
                     {
                         Accessories.AccessoriesName = txtAccessoriesName.Text;
+                        Accessories.AccessoriesPrice = txtPrice.Text;
                         Accessories.ShortContent = txtShortContent.Text;
                         Accessories.DetailContent = fckDetail.Value;
                         if (path.Length > 0) Accessories.ImageLink = path;

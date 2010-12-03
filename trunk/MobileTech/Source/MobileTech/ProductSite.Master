@@ -16,12 +16,12 @@
 <body>
     <form id="form1" runat="server">
     <div id="warpper">
-        <uc2:Header ID="Header1" runat="server" />
+        <%--<uc2:Header ID="Header1" runat="server" />--%>
         <div id="container-content">
             <div id="container">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
-                <uc1:Footer ID="Footer1" runat="server" />
+                <%--<uc1:Footer ID="Footer1" runat="server" />--%>
             </div>
         </div>
     </div>
