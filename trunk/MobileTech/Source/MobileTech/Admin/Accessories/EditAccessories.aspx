@@ -24,6 +24,16 @@
             </tr>
             <tr>
                 <td>
+                    Price: (*)&nbsp;
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPrice" runat="server" Width="100px"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*"
+                        ControlToValidate="txtPrice"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     Short Content: (*)&nbsp;
                 </td>
                 <td>

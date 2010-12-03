@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Mobile.DomainObjects;
 
 namespace MobileTech
 {
@@ -21,15 +22,22 @@ namespace MobileTech
                     lstProduct.Visible = false;
                     pnlAccessoriesDetail.Visible = true;
                     isDetail = true;
-                    LoadDataDetail();
+                    LoadDataDetail(id);
                 }
             }
             if (!IsPostBack && !isDetail) LoadData();
         }
 
-        private void LoadDataDetail()
+        private void LoadDataDetail(int id)
         {
-            
+            Accessories accessories = ProductService.GetAccessories(id);
+            if (accessories != null)
+            {
+                imgImageDetail.ImageUrl = accessories.ImageLink;
+                lblName.InnerText = accessories.AccessoriesName;
+                lblShortContent.InnerText = accessories.ShortContent;
+                lblDetailContent.InnerHtml = accessories.DetailContent;
+            }
         }
 
         private void LoadData()
