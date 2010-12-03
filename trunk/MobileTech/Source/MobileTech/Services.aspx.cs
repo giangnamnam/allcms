@@ -20,7 +20,7 @@ namespace MobileTech
                 if (id > 0)
                 {
                     lstProduct.Visible = false;
-                    //pnlAccessoriesDetail.Visible = true;
+                    pnlAccessoriesDetail.Visible = true;
                     isDetail = true;
                     LoadDataDetail(id);
                 }
@@ -33,10 +33,10 @@ namespace MobileTech
             Service service = ProductService.GetService(id);
             if (service != null)
             {
-                //imgImageDetail.ImageUrl = service.ImageLink;
-                //lblName.InnerText = service.ServiceName;
-                //lblShortContent.InnerText = service.ShortContent;
-                //lblDetailContent.InnerHtml = service.DetailContent;
+                imgImageDetail.ImageUrl = service.ImageLink;
+                lblName.InnerText = service.ServiceName;
+                lblShortContent.InnerText = service.ShortContent;
+                lblDetailContent.InnerHtml = service.DetailContent;
             }
         }
 

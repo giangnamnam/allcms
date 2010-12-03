@@ -35,32 +35,33 @@
                                     <tr>
                                         <td style="width: 213px">
                                             <div class="ct-image" style="margin-left: 0">
-                                                <a href="Accessory.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>">
+                                                <a href="Services.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>">
                                                     <asp:Image ID="imgImage" Height="243px" Width="213px" runat="server" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.ImageLink") %>'>
                                                     </asp:Image>
                                                 </a>
                                             </div>
                                         </td>
                                         <td valign="top">
-                                            <div class="ct-text">
-                                                <strong>
-                                                    <label runat="server" id="lblName" style="margin-left: 5; font-weight: bold; font-size: medium">
-                                                    </label>
-                                                </strong>
+                                            <div class="ct-text" style="height: 243px">
+                                                <a href="Services.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="font-size: medium; font-weight:bold;
+                                                    color: White">
+                                                    <%# DataBinder.Eval(Container, "DataItem.ServiceName")%>
+                                                     </a>
                                                 <br />
                                                 <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
+                                                    Price:
+                                                    <%# DataBinder.Eval(Container, "DataItem.ServicePrice")%>
                                                 </label>
-                                            </div>
-                                            <div class="contentDetail">
-                                                <label class="style-ct-text" runat="server" id="lblDetailContent">
-                                                </label>
+                                                <br />
+                                                <label class="style-ct-text">
+                                                    <%# DataBinder.Eval(Container, "DataItem.ShortContent")%></label>
                                             </div>
                                         </td>
                                     </tr>
                                 </table>
                             </ItemTemplate>
                         </asp:DataList>
-                        <%--<div style="margin-top: 2px; margin-left: 8px">
+                        <div style="margin-top: 2px; margin-left: 0px">
                             <asp:Panel runat="server" ID="pnlAccessoriesDetail" Visible="false">
                                 <div class="ct-image" style="margin-left: 0">
                                     <asp:Image ID="imgImageDetail" Height="243px" Width="213px" runat="server"></asp:Image>
@@ -79,7 +80,7 @@
                                     </label>
                                 </div>
                             </asp:Panel>
-                        </div>--%>
+                        </div>
                     </div>
                 </div>
             </td>
