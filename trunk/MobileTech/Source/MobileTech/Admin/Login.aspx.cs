@@ -18,7 +18,7 @@ namespace MobileTech.Admin
         protected void ctlLogin_Authenticate(object sender, AuthenticateEventArgs e)
         {
             //Password: Passw@rd
-            if (Membership.ValidateUser(ctlLogin.UserName, "Passw@rd"))
+            if (Membership.ValidateUser(ctlLogin.UserName, ctlLogin.Password))
             {
                 Session[MyConst.Session_Login_Status] = true;
                 string url = Request.QueryString["ReturnUrl"];
@@ -29,7 +29,8 @@ namespace MobileTech.Admin
                 else
                 {
                     FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
-                    Response.Redirect("Product/");
+                    //Response.Redirect("Product/");
+                    Response.Redirect("Service/");
                 }
             }
             else
