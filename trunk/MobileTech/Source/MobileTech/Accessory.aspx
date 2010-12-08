@@ -1,46 +1,35 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
     CodeFile="Accessory.aspx.cs" Inherits="MobileTech.Accessory" %>
 
+<%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table id="container" style="vertical-align: middle">
         <tr>
             <td id="sub-nav">
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link1</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link2</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link3</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link4</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link5</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link6</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link7</a></li></ul>
+                
+                <uc1:LeftMenu ID="LeftMenu1" runat="server" />
+                
             </td>
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
                         Home > Accessories
                     </div>
-                    <div id="content-small" style="margin-top: 2px; margin-left: -8px">
+                    <div id="content-small" style="margin-left: -8px">
                         <asp:DataList ID="lstProduct" DataKeyField="ID" runat="server" RepeatColumns="3"
-                            Width="500px" OnItemDataBound="lstProduct_ItemDataBound" CellSpacing="8">
+                            Width="500px" OnItemDataBound="lstProduct_ItemDataBound" CellSpacing="8" CellPadding="8">
                             <ItemTemplate>
-                                <div align="center" style="margin-left: 8px">
+                                <div align="center" style="margin-left: 8px; margin-top: 8px">
                                     <a href="Accessory.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>">
                                         <asp:Image ID="imgImage" Height="243px" Width="213px" runat="server" ImageUrl='<%# DataBinder.Eval(Container, "DataItem.ImageLink") %>'>
                                         </asp:Image>
                                     </a><a href="Accessory.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="color: Green">
                                         <%# DataBinder.Eval(Container, "DataItem.AccessoriesName")%>
                                     </a>
-                                    <label style="color: White">
-                                        |
-                                    </label>
+                                    <br />
                                     <label style="color: Yellow">
                                         <%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%></label>
                                 </div>

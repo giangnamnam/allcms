@@ -12,9 +12,18 @@ namespace Mobile.Repository
         public IList<Accessories> GetAccessoriesList()
         {
             ICriteria query = Session.CreateCriteria<Accessories>();
+            
             query.AddOrder(Order.Asc("CreatedDate"));
             return query.List<Accessories>();
         }
+        public IList<Accessories> GetAccessoriesByCategory(int categoryID)
+        {
+            ICriteria query = Session.CreateCriteria<Accessories>();
+            query.Add(Expression.Eq("CategoryAcc.ID", categoryID));
+            query.AddOrder(Order.Asc("CreatedDate"));
+            return query.List<Accessories>();
+        }
+
         public bool CheckAccessoriesNameExisted(string AccessoriesName, int? excludeAccessoriesID)
         {
             ICriteria query = Session.CreateCriteria<Accessories>();

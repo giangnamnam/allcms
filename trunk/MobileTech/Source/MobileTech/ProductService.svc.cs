@@ -268,6 +268,11 @@ namespace MobileTech
             return Instance.AccessoriesRepository.GetObjectByID(id);
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<Accessories> GetAccessoriesByCategory(int categoryID)
+        {
+            return Instance.AccessoriesRepository.GetAccessoriesByCategory(categoryID);
+        }
         [DataObjectMethod(DataObjectMethodType.Update, true)]
         public static void UpdateAccessories(Accessories Accessories)
         {
