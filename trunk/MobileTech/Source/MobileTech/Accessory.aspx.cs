@@ -12,7 +12,7 @@ namespace MobileTech
         protected void Page_Load(object sender, EventArgs e)
         {
             bool isDetail = false;
-            string idString=Request.QueryString["ID"];
+            string idString = Request.QueryString["ID"];
             if (idString != null && idString.Length > 0)
             {
                 int id = 0;
@@ -42,8 +42,22 @@ namespace MobileTech
 
         private void LoadData()
         {
-            lstProduct.DataSource = ProductService.GetAccessories();
+            IList<Accessories> list = null;
+            string idString = Request.QueryString["CategoryID"];
+            if (idString != null && idString.Length > 0)
+            {
+                int id = 0;
+                int.TryParse(idString, out id);
+                if (id > 0)
+                {
+                    list = ProductService.GetAccessoriesByCategory(id);
+                }
+            }
+            if (list == null) list = ProductService.GetAccessories();
+
+            lstProduct.DataSource = list;
             lstProduct.DataBind();
+
         }
 
         protected void lstProduct_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -56,7 +70,7 @@ namespace MobileTech
             //HyperLink hplName = e.Item.FindControl("hplName") as HyperLink;
             //hplName.NavigateUrl = "../ProductDetail.aspx?ID=" + lblID.Text.Trim();
 
-           
+
         }
     }
 }

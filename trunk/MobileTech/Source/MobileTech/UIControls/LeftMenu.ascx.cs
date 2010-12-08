@@ -11,7 +11,14 @@ namespace MobileTech.UIControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                lstService.DataSource = ProductService.GetService();
+                lstService.DataBind();
 
+                lstAccessories.DataSource = ProductService.GetCategoryAcc();
+                lstAccessories.DataBind();
+            }
         }
     }
 }
