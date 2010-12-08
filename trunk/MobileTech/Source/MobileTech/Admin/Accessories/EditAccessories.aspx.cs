@@ -117,6 +117,10 @@ namespace MobileTech.Admin.Accessories
                     Accessories.ShortContent = txtShortContent.Text;
                     Accessories.DetailContent = fckDetail.Value;
                     Accessories.ImageLink = path;
+                    Accessories.CreatedDate = DateTime.Now;
+                    int categoryID=0;
+                    int.TryParse(ddlCategory.SelectedValue, out categoryID);
+                    Accessories.CategoryAcc = ProductService.GetCategoryAcc(categoryID);
                     ProductService.InsertAccessories(Accessories);
                     PopulateControl();
                 }
@@ -131,6 +135,12 @@ namespace MobileTech.Admin.Accessories
                         Accessories.ShortContent = txtShortContent.Text;
                         Accessories.DetailContent = fckDetail.Value;
                         if (path.Length > 0) Accessories.ImageLink = path;
+
+                        Accessories.CreatedDate = DateTime.Now;
+                        int categoryID = 0;
+                        int.TryParse(ddlCategory.SelectedValue, out categoryID);
+                        Accessories.CategoryAcc = ProductService.GetCategoryAcc(categoryID);
+
                         ProductService.UpdateAccessories(Accessories);
                     }
                     Response.Redirect("Default.aspx");
@@ -162,5 +172,16 @@ namespace MobileTech.Admin.Accessories
         }
         #endregion
 
-    }
+        protected void ddlCategory_Init(object sender, EventArgs e)
+        {
+            IList<Mobile.DomainObjects.CategoryAcc> list= ProductService.GetCategoryAcc();
+            if (list != null && list.Count > 0)
+            {
+                foreach (Mobile.DomainObjects.CategoryAcc item in list)
+                {
+                    ddlCategory.Items.Add(new ListItem(item.CategoryAccName, item.ID.ToString()));
+                }
+            }
+        }
+}
 }
