@@ -54,7 +54,7 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
-        public virtual DateTime CreatedDate
+        public virtual DateTime? CreatedDate
         {
             get;
             set;
