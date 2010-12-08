@@ -16,7 +16,7 @@ namespace MobileTech.Admin.Share
                 || Session[MyConst.Session_Login_Status] == null
                 || (bool)Session[MyConst.Session_Login_Status] == false)
             {
-                //Response.Redirect("~/Admin/Login.aspx");
+                Response.Redirect("~/Admin/Login.aspx");
             }
             else
             {
