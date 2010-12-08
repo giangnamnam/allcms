@@ -12,6 +12,18 @@
                     <strong>Accessories Information </strong>
                 </td>
             </tr>
+             <tr>
+                <td style="height: 51px; width: 110px">
+                    Category: (*)&nbsp;
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlCategory" runat="server" Width="300px" 
+                        oninit="ddlCategory_Init">
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"
+                        ControlToValidate="ddlCategory"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
             <tr>
                 <td style="height: 51px; width: 110px">
                     Accessories Name: (*)&nbsp;

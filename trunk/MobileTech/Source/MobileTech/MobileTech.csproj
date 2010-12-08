@@ -138,6 +138,13 @@
     <Compile Include="Admin\Accessories\EditAccessories.aspx.designer.cs">
       <DependentUpon>EditAccessories.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CategoryAcc\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CategoryAcc\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Company\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,6 +322,13 @@
     <Compile Include="UIControls\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">
@@ -378,6 +392,7 @@
     <Content Include="Accessory.aspx" />
     <Content Include="Admin\Accessories\Default.aspx" />
     <Content Include="Admin\Accessories\EditAccessories.aspx" />
+    <Content Include="Admin\CategoryAcc\Default.aspx" />
     <Content Include="Admin\Company\Default.aspx" />
     <Content Include="Admin\Contact\Default.aspx" />
     <Content Include="Admin\FeatureType\Default.aspx" />
@@ -853,6 +868,7 @@
     <Content Include="style.css" />
     <Content Include="UIControls\Footer.ascx" />
     <Content Include="UIControls\Header.ascx" />
+    <Content Include="UIControls\LeftMenu.ascx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />

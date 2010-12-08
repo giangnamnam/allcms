@@ -78,6 +78,12 @@ namespace MobileTech
             get;
             set;
         }
+        public virtual ICategoryAccRepository CategoryAccRepository
+        {
+            get;
+            set;
+        }
+
         public virtual IAccessoriesRepository AccessoriesRepository
         {
             get;
@@ -207,6 +213,49 @@ namespace MobileTech
         }
         #endregion
 
+        #region CategoryAcc
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<CategoryAcc> GetCategoryAcc()
+        {
+            return Instance.CategoryAccRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static CategoryAcc GetCategoryAcc(int id)
+        {
+            return Instance.CategoryAccRepository.GetObjectByID(id);
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateCategoryAcc(int id, string CategoryAccName, string CategoryAccDescription)
+        {
+            CategoryAcc CategoryAcc = Instance.CategoryAccRepository.GetObjectByID<int>(id);
+            if (CategoryAcc != null)
+            {
+                CategoryAcc.CategoryAccName = CategoryAccName;
+                CategoryAcc.CategoryAccDescription = CategoryAccDescription;
+                Instance.CategoryAccRepository.Update(CategoryAcc);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteCategoryAcc(int id)
+        {
+            CategoryAcc CategoryAcc = Instance.CategoryAccRepository.GetObjectByID<int>(id);
+            if (CategoryAcc != null)
+            {
+                Instance.CategoryAccRepository.Delete(CategoryAcc);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertCategoryAcc(string CategoryAccName, string CategoryAccDescription)
+        {
+            CategoryAcc CategoryAcc = new CategoryAcc();
+            CategoryAcc.CategoryAccName = CategoryAccName;
+            CategoryAcc.CategoryAccDescription = CategoryAccDescription;
+            Instance.CategoryAccRepository.Add(CategoryAcc);
+        }
+        #endregion
+
         #region Accessories
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IList<Accessories> GetAccessories()
@@ -232,7 +281,7 @@ namespace MobileTech
         public static void DeleteAccessories(int id)
         {
             Accessories Accessories = Instance.AccessoriesRepository.GetObjectByID<int>(id);
-            if (Accessories != null)
+            if (Accessories != null && Instance.AccessoriesRepository.CheckAccessoriesCanDelete(id))
             {
                 Instance.AccessoriesRepository.Delete(Accessories);
             }

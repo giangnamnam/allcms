@@ -10,6 +10,6 @@
     <property name="ShortContent" column="ShortContent" not-null="false" type="string" insert="true" update="true" />
     <property name="DetailContent" column="DetailContent" not-null="false" type="string" insert="true" update="true" />
     <property name="ServiceStaus" column="ServiceStaus" not-null="false" type="int" insert="true" update="true" />
-    
+    <property name="CreatedDate" column="CreatedDate" not-null="false" type="DateTime" insert="true" update="true" />
   </class>
 </hibernate-mapping>

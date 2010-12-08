@@ -12,9 +12,8 @@ namespace Mobile.Repository
         public IList<Accessories> GetAccessoriesList()
         {
             ICriteria query = Session.CreateCriteria<Accessories>();
+            query.AddOrder(Order.Asc("CreatedDate"));
             return query.List<Accessories>();
-            //return NewQuery<Accessories>()                
-            //    .ToList();
         }
         public bool CheckAccessoriesNameExisted(string AccessoriesName, int? excludeAccessoriesID)
         {
@@ -37,9 +36,7 @@ namespace Mobile.Repository
         /// <returns>True: Can delete; False: Can not delete.</returns>
         public bool CheckAccessoriesCanDelete(int id)
         {
-            ICriteria query = Session.CreateCriteria<Accessories>();
-            query.Add(Expression.Eq("Accessories.ID", id));
-            return query.List().Count <= 0 ? true : false;
+            return true;
         }       
     }
 }

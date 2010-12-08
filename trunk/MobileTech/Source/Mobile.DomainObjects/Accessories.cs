@@ -48,5 +48,16 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+
+        public virtual CategoryAcc CategoryAcc
+        {
+            get;
+            set;
+        }
+        public virtual DateTime CreatedDate
+        {
+            get;
+            set;
+        }
     }
 }
