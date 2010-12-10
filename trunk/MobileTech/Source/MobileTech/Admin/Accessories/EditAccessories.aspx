@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" ValidateRequest="false"
-    CodeFile="EditAccessories.aspx.cs" Inherits="MobileTech.Admin.Accessories.EditAccessories" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" ValidateRequest="false" Inherits="MobileTech.Admin.Accessories.EditAccessories" Codebehind="EditAccessories.aspx.cs" %>
 
 <%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

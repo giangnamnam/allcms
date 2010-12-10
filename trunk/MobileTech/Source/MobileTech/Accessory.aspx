@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
-    CodeFile="Accessory.aspx.cs" Inherits="MobileTech.Accessory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true" Inherits="MobileTech.Accessory" Codebehind="Accessory.aspx.cs" %>
 
 <%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
 
