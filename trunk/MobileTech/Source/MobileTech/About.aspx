@@ -1,26 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
     CodeFile="About.aspx.cs" Inherits="MobileTech.About" %>
-
+<%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table id="container" style="vertical-align: middle">
         <tr>
             <td id="sub-nav">
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link1</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link2</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link3</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link4</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link5</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link6</a></li></ul>
-                <ul class="sub-nav-a">
-                    <li class="style-nav-a"><a href="#">link7</a></li></ul>
+                <uc1:LeftMenu ID="LeftMenu1" runat="server" />
             </td>
             <td>
                 <div id="main-content">

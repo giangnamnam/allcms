@@ -3,7 +3,9 @@
 </div>
 <div id="counter" style="height: 50px">
     <div class="counter-a">
-        visitor</div>
+        Visitor count</div>
+    <div class="counter-a" style="color:#FFFF33; font-size:20px">
+        123456789</div>
     <div class="counter-a">
         Follow us on</div>
     <div class="counter-a">
