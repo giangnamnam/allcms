@@ -14,6 +14,15 @@ namespace MobileTech {
     public partial class _Contact {
         
         /// <summary>
+        /// LeftMenu1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MobileTech.UIControls.LeftMenu LeftMenu1;
+        
+        /// <summary>
         /// Text1 control.
         /// </summary>
         /// <remarks>

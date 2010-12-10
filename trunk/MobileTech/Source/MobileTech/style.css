@@ -79,7 +79,7 @@ body
 {
 	height: 50px;
 	width: 725px;
-	background-image: url(image/nav.png);
+	background-image: url(Images/nav.png);
 	background-repeat: repeat-x;
 }
 .nav-a
@@ -238,7 +238,7 @@ body
 }
 .product
 {
-	background: url(image/bgad.png) repeat-x 0;
+	background: url(Images/bgad.png) repeat-x 0;
 	height: 232px;
 	width: 208px;
 	float: left;
@@ -252,11 +252,12 @@ body
 	float: left;
 	color: #FFFFFF;
 	line-height: 50px;
-	text-align: center;
+	text-align: left;
+	font-weight:bold;
 }
 #partner-table
 {
-	background-image: url(image/home-foodter.png);
+	background-image: url(Images/home-foodter.png);
 	height: 40px;
 	background-repeat: repeat-x;
 }
