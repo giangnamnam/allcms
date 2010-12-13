@@ -31,5 +31,27 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+
+        public virtual string ShortAbout
+        {
+            get;
+            set;
+        }
+
+        public virtual string Repair
+        {
+            get;
+            set;
+        }
+        public virtual string Unclock
+        {
+            get;
+            set;
+        }
+        public virtual string Ipad
+        {
+            get;
+            set;
+        }
     }
 }

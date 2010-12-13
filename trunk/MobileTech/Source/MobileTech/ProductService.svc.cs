@@ -364,10 +364,14 @@ namespace MobileTech
             return result;
         }
 
-        public void UpdateAbout(string about)
+        public void UpdateAbout(string shortAbout, string about, string repair, string unclock, string ipad)
         {
             SystemConfiguration config = GetSystemConfiguration();
             config.About = about;
+            config.Ipad = ipad;
+            config.Repair = repair;
+            config.ShortAbout = shortAbout;
+            config.Unclock = unclock;
             if (config.ID > 0)
             {
                 SystemConfigurationRepository.Update(config);

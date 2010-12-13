@@ -14,6 +14,15 @@ namespace MobileTech.Admin.SiteManagement {
     public partial class Default {
         
         /// <summary>
+        /// fckShortAbout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FredCK.FCKeditorV2.FCKeditor fckShortAbout;
+        
+        /// <summary>
         /// fckAbout control.
         /// </summary>
         /// <remarks>
@@ -21,6 +30,33 @@ namespace MobileTech.Admin.SiteManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FredCK.FCKeditorV2.FCKeditor fckAbout;
+        
+        /// <summary>
+        /// fckRepair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FredCK.FCKeditorV2.FCKeditor fckRepair;
+        
+        /// <summary>
+        /// fckUnclock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FredCK.FCKeditorV2.FCKeditor fckUnclock;
+        
+        /// <summary>
+        /// fckIpad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FredCK.FCKeditorV2.FCKeditor fckIpad;
         
         /// <summary>
         /// btnOK control.

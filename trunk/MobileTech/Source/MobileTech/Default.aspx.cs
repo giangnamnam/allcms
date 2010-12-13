@@ -14,7 +14,7 @@ namespace MobileTech
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            lblShortAbout.InnerHtml = ProductService.Instance.GetSystemConfiguration().ShortAbout;
         }
     }
 }

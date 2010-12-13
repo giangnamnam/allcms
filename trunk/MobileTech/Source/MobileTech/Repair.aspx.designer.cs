@@ -11,15 +11,24 @@
 namespace MobileTech {
     
     
-    public partial class _Default {
+    public partial class Repair {
         
         /// <summary>
-        /// lblShortAbout control.
+        /// LeftMenu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblShortAbout;
+        protected global::MobileTech.UIControls.LeftMenu LeftMenu1;
+        
+        /// <summary>
+        /// lblAbout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAbout;
     }
 }

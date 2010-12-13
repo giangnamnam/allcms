@@ -282,6 +282,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="IAdministrationService.cs" />
+    <Compile Include="Ipad.aspx.cs">
+      <DependentUpon>Ipad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ipad.aspx.designer.cs">
+      <DependentUpon>Ipad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="IProductService.cs" />
     <Compile Include="Plans.aspx.cs">
       <DependentUpon>Plans.aspx</DependentUpon>
@@ -301,6 +308,13 @@
       <DependentUpon>ProductSite.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repair.aspx.cs">
+      <DependentUpon>Repair.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repair.aspx.designer.cs">
+      <DependentUpon>Repair.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services.aspx.cs">
       <DependentUpon>Services.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +342,13 @@
     </Compile>
     <Compile Include="UIControls\LeftMenu.ascx.designer.cs">
       <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Unclock.aspx.cs">
+      <DependentUpon>Unclock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unclock.aspx.designer.cs">
+      <DependentUpon>Unclock.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -861,14 +882,17 @@
     <Content Include="Images\MobileWeb-Final.png" />
     <Content Include="Images\nav.png" />
     <Content Include="Images\title.png" />
+    <Content Include="Ipad.aspx" />
     <Content Include="menu.css" />
     <Content Include="Plans.aspx" />
+    <Content Include="Repair.aspx" />
     <Content Include="reset.css" />
     <Content Include="Services.aspx" />
     <Content Include="style.css" />
     <Content Include="UIControls\Footer.ascx" />
     <Content Include="UIControls\Header.ascx" />
     <Content Include="UIControls\LeftMenu.ascx" />
+    <Content Include="Unclock.aspx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FCKeditor\editor\dialog\fck_spellerpages\spellerpages\server-scripts\spellchecker.cfm" />
