@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body onLoad="javascript: alert('Under construction!')">
+<body>
     <form id="form1" runat="server">
     <div>
     

@@ -10,11 +10,11 @@
             </td>
             <td class="img-content" style="vertical-align: top">
                 <ul class="style-image-content">
-                    We are 100% independently owned company in Western Australia. We have an passionated
-                    expert team that promise to provide you an outstanding job. Explore our website
-                    to find out how we can assist you.</ul>
+                    <label runat="server" id="lblShortAbout">
+                            </label>
+                    </ul>
                 <div class="re-more" style="height: 20px;">
-                    <a href="#">Read more</a></div>
+                    <a href="About.aspx">Read more</a></div>
             </td>
         </tr>
     </table>
@@ -31,7 +31,7 @@
                                 happy new year<br />
                                 sdfsdgsdg</p>
                             <p class="re-more">
-                                <a href="#">Read&nbsp;more</a></p>
+                                <a href="Repair.aspx">Read&nbsp;more</a></p>
                         </span>
                     </td>
                 </tr>
@@ -44,7 +44,7 @@
                     happy new year<br />
                     sdgsdgsdgsgsh</p>
                 <p class="re-more">
-                    <a href="#">Read&nbsp;more</a></p>
+                    <a href="Unclock.aspx">Read&nbsp;more</a></p>
             </span>
         </div>
         <div id="accessories" class="product">
@@ -54,7 +54,7 @@
                     happy new year<br />
                     sdfsdgsdg</p>
                 <p class="re-more">
-                    <a href="#">Read&nbsp;more</a></p>
+                    <a href="Accessory.aspx">Read&nbsp;more</a></p>
             </span>
         </div>
         <div id="product" class="product">
@@ -64,7 +64,7 @@
                     happy new year<br />
                     sdgsdgsh</p>
                 <p class="re-more">
-                    <a href="#">Read&nbsp;more</a></p>
+                    <a href="Ipad.aspx">Read&nbsp;more</a></p>
             </span>
         </div>
     </div>

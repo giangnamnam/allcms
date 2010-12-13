@@ -17,13 +17,17 @@ namespace MobileTech.Admin.SiteManagement
                 if (config != null)
                 {
                     fckAbout.Value = config.About;
+                    fckShortAbout.Value = config.ShortAbout;
+                    fckRepair.Value = config.Repair;
+                    fckUnclock.Value = config.Unclock;
+                    fckIpad.Value = config.Ipad;
                 }
             }
         }
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            
-            ProductService.Instance.UpdateAbout(fckAbout.Value);
+
+            ProductService.Instance.UpdateAbout(fckShortAbout.Value, fckAbout.Value, fckRepair.Value, fckUnclock.Value, fckIpad.Value);
         }
-}
+    }
 }
