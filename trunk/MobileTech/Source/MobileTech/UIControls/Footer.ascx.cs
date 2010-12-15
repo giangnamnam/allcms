@@ -11,7 +11,7 @@ namespace MobileTech.UIControls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblVisitorCount.InnerHtml = string.Format("{0:000000}", Application["VistorCount"]);
         }
     }
 }

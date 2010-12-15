@@ -13,7 +13,7 @@ namespace MobileTech.Admin.SiteManagement
         {
             if (!IsPostBack)
             {
-                SystemConfiguration config = ProductService.Instance.GetSystemConfiguration();
+                SystemConfiguration config = ProductService.GetSystemConfiguration();
                 if (config != null)
                 {
                     fckAbout.Value = config.About;
@@ -27,7 +27,7 @@ namespace MobileTech.Admin.SiteManagement
         protected void btnOK_Click(object sender, EventArgs e)
         {
 
-            ProductService.Instance.UpdateAbout(fckShortAbout.Value, fckAbout.Value, fckRepair.Value, fckUnclock.Value, fckIpad.Value);
+            ProductService.UpdateAbout(fckShortAbout.Value, fckAbout.Value, fckRepair.Value, fckUnclock.Value, fckIpad.Value);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace MobileTech
         {
             if (!IsPostBack)
             {
-                lblAbout.InnerHtml = ProductService.Instance.GetSystemConfiguration().About;
+                lblAbout.InnerHtml = ProductService.GetSystemConfiguration().About;
             }
         }
     }
