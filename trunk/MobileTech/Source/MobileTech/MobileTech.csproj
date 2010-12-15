@@ -281,6 +281,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="IAdministrationService.cs" />
     <Compile Include="Ipad.aspx.cs">
       <DependentUpon>Ipad.aspx</DependentUpon>
@@ -860,6 +863,7 @@
     <Content Include="FCKeditor\_testcases\sampleposteddata.asp" />
     <Content Include="FCKeditor\_testcases\testcases.css" />
     <Content Include="FCKeditor\_whatsnew.html" />
+    <Content Include="Global.asax" />
     <Content Include="Images\bgad.png" />
     <Content Include="Images\bgFooter.jpg" />
     <Content Include="Images\facebook.png" />

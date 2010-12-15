@@ -5,7 +5,8 @@
     <div class="counter-a">
         Visitor count</div>
     <div class="counter-a" style="color:#FFFF33; font-size:20px">
-        123456789</div>
+        <label class="counter-a" style="color:#FFFF33; font-size:20px" runat="server" id="lblVisitorCount">
+                            </label></div>
     <div class="counter-a">
         Follow us on</div>
     <div class="counter-a">

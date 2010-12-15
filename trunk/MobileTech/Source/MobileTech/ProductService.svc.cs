@@ -353,10 +353,10 @@ namespace MobileTech
         #endregion
 
         #region SystemConfiguration
-        public SystemConfiguration GetSystemConfiguration()
+        public static SystemConfiguration GetSystemConfiguration()
         {
             SystemConfiguration result = new SystemConfiguration();
-            IList<SystemConfiguration> list = SystemConfigurationRepository.GetAll();
+            IList<SystemConfiguration> list = Instance.SystemConfigurationRepository.GetAll();
             if (list != null && list.Count > 0)
             {
                 result = list[0];
@@ -364,7 +364,7 @@ namespace MobileTech
             return result;
         }
 
-        public void UpdateAbout(string shortAbout, string about, string repair, string unclock, string ipad)
+        public static void UpdateAbout(string shortAbout, string about, string repair, string unclock, string ipad)
         {
             SystemConfiguration config = GetSystemConfiguration();
             config.About = about;
@@ -374,11 +374,25 @@ namespace MobileTech
             config.Unclock = unclock;
             if (config.ID > 0)
             {
-                SystemConfigurationRepository.Update(config);
+                Instance.SystemConfigurationRepository.Update(config);
             }
             else
             {
-                SystemConfigurationRepository.Add(config);
+                Instance.SystemConfigurationRepository.Add(config);
+            }
+        }
+
+        public static void UpdateVisitorCount(int count)
+        {
+            SystemConfiguration config = GetSystemConfiguration();
+            config.VisitorCount = count;
+            if (config.ID > 0)
+            {
+                Instance.SystemConfigurationRepository.Update(config);
+            }
+            else
+            {
+                Instance.SystemConfigurationRepository.Add(config);
             }
         }
         #endregion

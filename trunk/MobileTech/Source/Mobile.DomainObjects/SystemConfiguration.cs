@@ -53,5 +53,16 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+        public virtual int VisitorCount
+        {
+            get;
+            set;
+        }
+
+        public virtual int VisitorOnline
+        {
+            get;
+            set;
+        }
     }
 }

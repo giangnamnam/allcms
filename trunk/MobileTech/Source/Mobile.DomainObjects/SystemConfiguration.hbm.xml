@@ -11,5 +11,7 @@
     <property name="Repair" column="Repair" not-null="false" type="string" insert="true" update="true" />
     <property name="Unclock" column="Unclock" not-null="false" type="string" insert="true" update="true" />
     <property name="Ipad" column="Ipad" not-null="false" type="string" insert="true" update="true" />
+    <property name="VisitorCount" column="VisitorCount" not-null="false" type="int" insert="true" update="true" />
+    <property name="VisitorOnline" column="VisitorOnline" not-null="false" type="int" insert="true" update="true" />
   </class>
 </hibernate-mapping>
