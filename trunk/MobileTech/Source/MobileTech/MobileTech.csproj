@@ -260,6 +260,13 @@
     <Compile Include="Admin\UserManagement\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\PasswordRecovery.aspx.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PasswordRecovery.aspx.designer.cs">
+      <DependentUpon>PasswordRecovery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserManagement\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,6 +436,7 @@
     <Content Include="Admin\Share\AdminSite.Master" />
     <Content Include="Admin\SiteManagement\Default.aspx" />
     <Content Include="Admin\UserManagement\ChangePassword.aspx" />
+    <Content Include="Admin\PasswordRecovery.aspx" />
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\Atlas.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasCompat.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Debug\AtlasCompat2.js" />
@@ -960,6 +968,7 @@
   <ItemGroup>
     <Folder Include="Admin\UserControl\" />
     <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\Theme\" />
     <Folder Include="Images\Accessories\" />
     <Folder Include="Images\Product\" />
     <Folder Include="Images\Service\" />

@@ -50,51 +50,6 @@ namespace MobileTech.Admin.UserManagement {
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceMembershipUser;
         
         /// <summary>
-        /// CheckBoxShowRolesAssigned control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBoxShowRolesAssigned;
-        
-        /// <summary>
-        /// GridViewRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewRole;
-        
-        /// <summary>
-        /// divCreateRoles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCreateRoles;
-        
-        /// <summary>
-        /// TextBoxCreateNewRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxCreateNewRole;
-        
-        /// <summary>
-        /// ButtonCreateNewRole control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCreateNewRole;
-        
-        /// <summary>
         /// divCreateUsers control.
         /// </summary>
         /// <remarks>
