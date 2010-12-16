@@ -14,8 +14,12 @@
             </ul>
             <div align="center">
                 <asp:Login ID="ctlLogin" runat="server" OnAuthenticate="ctlLogin_Authenticate" Orientation="Horizontal"
-                     TitleTextStyle-Font-Bold="true" UserNameLabelText="Username:"
-                    UserName="admin">
+                     TitleTextStyle-Font-Bold="true" UserNameLabelText="Username:" 
+                    UserName="admin" BackColor="#F7F7DE" BorderColor="#CCCC99" 
+                    BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt" 
+                    PasswordRecoveryText="Forgot Password" 
+                    PasswordRecoveryUrl="~/Admin/PasswordRecovery.aspx">
+<TitleTextStyle Font-Bold="True" BackColor="#6B696B" ForeColor="#FFFFFF"></TitleTextStyle>
                 </asp:Login>
             </div>
         </div>

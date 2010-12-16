@@ -129,13 +129,12 @@
                 <table style="font-weight: normal; font-size: 12px; font-family: Arial" bgcolor="white"
                     width="100%" border="0" cellpadding="1" cellspacing="2">
                     <tr valign="top" bgcolor="#CCFFFF">
-                        <td align="center" width="50%">
+                       <%-- <td align="center" width="50%">
                             <b>Management of roles</b><br /><br />
                             <asp:CheckBox ID="CheckBoxShowRolesAssigned" runat="server" AutoPostBack="True" Text="Show Roles Assigned Only" />
                             <br />
                             <br />
-                            <%--<atlas:UpdatePanel ID="UpdatePanelManageRoles" runat="server">
-                                <ContentTemplate>--%>
+                           
                                     <asp:GridView ID="GridViewRole" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSourceRoleObject"
                                         DataKeyNames="RoleName" CellPadding="4" AllowPaging="True" HorizontalAlign="Center"
                                         Width="100%" ForeColor="#333333" GridLines="None">
@@ -166,25 +165,22 @@
                                         <EditRowStyle BackColor="#2461BF" />
                                         <AlternatingRowStyle BackColor="White" />
                                     </asp:GridView>
-                                <%--</ContentTemplate>
-                            </atlas:UpdatePanel>--%>
+                                
                             
                             
                         </td>
                         <td align="center" width="20%">
                             <div runat="server" id="divCreateRoles">
-                                <%--<atlas:UpdatePanel ID="UpdatePanelCreateNewRole" runat="server">
-                                    <ContentTemplate>--%>
+                               
                                         <b>Creator of new role</b><br />
                                         <br />
                                         <asp:TextBox ID="TextBoxCreateNewRole" runat="server"></asp:TextBox><br />
                                         <br />
                                         <asp:Button ID="ButtonCreateNewRole" runat="server" OnClick="ButtonCreateNewRole_Click"
                                             Text="Create New Role" /><br />
-                                    <%--</ContentTemplate>
-                                </atlas:UpdatePanel>--%>
+                                   
                             </div>
-                        </td>
+                        </td>--%>
                         <td align="center" width="30%">
                             <b>Creator of new user</b><br />
                             <br />
@@ -291,8 +287,8 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="GridViewMemberUser" Name="UserName" PropertyName="SelectedValue"
                 Type="String" />
-            <asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
-                PropertyName="Checked" Type="Boolean" />
+            <%--<asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
+                PropertyName="Checked" Type="Boolean" />--%>
         </SelectParameters>
         <InsertParameters>
             <asp:Parameter Name="RoleName" Type="String" />
