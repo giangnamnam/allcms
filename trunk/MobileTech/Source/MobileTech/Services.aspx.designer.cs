@@ -23,6 +23,15 @@ namespace MobileTech {
         protected global::MobileTech.UIControls.LeftMenu LeftMenu1;
         
         /// <summary>
+        /// SiteMap1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::MobileTech.UIControls.SiteMap SiteMap1;
+        
+        /// <summary>
         /// lstProduct control.
         /// </summary>
         /// <remarks>

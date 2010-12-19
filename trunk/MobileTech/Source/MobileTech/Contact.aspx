@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true" Inherits="MobileTech._Contact" Codebehind="Contact.aspx.cs" %>
 <%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
+<%@ Register src="UIControls/SiteMap.ascx" tagname="SiteMap" tagprefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -11,7 +12,9 @@
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
-                        Home > Contact
+                       
+                        <uc2:SiteMap ID="SiteMap1" runat="server" />
+                       
                     </div>
                     <div class="title" style="margin-top: 4px; vertical-align: middle">
                         <h2>
@@ -89,8 +92,7 @@
                                                             <br>
                                                             <%#Eval("ContactAddress")%><br>
                                                             <%#Eval("ContactPhone")%><br>
-                                                            <a href="http://www.google.com">PDF map</a> | <a href="http://www.google.com">Interactive
-                                                                map</a><br />
+                                                            <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1', 'width=325, height=350'); return false;">PDF map</a> <br />
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -105,66 +107,11 @@
             </td>
         </tr>
     </table>
+<script type="text/javascript">
+    function OpenWeb(url) {
+        window.open(url, "Google map", "status=1,width=425,height=350"); 
+    }
+</script>
 </asp:Content>
-<%--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="MobileTech._Contact" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="menu.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div id="warpper">
-        <div id="content-header">
-            <div id="header">
-                <div id="logo">
-                    <img height="140px" src="Images/lg.png" />
-                </div>
-                <div id="hd-right">
-                    <div id="hd-flash">
-                        <img src="Images/title.png" /></div>
-                    <div class="topMenu">
-							<ul>
-								<li><a class="home" href="Default.aspx">Home</a></li>
-								<li><a class="about" href="About.aspx">About</a></li>
-								<li><a class="services" href="Services.aspx">Services</a></li>
-								<li><a class="accessories" href="Accessories.aspx">Accessories</a></li>
-								<li><a class="plans" href="Plans.aspx">Plans</a></li>
-								<li><a class="contact" href="Contact.aspx">Contact</a></li>
-							</ul>
-						</div>
-                    
-                </div>
-            </div>
-        </div>
-        <div id="container-content">
-            
-        </div>
-        <div id="spacer" style="height: 60px;">
-        </div>
-        <div id="footer">
-            <div id="submenu">
-                <%--<ul class="style-submenu">
-                    <a href="Default.aspx">home</a></ul>
-                <ul class="style-submenu">
-                    <a href="About.aspx">about</a></ul>
-                <ul class="style-submenu" style="width: 70px">
-                    <a href="Services.aspx">services</a></ul>
-                <ul class="style-submenu" style="width: 100px">
-                    <a href="Accessories.aspx">accessories</a></ul>
-                <ul class="style-submenu">
-                    <a href="Plans.aspx">plans</a></ul>
-                <ul class="style-submenu">
-                    <a href="Contact.aspx">contact</a></ul>
-               
-            </div>
-        </div>
-    </div>
-    </form>
-</body>
-</html>
---%>
+

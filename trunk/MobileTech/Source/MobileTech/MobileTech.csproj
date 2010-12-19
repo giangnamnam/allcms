@@ -353,6 +353,13 @@
     <Compile Include="UIControls\LeftMenu.ascx.designer.cs">
       <DependentUpon>LeftMenu.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UIControls\SiteMap.ascx.cs">
+      <DependentUpon>SiteMap.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UIControls\SiteMap.ascx.designer.cs">
+      <DependentUpon>SiteMap.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Unclock.aspx.cs">
       <DependentUpon>Unclock.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -904,6 +911,7 @@
     <Content Include="UIControls\Footer.ascx" />
     <Content Include="UIControls\Header.ascx" />
     <Content Include="UIControls\LeftMenu.ascx" />
+    <Content Include="UIControls\SiteMap.ascx" />
     <Content Include="Unclock.aspx" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,8 @@
 
 <%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
 
+<%@ Register src="UIControls/SiteMap.ascx" tagname="SiteMap" tagprefix="uc2" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -15,7 +17,9 @@
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
-                        Home > Accessories
+                        
+                        <uc2:SiteMap ID="SiteMap1" runat="server" />
+                        
                     </div>
                     <div id="content-small" style="margin-left: -8px">
                         <asp:DataList ID="lstProduct" DataKeyField="ID" runat="server" RepeatColumns="3"
