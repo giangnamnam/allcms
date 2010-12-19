@@ -1,4 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LeftMenu.ascx.cs" Inherits="MobileTech.UIControls.LeftMenu" %>
+<div style=" width:100%; height:400px">
+
 <strong style="color: White">Accessories</strong>
 <asp:DataList ID="lstAccessories" DataKeyField="ID" runat="server" RepeatColumns="1"
     Width="205px">
@@ -19,3 +21,4 @@
     </ItemTemplate>
     <ItemStyle Width="33%" VerticalAlign="Top" />
 </asp:DataList>
+</div>

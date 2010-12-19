@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true" Inherits="MobileTech.Repair" Codebehind="Repair.aspx.cs" %>
 <%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
+<%@ Register src="UIControls/SiteMap.ascx" tagname="SiteMap" tagprefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -11,7 +12,9 @@
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
-                        Home > Repair
+                        
+                        <uc2:SiteMap ID="SiteMap1" runat="server" />
+                        
                     </div>
                     <div class="title" style="margin-top: 4px; vertical-align: middle">
                         <h2>
