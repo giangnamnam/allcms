@@ -1,20 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true" Inherits="MobileTech.Services" Codebehind="Services.aspx.cs" %>
-<%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
-<%@ Register src="UIControls/SiteMap.ascx" tagname="SiteMap" tagprefix="uc2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
+    Inherits="MobileTech.Services" CodeBehind="Services.aspx.cs" %>
+
+<%@ Register Src="UIControls/LeftMenu.ascx" TagName="LeftMenu" TagPrefix="uc1" %>
+<%@ Register Src="UIControls/SiteMap.ascx" TagName="SiteMap" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table id="container" style="vertical-align: middle">
         <tr>
             <td id="sub-nav">
-                 <uc1:LeftMenu ID="LeftMenu1" runat="server" />
+                <uc1:LeftMenu ID="LeftMenu1" runat="server" />
             </td>
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
-                        
                         <uc2:SiteMap ID="SiteMap1" runat="server" />
-                        
                     </div>
                     <div id="content-small" style="margin-top: 2px; margin-left: 0px">
                         <asp:DataList ID="lstProduct" DataKeyField="ID" runat="server" RepeatColumns="1"
@@ -32,12 +32,12 @@
                                         </td>
                                         <td valign="top">
                                             <div class="ct-text" style="height: 243px">
-                                                <a href="Services.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="font-size: medium; font-weight:bold;
-                                                    color: White">
+                                                <a href="Services.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="font-size: medium;
+                                                    font-weight: bold; color: White">
                                                     <%# DataBinder.Eval(Container, "DataItem.ServiceName")%>
-                                                     </a>
+                                                </a>
                                                 <br />
-                                               <%-- <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
+                                                <%-- <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
                                                     Price:
                                                     <%# DataBinder.Eval(Container, "DataItem.ServicePrice")%>
                                                 </label>
@@ -53,7 +53,7 @@
                         <div style="margin-top: 2px; margin-left: 0px">
                             <asp:Panel runat="server" ID="pnlAccessoriesDetail" Visible="false">
                                 <div class="ct-image" style="margin-left: 0">
-                                    <asp:Image ID="imgImageDetail" Height="243px" Width="213px" runat="server"></asp:Image>
+                                    <asp:Image ID="imgImageDetail" Height="243px" Width="210px" runat="server"></asp:Image>
                                 </div>
                                 <div class="ct-text">
                                     <strong>
@@ -67,6 +67,7 @@
                                 <div class="contentDetail">
                                     <label class="style-ct-text" runat="server" id="lblDetailContent">
                                     </label>
+                                    
                                 </div>
                             </asp:Panel>
                         </div>

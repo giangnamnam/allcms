@@ -8,7 +8,7 @@
             <td id="image">
                 <img src="Images/h1.png" />
             </td>
-            <td class="img-content" style="vertical-align: top">
+            <td id="about" class="img-content" style="vertical-align: top">
                 <ul class="style-image-content">
                     <label runat="server" id="lblShortAbout">
                             </label>
@@ -57,7 +57,7 @@
                     <a href="Accessory.aspx">Read&nbsp;more</a></p>
             </span>
         </div>
-        <div id="product" class="product">
+        <div id="ipad" class="product">
             <img src="Images/img4.png" /><span class="pro-info" style="height: 50px"><h3 class="pro-title">
                 Ipad</h3>
                 <p class="pro-content">

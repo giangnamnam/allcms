@@ -34,15 +34,17 @@
                                     </a>
                                     <br />
                                     <label style="color: Yellow">
-                                        $<%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%></label>
+                                        $<%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%>AUD</label>
                                 </div>
                             </ItemTemplate>
                             <ItemStyle Width="33%" VerticalAlign="Top" />
                         </asp:DataList>
                         <div style="margin-top: 2px; margin-left: 8px">
                             <asp:Panel runat="server" ID="pnlAccessoriesDetail" Visible="false">
-                                <div class="ct-image" style="margin-left: 0">
-                                    <asp:Image ID="imgImageDetail" Height="243px" Width="213px" runat="server"></asp:Image>
+                                <div class="ct-image" style="margin-left: 0; text-align:center">
+                                    <asp:Image ID="imgImageDetail" Height="243px" Width="210px" runat="server"></asp:Image>
+                                    <br />
+                                    <label runat="server" id="lblPrice" style="color:Yellow;"></label>
                                 </div>
                                 <div class="ct-text">
                                     <strong>
