@@ -237,6 +237,16 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>
+                                                    <asp:Label ID="Label7" Text="Role:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:RadioButtonList ID="RadioButtonRoleList" runat="server" RepeatDirection="Horizontal"
+                                                        oninit="RadioButtonRoleList_Init">
+                                                    </asp:RadioButtonList>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td></td>
                                                 <td>
                                                     <asp:Button ID="ButtonNewUser" runat="server" Text="Create New User" OnClick="ButtonNewUser_Click" />
