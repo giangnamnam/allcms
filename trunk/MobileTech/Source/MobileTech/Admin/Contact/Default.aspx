@@ -76,7 +76,7 @@
                 Address
             </td>
             <td>
-                <asp:TextBox ID="txtAddress" runat="server" Width="200"></asp:TextBox>
+                <asp:TextBox ID="txtAddress" runat="server" Width="300" TextMode="MultiLine" Height="50px"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@
                 Google Address
             </td>
             <td>
-                <asp:TextBox ID="txtGoogleAddress" runat="server" Width="200"></asp:TextBox>
+                <asp:TextBox ID="txtGoogleAddress" runat="server" Width="300"  TextMode="MultiLine" Height="50px"></asp:TextBox>
             </td>
         </tr>
         <tr>

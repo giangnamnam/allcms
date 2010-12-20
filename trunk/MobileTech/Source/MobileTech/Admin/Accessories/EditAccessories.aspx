@@ -12,7 +12,7 @@
                 </td>
             </tr>
              <tr>
-                <td style="height: 51px; width: 110px">
+                <td style="height: 51px; width: 110px; font-weight:bold; font-size:small">
                     Category: (*)&nbsp;
                 </td>
                 <td>
