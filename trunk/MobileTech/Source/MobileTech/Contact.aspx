@@ -92,7 +92,7 @@
                                                             <br>
                                                             <%#Eval("ContactAddress")%><br>
                                                             <%#Eval("ContactPhone")%><br>
-                                                            <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1', 'width=325, height=350'); return false;">PDF map</a> <br />
+                                                            <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1', 'width=425, height=350'); return false;">View map</a> <br />
                                                         </p>
                                                     </td>
                                                 </tr>

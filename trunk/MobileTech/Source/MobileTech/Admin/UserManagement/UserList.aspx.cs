@@ -127,8 +127,8 @@ namespace MobileTech.Admin.UserManagement
                 ObjectDataSourceMembershipUser.Insert();
                 GridViewMemberUser.DataBind();
 
-                string roleName=Roles.GetAllRoles()[0];
-                if(!Roles.IsUserInRole(TextBoxUserName.Text,roleName))
+                string roleName = RadioButtonRoleList.SelectedValue;//Roles.GetAllRoles()[0];
+                if (!Roles.IsUserInRole(TextBoxUserName.Text, roleName))
                 {
                     Roles.AddUserToRole(TextBoxUserName.Text, roleName);
                 }
@@ -209,6 +209,19 @@ namespace MobileTech.Admin.UserManagement
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
             GridViewMemberUser.DataBind();
+        }
+
+        protected void RadioButtonRoleList_Init(object sender, EventArgs e)
+        {
+            foreach (string role in Roles.GetAllRoles())
+            {
+                RadioButtonRoleList.Items.Add(new ListItem(role, role));
+            }
+            if (RadioButtonRoleList.Items.Count > 0)
+            {
+                RadioButtonRoleList.SelectedIndex = 0;
+
+            }
         }
     }
 }
