@@ -34,7 +34,7 @@
                                     </a>
                                     <br />
                                     <label style="color: Yellow">
-                                        <%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%></label>
+                                        $<%# DataBinder.Eval(Container, "DataItem.AccessoriesPrice")%></label>
                                 </div>
                             </ItemTemplate>
                             <ItemStyle Width="33%" VerticalAlign="Top" />

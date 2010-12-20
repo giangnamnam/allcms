@@ -30,6 +30,8 @@
                             <asp:TextBox ID="TextBoxSearchUser" runat="server" OnTextChanged="TextBoxSearchUser_TextChanged"></asp:TextBox>
                         </td>
                         <td style="width: 17px">
+                            <asp:Button ID="btnSearch" runat="server" Text="Search" 
+                                onclick="btnSearch_Click" />
                         </td>
                         <td style="width: 100px">
                             &nbsp;
@@ -206,6 +208,16 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <asp:Label ID="Label7" Text="Role:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:RadioButtonList ID="RadioButtonRoleList" runat="server" RepeatDirection="Horizontal"
+                                                        oninit="RadioButtonRoleList_Init">
+                                                    </asp:RadioButtonList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <asp:Label ID="Label5" Text="PasswordQuestion:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
@@ -236,16 +248,7 @@
                                                     <asp:CheckBox ID="CheckboxApproval" runat="server"></asp:CheckBox>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <asp:Label ID="Label7" Text="Role:" runat="server"></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:RadioButtonList ID="RadioButtonRoleList" runat="server" RepeatDirection="Horizontal"
-                                                        oninit="RadioButtonRoleList_Init">
-                                                    </asp:RadioButtonList>
-                                                </td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <td></td>
                                                 <td>

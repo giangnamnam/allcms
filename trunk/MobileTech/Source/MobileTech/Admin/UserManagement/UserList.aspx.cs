@@ -204,7 +204,7 @@ namespace MobileTech.Admin.UserManagement
 
         protected void TextBoxSearchUser_TextChanged(object sender, EventArgs e)
         {
-            GridViewMemberUser.DataBind();
+            //GridViewMemberUser.DataBind();
         }
         protected void ButtonSearch_Click(object sender, EventArgs e)
         {
@@ -221,6 +221,14 @@ namespace MobileTech.Admin.UserManagement
             {
                 RadioButtonRoleList.SelectedIndex = 0;
 
+            }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (TextBoxSearchUser.Text.Length > 0)
+            {
+                GridViewMemberUser.DataBind();
             }
         }
     }

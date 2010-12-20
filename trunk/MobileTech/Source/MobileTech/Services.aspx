@@ -37,11 +37,11 @@
                                                     <%# DataBinder.Eval(Container, "DataItem.ServiceName")%>
                                                      </a>
                                                 <br />
-                                                <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
+                                               <%-- <label class="style-ct-text" runat="server" id="lblShortContent" style="font-weight: bold">
                                                     Price:
                                                     <%# DataBinder.Eval(Container, "DataItem.ServicePrice")%>
                                                 </label>
-                                                <br />
+                                                <br />--%>
                                                 <label class="style-ct-text">
                                                     <%# DataBinder.Eval(Container, "DataItem.ShortContent")%></label>
                                             </div>
