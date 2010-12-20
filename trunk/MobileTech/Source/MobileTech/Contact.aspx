@@ -73,10 +73,10 @@
                                     </td>
                                 </tr>
                             </table>
-                            <h2>
+                            <%--<h2>
                                 <p style='color: Red'>
                                     Campus maps</p>
-                            </h2>
+                            </h2>--%>
                             <asp:GridView ID="GridViewContact" runat="server" AutoGenerateColumns="False" CellPadding="3"
                                 GridLines="Vertical" ShowHeader="False" BorderStyle="None" BorderWidth="1px"
                                 Width="100%">
@@ -85,9 +85,10 @@
                                         <ItemTemplate>
                                             <table width="100%" align="center">
                                                 <tr>
-                                                    <td>
+                                                    <td id="contactMapLink">
+                                                        <br />
                                                         <p>
-                                                            <strong>
+                                                            <strong style="font-size:14px; font-weight:bold">
                                                                 <%#Eval("ContactName")%></strong>
                                                             <br>
                                                             <%#Eval("ContactAddress")%><br>

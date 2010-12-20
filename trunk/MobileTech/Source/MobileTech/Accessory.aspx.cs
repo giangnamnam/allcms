@@ -37,6 +37,7 @@ namespace MobileTech
                 lblName.InnerText = accessories.AccessoriesName;
                 lblShortContent.InnerText = accessories.ShortContent;
                 lblDetailContent.InnerHtml = accessories.DetailContent;
+                lblPrice.InnerText = string.Format("${0}AUD", accessories.AccessoriesPrice);
             }
         }
 

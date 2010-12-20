@@ -111,10 +111,34 @@ body
 {
 	color: #00aeff;
 }
+
+/*Read More*/
 #accessories a:hover, #accessories a.selected
 {
 	color: #55e546;
 }
+#ipad a:hover, #ipad a.selected
+{
+	color: #55e546;
+}
+#repair a:hover, #repair a.selected
+{
+	color: #55e546;
+}
+#unclock a:hover, #unclock a.selected
+{
+	color: #55e546;
+}
+#about a:hover, #about a.selected
+{
+	color: #55e546;
+}
+#contactMapLink a:hover, #contactMapLink a.selected
+{
+	color: #55e546;
+}
+/*---------*/
+
 #plans a:hover, #plans a.selected
 {
 	color: #ff00c2;
@@ -195,6 +219,7 @@ body
 .contentDetail
 {
 	height: auto;
+	
 	background-color: #272727;
 }
 
@@ -209,8 +234,8 @@ body
 .ct-text
 {
 	float: left;
-	width: 440px;
-	margin-left: 2px;
+	width: 437px;
+	margin-left: 5px;
 	height: auto;
 	color: #CCCCCC;
 	background-color: #272727;
@@ -218,8 +243,9 @@ body
 .style-ct-text
 {
 	color: #CCCCCC;
-	padding: 20px;
+	margin-left:5px;
 	font-size: 12px;
+	padding: 15px;
 }
 #image
 {
