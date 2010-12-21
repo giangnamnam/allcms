@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="ct-text">
                                     <strong>
-                                        <label runat="server" id="lblName" style="margin-left: 5; font-weight: bold; font-size: medium">
+                                        <label runat="server" id="lblName" style="margin-left: 10px; font-weight: bold; font-size: medium">
                                         </label>
                                     </strong>
                                     <br />

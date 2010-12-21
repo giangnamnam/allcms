@@ -3,11 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <%--<atlas:ScriptManager ID="sm" runat="server" EnablePartialRendering="true">
+    <atlas:ScriptManager ID="sm" runat="server" EnablePartialRendering="false">
         <Scripts>
             <atlas:ScriptReference Path="ScriptLibrary/TextChangedBehavior.js" />
         </Scripts>
-    </atlas:ScriptManager>--%>
+    </atlas:ScriptManager>
 
     <script type="text/javascript">
         function onTextChange() {
@@ -131,7 +131,7 @@
                 <table style="font-weight: normal; font-size: 12px; font-family: Arial" bgcolor="white"
                     width="100%" border="0" cellpadding="1" cellspacing="2">
                     <tr valign="top" bgcolor="#CCFFFF">
-                       <%-- <td align="center" width="50%">
+                        <td align="center" width="50%">
                             <b>Management of roles</b><br /><br />
                             <asp:CheckBox ID="CheckBoxShowRolesAssigned" runat="server" AutoPostBack="True" Text="Show Roles Assigned Only" />
                             <br />
@@ -171,7 +171,7 @@
                             
                             
                         </td>
-                        <td align="center" width="20%">
+                       <%--<td align="center" width="20%">
                             <div runat="server" id="divCreateRoles">
                                
                                         <b>Creator of new role</b><br />
@@ -218,7 +218,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label5" Text="PasswordQuestion:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label5" Text="Password Question:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="TextBoxPasswordQuestion" runat="server" Width="140px"></asp:TextBox>
@@ -226,7 +226,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label6" Text="PasswordAnswer:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label6" Text="Password Answer:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="TextBoxPasswordAnswer" runat="server" Width="140px"></asp:TextBox>
@@ -266,7 +266,7 @@
             </td>
         </tr>
     </table>
-    <%--<atlas:UpdatePanel ID="UpdatePanelCheckBoxes" runat="server">
+    <atlas:UpdatePanel ID="UpdatePanelCheckBoxes" runat="server">
         <ContentTemplate>
             <table style="font-weight: normal; font-size: 12px; font-family: Arial" border="0"
                 cellpadding="1" cellspacing="2" bgcolor="white" width="100%">
@@ -282,7 +282,7 @@
                 </tr>
             </table>
         </ContentTemplate>
-    </atlas:UpdatePanel>--%>
+    </atlas:UpdatePanel>
     
     <table style="font-weight: normal; font-size: 12px; font-family: Arial" border="0"
         cellpadding="1" cellspacing="2" bgcolor="white" width="100%">
@@ -300,8 +300,8 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="GridViewMemberUser" Name="UserName" PropertyName="SelectedValue"
                 Type="String" />
-            <%--<asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
-                PropertyName="Checked" Type="Boolean" />--%>
+            <asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
+                PropertyName="Checked" Type="Boolean" />
         </SelectParameters>
         <InsertParameters>
             <asp:Parameter Name="RoleName" Type="String" />
