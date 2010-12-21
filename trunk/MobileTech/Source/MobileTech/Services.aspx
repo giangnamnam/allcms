@@ -33,7 +33,7 @@
                                         <td valign="top">
                                             <div class="ct-text" style="height: 243px">
                                                 <a href="Services.aspx?ID=<%# DataBinder.Eval(Container, "DataItem.ID")%>" style="font-size: medium;
-                                                    font-weight: bold; color: White">
+                                                    font-weight: bold; color: White; margin-left:10px">
                                                     <%# DataBinder.Eval(Container, "DataItem.ServiceName")%>
                                                 </a>
                                                 <br />
@@ -42,8 +42,10 @@
                                                     <%# DataBinder.Eval(Container, "DataItem.ServicePrice")%>
                                                 </label>
                                                 <br />--%>
-                                                <label class="style-ct-text">
-                                                    <%# DataBinder.Eval(Container, "DataItem.ShortContent")%></label>
+                                                <div class="contentDetail">
+                                                    <label class="style-ct-text">
+                                                        <%# DataBinder.Eval(Container, "DataItem.ShortContent")%></label>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -67,7 +69,6 @@
                                 <div class="contentDetail">
                                     <label class="style-ct-text" runat="server" id="lblDetailContent">
                                     </label>
-                                    
                                 </div>
                             </asp:Panel>
                         </div>
