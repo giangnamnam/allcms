@@ -52,7 +52,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Web.Atlas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Atlas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assembly\Microsoft.Web.Atlas.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly\NHibernate.dll</HintPath>
