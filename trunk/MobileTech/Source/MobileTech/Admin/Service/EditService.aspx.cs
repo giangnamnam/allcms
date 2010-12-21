@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace MobileTech.Admin.Service
 {
@@ -96,7 +97,21 @@ namespace MobileTech.Admin.Service
                     ext = ext.Trim();
                     if (ext == ".gif" || ext == ".bmp" || ext == ".jpg" || ext == ".png")
                     {
-                        fileImage.SaveAs(GetImageDir(id, fileImage.FileName));
+                        //fileImage.SaveAs(GetImageDir(id, fileImage.FileName));
+                        //path = GetImagePath(id, fileImage.FileName);
+
+                        System.Drawing.Image image = System.Drawing.Image.FromStream(fileImage.PostedFile.InputStream);
+                        //float imgWidth = image.PhysicalDimension.Width;
+                        //float imgHeight = image.PhysicalDimension.Height;
+                        //float imgSize = imgHeight > imgWidth ? imgHeight : imgWidth;
+                        //float imgResize = imgSize <= 128 ? (float)1.0 : 128 / imgSize;
+                        //imgWidth *= imgResize; imgHeight *= imgResize;
+                        System.Drawing.Image thumbImage = image.GetThumbnailImage(213, 243, delegate() { return false; }, (IntPtr)0);
+
+                        string fileName = GetImageDir(id, fileImage.FileName);
+                        if (File.Exists(fileName)) File.Delete(fileName);
+                        thumbImage.Save(fileName);
+
                         path = GetImagePath(id, fileImage.FileName);
                     }
                     else

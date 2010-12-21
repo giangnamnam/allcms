@@ -14,6 +14,15 @@ namespace MobileTech.Admin.UserManagement {
     public partial class UserList {
         
         /// <summary>
+        /// sm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Web.UI.ScriptManager sm;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -57,6 +66,24 @@ namespace MobileTech.Admin.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSourceMembershipUser;
+        
+        /// <summary>
+        /// CheckBoxShowRolesAssigned control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxShowRolesAssigned;
+        
+        /// <summary>
+        /// GridViewRole control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewRole;
         
         /// <summary>
         /// divCreateUsers control.
@@ -210,6 +237,33 @@ namespace MobileTech.Admin.UserManagement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelInsertMessage;
+        
+        /// <summary>
+        /// UpdatePanelCheckBoxes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Microsoft.Web.UI.UpdatePanel UpdatePanelCheckBoxes;
+        
+        /// <summary>
+        /// CheckBoxManageRoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxManageRoles;
+        
+        /// <summary>
+        /// CheckBoxAddUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxAddUser;
         
         /// <summary>
         /// ObjectDataSourceRoleObject control.
