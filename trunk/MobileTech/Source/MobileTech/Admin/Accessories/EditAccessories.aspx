@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" ValidateRequest="false" Inherits="MobileTech.Admin.Accessories.EditAccessories" Codebehind="EditAccessories.aspx.cs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true"
+    ValidateRequest="false" Inherits="MobileTech.Admin.Accessories.EditAccessories"
+    CodeBehind="EditAccessories.aspx.cs" %>
 
 <%@ Register Assembly="FredCK.FCKeditorV2" Namespace="FredCK.FCKeditorV2" TagPrefix="FCKeditorV2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -11,13 +13,12 @@
                     <strong>Accessories Information </strong>
                 </td>
             </tr>
-             <tr>
-                <td style="height: 51px; width: 110px; font-weight:bold; font-size:small">
+            <tr>
+                <td style="height: 51px; width: 110px; font-weight: bold; font-size: small">
                     Category: (*)&nbsp;
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlCategory" runat="server" Width="300px" 
-                        oninit="ddlCategory_Init">
+                    <asp:DropDownList ID="ddlCategory" runat="server" Width="300px" OnInit="ddlCategory_Init">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"
                         ControlToValidate="ddlCategory"></asp:RequiredFieldValidator>
@@ -48,7 +49,8 @@
                     Short Content: (*)&nbsp;
                 </td>
                 <td>
-                    <asp:TextBox ID="txtShortContent" runat="server" Width="300px" TextMode="MultiLine" Height="40px"></asp:TextBox>
+                    <asp:TextBox ID="txtShortContent" runat="server" Width="300px" TextMode="MultiLine"
+                        Height="40px"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
                         ControlToValidate="txtShortContent"></asp:RequiredFieldValidator>
                 </td>
@@ -82,7 +84,7 @@
                 <td>
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" Width="90px" />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="90px" Visible="false"
-                        OnClick="btnDelete_Click" />
+                        OnClick="btnDelete_Click" OnClientClick="return confirm('Are you sure you want to delete it?');" />
                     <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="90px" CausesValidation="False"
                         OnClick="btnCancel_Click" />
                 </td>
