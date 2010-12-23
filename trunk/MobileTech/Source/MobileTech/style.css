@@ -290,7 +290,7 @@ body
 .re-more, .re-more a
 {
 	color: #0000FF;
-	float: right;
+	float:right;
 	margin-right: 20px;
 	font-size: 12px;
 }
@@ -310,9 +310,12 @@ body
 }
 .pro-content
 {
-	font-size: 12px;
+	font-family: Arial, Verdana;
+	font-weight:bold;
+	font-size: 9pt;
 	padding: 10px;
 	line-height: 17px;
+	float:left;
 }
 .pro-title p
 {
