@@ -71,7 +71,22 @@
                                     Visible="False" ReadOnly="True" SortExpression="LastPasswordChangedDate" />
                                 <asp:BoundField DataField="ProviderName" HeaderText="ProviderName" ReadOnly="True"
                                     Visible="False" SortExpression="ProviderName" />
-                                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
+                                <asp:TemplateField ShowHeader="False">
+                                    <ItemTemplate>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                                            CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" 
+                                            CommandName="Select" Text="Select"></asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" 
+                                            CommandName="Delete" Text="Delete" OnClientClick="return confirm('Are you sure you want to delete this user?');"></asp:LinkButton>
+                                    </ItemTemplate>
+                                    <EditItemTemplate>
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" 
+                                            CommandName="Update" Text="Update"></asp:LinkButton>
+                                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" 
+                                            CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                                    </EditItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                             <FooterStyle BackColor="#507CD1" ForeColor="White" Font-Bold="True" />
                             <RowStyle BackColor="#EFF3FB" />

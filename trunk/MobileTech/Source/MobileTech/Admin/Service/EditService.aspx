@@ -70,7 +70,7 @@
                 <td>
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" Width="90px" />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="90px" Visible="false"
-                        OnClick="btnDelete_Click" />
+                        OnClick="btnDelete_Click" OnClientClick="return confirm('Are you sure you want to delete it?');"/>
                     <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="90px" CausesValidation="False"
                         OnClick="btnCancel_Click" />
                 </td>
