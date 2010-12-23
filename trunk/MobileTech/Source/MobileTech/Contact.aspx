@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true" Inherits="MobileTech._Contact" Codebehind="Contact.aspx.cs" %>
-<%@ Register src="UIControls/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc1" %>
-<%@ Register src="UIControls/SiteMap.ascx" tagname="SiteMap" tagprefix="uc2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ProductSite.Master" AutoEventWireup="true"
+    Inherits="MobileTech._Contact" CodeBehind="Contact.aspx.cs" %>
+
+<%@ Register Src="UIControls/LeftMenu.ascx" TagName="LeftMenu" TagPrefix="uc1" %>
+<%@ Register Src="UIControls/SiteMap.ascx" TagName="SiteMap" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table style="vertical-align: middle; height:auto" >
+    <table id="container" style="vertical-align: middle">
         <tr>
             <td id="sub-nav">
                 <uc1:LeftMenu ID="LeftMenu1" runat="server" />
@@ -12,9 +14,7 @@
             <td>
                 <div id="main-content">
                     <div class="title" style="vertical-align: bottom; color: Red">
-                       
                         <uc2:SiteMap ID="SiteMap1" runat="server" />
-                       
                     </div>
                     <div class="title" style="margin-top: 4px; vertical-align: middle">
                         <h2>
@@ -26,11 +26,20 @@
                         <div class="content-news">
                             <table border="0" cellpadding="10" cellspacing="10" width="100%" style="height: 220px">
                                 <tr>
-                                    <td style="width: 80px; color: White">
-                                        Full Name:
+                                    <td>
                                     </td>
                                     <td>
-                                        <input id="Text1" type="text" name="name" size="50" runat="server" />
+                                        <asp:Label ID="lblMsg" runat="server" Visible="False" ForeColor="Red" Font-Size="12px"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 80px; color: White">
+                                        Full Name: <span style="color: Red">*</span>
+                                    </td>
+                                    <td>
+                                        <input id="txtFullName" type="text" name="name" size="50" runat="server" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtFullName"
+                                            Display="Dynamic" ErrorMessage="Enter name!"></asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -38,7 +47,7 @@
                                         Address:
                                     </td>
                                     <td>
-                                        <input id="Text2" type="text" name="address" size="50" runat="server" />
+                                        <input id="txtAddress" type="text" name="address" size="50" runat="server" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -46,15 +55,19 @@
                                         Phone:
                                     </td>
                                     <td>
-                                        <input id="Text3" type="text" name="phone" size="50" runat="server" />
+                                        <input id="txtPhone" type="text" name="phone" size="50" runat="server" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="color: White">
-                                        Email:
+                                        Email: <span style="color: Red">*</span>
                                     </td>
                                     <td>
-                                        <input id="Text4" type="text" name="email" size="50" runat="server" />
+                                        <input id="txtEmailFrom" type="text" name="email" size="50" runat="server" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtEmailFrom"
+                                            Display="Dynamic" ErrorMessage="Enter email address!"></asp:RequiredFieldValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmailFrom"
+                                            Display="Dynamic" ErrorMessage="Incorrect email format!" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -62,14 +75,14 @@
                                         Content:
                                     </td>
                                     <td>
-                                        <textarea id="Textarea2" rows="6" name="content" cols="70" runat="server"></textarea>
+                                        <textarea id="txtContent" rows="6" name="content" cols="70" runat="server"></textarea>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                     </td>
                                     <td>
-                                        <input id="Submit1" type="submit" value="Send Mail" />
+                                        <asp:Button ID="btnSendMail" runat="server" OnClick="btnSend_Click" Text="Send Mail" />
                                     </td>
                                 </tr>
                             </table>
@@ -88,12 +101,14 @@
                                                     <td id="contactMapLink">
                                                         <br />
                                                         <p>
-                                                            <strong style="font-size:14px; font-weight:bold">
+                                                            <strong style="font-size: 14px; font-weight: bold; color: #ff3300">
                                                                 <%#Eval("ContactName")%></strong>
                                                             <br>
                                                             <%#Eval("ContactAddress")%><br>
                                                             <%#Eval("ContactPhone")%><br>
-                                                            <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1', 'width=425, height=350'); return false;">View map</a> <br />
+                                                            <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1'); return false;">
+                                                                View map</a>
+                                                            <br />
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -108,11 +123,11 @@
             </td>
         </tr>
     </table>
-<script type="text/javascript">
+
+    <script type="text/javascript">
     function OpenWeb(url) {
         window.open(url, "Google map", "status=1,width=425,height=350"); 
     }
-</script>
+    </script>
+
 </asp:Content>
-
-

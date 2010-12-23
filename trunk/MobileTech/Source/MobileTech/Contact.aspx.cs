@@ -16,31 +16,35 @@ namespace MobileTech
         {
             if (!IsPostBack)
             {
+                lblMsg.Visible = false;
                 GridViewContact.DataSource= ProductService.GetContact();
                 GridViewContact.DataBind();
             }
         }
         protected void btnSend_Click(object sender, EventArgs e)
         {
-
+            SendMail();
         }
 
         #region Send Mail
         string GetBody()
         {
             StringBuilder result = new StringBuilder();
-            
+            result.AppendLine("Customer name: " + txtFullName.Value.Trim() + "<br />");
+            result.AppendLine("Address: " + txtAddress.Value.Trim() + "<br />");
+            result.AppendLine("Phone: " + txtPhone.Value.Trim() + "<br />");
+            result.AppendLine("Content: " + "<br />");
+            result.AppendLine(txtContent.Value.Trim());
             return result.ToString();
         }
         void SendMail()
         {
-            string subject = "[MobileTech] - Contact";
-
+            string subject = ConfigurationManager.AppSettings["MailSubject"];
             string mailServer = ConfigurationManager.AppSettings["MailServer"];
             string mailAccount = ConfigurationManager.AppSettings["MailAccount"];
             string mailAccountPass = ConfigurationManager.AppSettings["MailAccountPass"];
             string mailCredential = ConfigurationManager.AppSettings["Credentials"];
-            string from = ConfigurationManager.AppSettings["MailFrom"];
+            string from = txtEmailFrom.Value.Trim();
             string to = ConfigurationManager.AppSettings["MailTo"];
             
             SmtpClient mailClient = new SmtpClient();
@@ -72,10 +76,13 @@ namespace MobileTech
                 #endregion
 
                 mailClient.Send(msg);
+                lblMsg.Text = "Sent successfully!";
+                lblMsg.Visible = true;
             }
             catch (Exception ex)
             {
-                string a = ex.Message;
+                lblMsg.Visible = false;
+                throw ex;
             }
         }
         #endregion
