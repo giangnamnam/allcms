@@ -18,7 +18,7 @@
  * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
  */
 
-FCKConfig.CustomConfigurationsPath = '' ;
+FCKConfig.CustomConfigurationsPath = '';
 
 FCKConfig.EditorAreaCSS = FCKConfig.BasePath + 'css/fck_editorarea.css' ;
 
@@ -77,7 +77,7 @@ FCKConfig.FloatingPanelsZIndex = 10000 ;
 FCKConfig.ToolbarLocation = 'In' ;
 
 FCKConfig.ToolbarSets["Default"] = [
-	['Source','DocProps','-','Save','NewPage','Preview','-','Templates'],
+	['DocProps','-','Save','NewPage','Preview','-','Templates'],
 	['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
 	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
 	['Form','Checkbox','Radio','TextField','Textarea','Select','Button','ImageButton','HiddenField'],
@@ -131,8 +131,8 @@ FCKConfig.FlashDlgHideAdvanced	= false ;
 // inline when creating the editor instance. In that cases you must set the 
 // values of LinkBrowserURL, ImageBrowserURL and so on.
 // Custom implementations should just ignore it.
-var _FileBrowserLanguage	= 'asp' ;	// asp | aspx | cfm | lasso | perl | php | py
-var _QuickUploadLanguage	= 'asp' ;	// asp | aspx | cfm | lasso | php
+var _FileBrowserLanguage	= 'aspx' ;	// asp | aspx | cfm | lasso | perl | php | py
+var _QuickUploadLanguage	= 'aspx' ;	// asp | aspx | cfm | lasso | php
 
 // Don't care about the following line. It just calculates the correct connector 
 // extension to use for the default File Browser (Perl uses "cgi").
