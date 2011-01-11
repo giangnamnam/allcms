@@ -29,8 +29,15 @@ namespace MobileTech.Admin
                 else
                 {
                     FormsAuthentication.SetAuthCookie(ctlLogin.UserName, false);
-                    //Response.Redirect("Product/");
-                    Response.Redirect("Service/");
+                    if (Roles.IsUserInRole(ctlLogin.UserName, MyConst.Technician_Role))
+                    {
+                        Response.Redirect("Repair/");
+                    }
+                    else
+                    {
+                        //Response.Redirect("Product/");
+                        Response.Redirect("Service/");
+                    }
                 }
             }
             else

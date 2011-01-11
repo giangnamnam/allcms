@@ -211,6 +211,20 @@
     <Compile Include="Admin\Product\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Repair\InputView.aspx.cs">
+      <DependentUpon>InputView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Repair\InputView.aspx.designer.cs">
+      <DependentUpon>InputView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Repair\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Repair\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Service\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -441,6 +455,8 @@
     <Content Include="Admin\ProductSpecification\Default.aspx" />
     <Content Include="Admin\ProductStatus\Default.aspx" />
     <Content Include="Admin\Product\AddProduct.aspx" />
+    <Content Include="Admin\Repair\InputView.aspx" />
+    <Content Include="Admin\Repair\Default.aspx" />
     <Content Include="Admin\Service\Default.aspx" />
     <Content Include="Admin\Service\EditService.aspx" />
     <Content Include="Admin\Share\AdminSite.Master" />
