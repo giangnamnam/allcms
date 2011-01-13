@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.ProductRepair, Mobile.DomainObjects" table="ProductRepair" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="RepairNo" column="RepairNo" not-null="false" type="string" insert="true" update="true" />
+    <property name="StaffName" column="StaffName" not-null="false" type="string" insert="true" update="true" />
+    <property name="CustomerName" column="CustomerName" not-null="false" type="string" insert="true" update="true" />
+    <property name="CustomerDate" column="CustomerDate" not-null="false" type="DateTime" insert="true" update="true" />
+    <property name="CustomerContact" column="CustomerContact" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductModel" column="ProductModel" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductColor" column="ProductColor" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductIMEI" column="ProductIMEI" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductFaultReport" column="ProductFaultReport" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductNoSim" column="ProductNoSim" not-null="false" type="Boolean" insert="true" update="true" />
+    <property name="ProductWB" column="ProductWB" not-null="false" type="Boolean" insert="true" update="true" />
+    <property name="ProductNB" column="ProductNB" not-null="false" type="Boolean" insert="true" update="true" />
+    <property name="ProductMemoryCard" column="ProductMemoryCard" not-null="false" type="Boolean" insert="true" update="true" />
+    <property name="ProductExteriorCondition" column="ProductExteriorCondition" not-null="false" type="string" insert="true" update="true" />
+    <property name="MemoLabourCode" column="MemoLabourCode" not-null="false" type="string" insert="true" update="true" />
+    <property name="MemoPartsCode" column="MemoPartsCode" not-null="false" type="string" insert="true" update="true" />
+    <property name="MemoTotalInCludingGST" column="MemoTotalInCludingGST" not-null="false" type="string" insert="true" update="true" />
+    <property name="SignName" column="SignName" not-null="false" type="string" insert="true" update="true" />
+    <property name="SignDate" column="SignDate" not-null="false" type="DateTime" insert="true" update="true" />
+    <property name="SignCustomerName" column="SignCustomerName" not-null="false" type="string" insert="true" update="true" />
+    <property name="SignCustomerDate" column="SignCustomerDate" not-null="false" type="DateTime" insert="true" update="true" />
+    <property name="ModifiedBy" column="ModifiedBy" not-null="false" type="string" insert="true" update="true" />
+    <property name="ModifiedDate" column="ModifiedDate" not-null="false" type="DateTime" insert="true" update="true" />
+    <property name="Status" column="Status" not-null="false" type="string" insert="true" update="true" />
+    
+  </class>
+</hibernate-mapping>

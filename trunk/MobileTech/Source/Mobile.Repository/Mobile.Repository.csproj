@@ -68,12 +68,14 @@
     <Compile Include="IContactRepository.cs" />
     <Compile Include="IFeatureType.cs" />
     <Compile Include="IProductColor.cs" />
+    <Compile Include="IProductRepairRepository.cs" />
     <Compile Include="IProductRepository.cs" />
     <Compile Include="IProductSpecification.cs" />
     <Compile Include="IProductStatus.cs" />
     <Compile Include="IServiceRepository.cs" />
     <Compile Include="ISystemConfigurationRepository.cs" />
     <Compile Include="ProductColor.cs" />
+    <Compile Include="ProductRepairRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="ProductSpecification.cs" />
     <Compile Include="ProductStatus.cs" />

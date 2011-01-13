@@ -95,6 +95,12 @@ namespace MobileTech
             set;
         }
 
+        public virtual IProductRepairRepository ProductRepairRepository
+        {
+            get;
+            set;
+        }
+
         public virtual ISystemConfigurationRepository SystemConfigurationRepository
         {
             get;
@@ -349,6 +355,53 @@ namespace MobileTech
             contact.ContactPhone = ContactPhone;
             contact.ContactEmail = ContactEmail;
             Instance.ContactRepository.Add(contact);
+        }
+        #endregion
+
+        #region ProductRepair
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<ProductRepair> GetProductRepair()
+        {
+            return Instance.ProductRepairRepository.GetAll();
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateProductRepair(int id, string repairName, string repairAddress,
+            string ProductRepairGoogleAddress, string ProductRepairPhone, string ProductRepairEmail)
+        {
+            ProductRepair repair = Instance.ProductRepairRepository.GetObjectByID<int>(id);
+            if (repair != null)
+            {
+                //repair.ProductRepairName = ProductRepairName;
+                //repair.ProductRepairAddress = ProductRepairAddress;
+                //repair.ProductRepairGoogleAddress = ProductRepairGoogleAddress;
+                //repair.ProductRepairPhone = ProductRepairPhone;
+                //repair.ProductRepairEmail = ProductRepairEmail;
+
+                Instance.ProductRepairRepository.Update(repair);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteProductRepair(int id)
+        {
+            ProductRepair ProductRepair = Instance.ProductRepairRepository.GetObjectByID<int>(id);
+            if (ProductRepair != null)
+            {
+                Instance.ProductRepairRepository.Delete(ProductRepair);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertProductRepair(string ProductRepairName, string ProductRepairAddress,
+            string ProductRepairGoogleAddress, string ProductRepairPhone, string ProductRepairEmail)
+        {
+            //ProductRepair repair = new ProductRepair();
+            //repair.ProductRepairName = ProductRepairName;
+            //repair.ProductRepairAddress = ProductRepairAddress;
+            //repair.ProductRepairGoogleAddress = ProductRepairGoogleAddress;
+            //repair.ProductRepairPhone = ProductRepairPhone;
+            //repair.ProductRepairEmail = ProductRepairEmail;
+            //Instance.ProductRepairRepository.Add(repair);
         }
         #endregion
 
