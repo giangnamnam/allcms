@@ -10,4 +10,9 @@ namespace Mobile.Common
 
         public const string Technician_Role = "Technician";
     }
+
+    public enum ProductRepairStatus
+    {
+         Pending = 1, InProcessing = 2, Repaired = 3
+    }
 }
