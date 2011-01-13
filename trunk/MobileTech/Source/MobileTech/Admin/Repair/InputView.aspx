@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" Inherits="MobileTech.Admin.Repair.InputView" Codebehind="InputView.aspx.cs" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" Inherits="MobileTech.Admin.Repair.InputView" Codebehind="InputView.aspx.cs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -8,5 +8,6 @@
             <li><a id="A2" href="InputView.aspx" runat="server">Input View</a></li>
         </ul>
     </div>
+    <asp:Button ID="btn" runat="server" OnClick="GenerateMsWordDoc" Text="Generate Ms Word Document" />
     
 </asp:Content>
