@@ -18,7 +18,7 @@
                     </div>
                     <div class="title" style="margin-top: 4px; vertical-align: middle">
                         <h2>
-                            <p style="color: White; font-size: medium; vertical-align: middle"">
+                            <p style="color: White; font-size: medium; vertical-align: middle">
                                Repair</p>
                         </h2>
                     </div>

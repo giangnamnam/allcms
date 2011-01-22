@@ -11,9 +11,24 @@ namespace MobileTech.Admin.Repair
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grvProductList.DataSource = ProductService.Instance.GetProduct();
-            grvProductList.DataBind();
+            if (!IsPostBack)
+            {
+                BindingData();
+            }
         }
+
+        void BindingData()
+        {
+            int? status=0;
+            ProductRepairStatus enumStatus = (ProductRepairStatus)Enum.Parse(typeof(ProductRepairStatus), ddlStatus.SelectedValue);
+            if (enumStatus != null)
+            {
+                status = enumStatus.GetHashCode();
+            }
+            gridProduct.DataSource = ProductService.GetProductRepair(txtName.Text, txtRepairNo.Text, status);
+            gridProduct.DataBind();
+        }
+
         protected void ddlStatus_Init(object sender, EventArgs e)
         {
             foreach (object value in Enum.GetValues(typeof(ProductRepairStatus)))
@@ -24,6 +39,29 @@ namespace MobileTech.Admin.Repair
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindingData();
+        }
+
+        protected void gridProduct_EditCommand(object source, DataGridCommandEventArgs e)
+        {
+            Label lblID = e.Item.FindControl("lblID") as Label;
+            Response.Redirect("InputView.aspx?ID=" + lblID.Text.Trim());
+        }
+
+        protected void gridProduct_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+        {
+            gridProduct.CurrentPageIndex = e.NewPageIndex;
+            BindingData();
+        }
+
+        protected void gridProduct_ItemDataBound(object sender, DataGridItemEventArgs e)
+        {
+
 
         }
 

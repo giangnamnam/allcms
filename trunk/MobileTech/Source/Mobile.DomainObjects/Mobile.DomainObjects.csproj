@@ -88,6 +88,12 @@
   <ItemGroup>
     <EmbeddedResource Include="ProductRepair.hbm.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">
+      <Project>{92A9B3C4-B76C-45BC-8868-04435E677F12}</Project>
+      <Name>Mobile.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

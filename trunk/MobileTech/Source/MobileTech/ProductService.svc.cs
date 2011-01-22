@@ -364,6 +364,11 @@ namespace MobileTech
         {
             return Instance.ProductRepairRepository.GetAll();
         }
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<ProductRepair> GetProductRepair(string name, string repairNo, int? status)
+        {
+            return Instance.ProductRepairRepository.GetProductRepairList(name, repairNo,status);
+        }
         [DataObjectMethod(DataObjectMethodType.Update, true)]
         public static void UpdateProductRepair(int id, string repairName, string repairAddress,
             string ProductRepairGoogleAddress, string ProductRepairPhone, string ProductRepairEmail)

@@ -9,12 +9,24 @@ namespace Mobile.Repository
 {
     public class ProductRepairRepository : RepositoryBase<ProductRepair>, IProductRepairRepository
     {
-        public IList<ProductRepair> GetProductRepairList()
+        public IList<ProductRepair> GetProductRepairList(string name, string repairNo, int? status)
         {
             ICriteria query = Session.CreateCriteria<ProductRepair>();
+            if (status.HasValue)
+            {
+                query.Add(Expression.Eq("Status", status.Value));
+            }
+
+            if (name!=string.Empty && name.Length>0)
+            {
+                query.Add(Expression.Like("CustomerName", string.Format("{0}%",name)));
+            }
+            if (repairNo != string.Empty && repairNo.Length > 0)
+            {
+                query.Add(Expression.Like("RepairNo", string.Format("{0}%", repairNo)));
+            }
+            query.AddOrder(new Order("ModifiedDate", true));
             return query.List<ProductRepair>();
-            //return NewQuery<ProductRepair>()                
-            //    .ToList();
         }
         public bool CheckProductRepairNameExisted(string ProductRepairName, int? excludeProductRepairID)
         {
