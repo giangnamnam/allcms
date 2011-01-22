@@ -342,6 +342,13 @@
     <Compile Include="Repair.aspx.designer.cs">
       <DependentUpon>Repair.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RepairList.aspx.cs">
+      <DependentUpon>RepairList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairList.aspx.designer.cs">
+      <DependentUpon>RepairList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services.aspx.cs">
       <DependentUpon>Services.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -919,11 +926,13 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\MobileWeb-Final.png" />
     <Content Include="Images\nav.png" />
+    <Content Include="Images\Repair\RepairLogo.jpg" />
     <Content Include="Images\title.png" />
     <Content Include="Ipad.aspx" />
     <Content Include="menu.css" />
     <Content Include="Plans.aspx" />
     <Content Include="Repair.aspx" />
+    <Content Include="RepairList.aspx" />
     <Content Include="reset.css" />
     <Content Include="Services.aspx" />
     <Content Include="style.css" />

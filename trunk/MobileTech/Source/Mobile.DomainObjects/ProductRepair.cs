@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
+using Mobile.Common;
 
 namespace Mobile.DomainObjects
 {
@@ -145,6 +146,32 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+        #region RepairToString
+        private string m_RepairToString = string.Empty;
+        /// <summary>
+        /// Gets RepairToString
+        /// </summary>
+        public virtual string StatusToString
+        {
+            get
+            {
+                switch (Status)
+                {
+                    case 1:
+                        m_RepairToString = "Pending";
+                        break;
+                    case 2:
+                        m_RepairToString = "In Processing";
+                        break;
+                    case 3:
+                        m_RepairToString = "Repaired";
+                        break;
+                }
+                return m_RepairToString;
+            }
+
+        }
+        #endregion
 
         public virtual int Status
         {

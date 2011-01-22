@@ -27,7 +27,8 @@
     <property name="SignCustomerDate" column="SignCustomerDate" not-null="false" type="DateTime" insert="true" update="true" />
     <property name="ModifiedBy" column="ModifiedBy" not-null="false" type="string" insert="true" update="true" />
     <property name="ModifiedDate" column="ModifiedDate" not-null="false" type="DateTime" insert="true" update="true" />
-    <property name="Status" column="Status" not-null="false" type="string" insert="true" update="true" />
+    
+    <property name="Status" column="Status" not-null="false" type="int" insert="true" update="true" />
     
   </class>
 </hibernate-mapping>
