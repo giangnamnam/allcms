@@ -32,7 +32,7 @@ namespace Mobile.DomainObjects
             set;
         }
 
-        public virtual string CustomerDate
+        public virtual DateTime? CustomerDate
         {
             get;
             set;
@@ -74,13 +74,13 @@ namespace Mobile.DomainObjects
             set;
         }
 
-        public virtual bool ProductWB
+        public virtual string ProductWB
         {
             get;
             set;
         }
 
-        public virtual bool ProductNB
+        public virtual string ProductNB
         {
             get;
             set;
@@ -110,7 +110,11 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
-
+        public virtual string PartsFixed
+        {
+            get;
+            set;
+        }
         public virtual string SignName
         {
             get;

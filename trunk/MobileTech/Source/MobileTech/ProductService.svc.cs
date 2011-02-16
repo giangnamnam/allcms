@@ -365,15 +365,24 @@ namespace MobileTech
             return Instance.ProductRepairRepository.GetAll();
         }
         [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static string GetProductRepairMaxID()
+        {
+            return Instance.ProductRepairRepository.GetProductRepairMaxID();
+        }
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static IList<ProductRepair> GetProductRepair(string name, string repairNo, int? status)
         {
             return Instance.ProductRepairRepository.GetProductRepairList(name, repairNo,status);
         }
-        [DataObjectMethod(DataObjectMethodType.Update, true)]
-        public static void UpdateProductRepair(int id, string repairName, string repairAddress,
-            string ProductRepairGoogleAddress, string ProductRepairPhone, string ProductRepairEmail)
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static ProductRepair GetProductRepair(int id)
         {
-            ProductRepair repair = Instance.ProductRepairRepository.GetObjectByID<int>(id);
+            return Instance.ProductRepairRepository.GetObjectByID(id);
+        }
+        [DataObjectMethod(DataObjectMethodType.Update, true)]
+        public static void UpdateProductRepair(ProductRepair repair)
+        {
+            //ProductRepair repair = Instance.ProductRepairRepository.GetObjectByID<int>(id);
             if (repair != null)
             {
                 //repair.ProductRepairName = ProductRepairName;
@@ -397,8 +406,7 @@ namespace MobileTech
 
         }
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public static void InsertProductRepair(string ProductRepairName, string ProductRepairAddress,
-            string ProductRepairGoogleAddress, string ProductRepairPhone, string ProductRepairEmail)
+        public static void InsertProductRepair(ProductRepair repair)
         {
             //ProductRepair repair = new ProductRepair();
             //repair.ProductRepairName = ProductRepairName;
@@ -406,7 +414,7 @@ namespace MobileTech
             //repair.ProductRepairGoogleAddress = ProductRepairGoogleAddress;
             //repair.ProductRepairPhone = ProductRepairPhone;
             //repair.ProductRepairEmail = ProductRepairEmail;
-            //Instance.ProductRepairRepository.Add(repair);
+            Instance.ProductRepairRepository.Add(repair);
         }
         #endregion
 

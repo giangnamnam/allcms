@@ -78,6 +78,7 @@
                     ItemStyle-Width="70px" EditText="Edit">
                     <ItemStyle Width="70px"></ItemStyle>
                 </asp:EditCommandColumn>
+                
             </Columns>
             <PagerStyle HorizontalAlign="Left" ForeColor="#003399" BackColor="#99CCCC" Mode="NumericPages">
             </PagerStyle>

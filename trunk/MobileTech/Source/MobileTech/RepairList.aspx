@@ -24,10 +24,27 @@
                     </div>
                     <div id="content-small">
                         <div class="content-news">
+                            <table>
+                                <tr>
+                                    <td style="width: 200px">
+                                    </td>
+                                    <td style="width: 80px">
+                                        Repair No.
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtRepairNo" runat="server"></asp:TextBox>
+                                    </td>
+                                    
+                                    <td style="width: 50px">
+                                        <asp:Button ID="btnSearch" runat="server" Text="Track" 
+                                            onclick="btnSearch_Click"/>
+                                    </td>
+                                </tr>
+                            </table>
                             <asp:GridView ID="grvProductList" runat="server" AllowPaging="True" AllowSorting="True"
-                                AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None"
-                                BorderWidth="1px" CellPadding="4" Width="100%">
-                                <RowStyle ForeColor="#003399" BackColor="White" />
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
+                                BorderWidth="1px" CellPadding="3" Width="100%" GridLines="Vertical">
+                                <RowStyle ForeColor="Black" BackColor="#EEEEEE" />
                                 <Columns>
                                     <asp:BoundField DataField="RepairNo" HeaderText="RepairNo"></asp:BoundField>
                                     <asp:BoundField DataField="CustomerName" HeaderText="CustomerName"></asp:BoundField>
@@ -37,12 +54,12 @@
                                     <asp:BoundField DataField="StatusToString" HeaderText="Status">
                                         <ItemStyle Width="100px" VerticalAlign="Middle" />
                                     </asp:BoundField>
-                                    
                                 </Columns>
-                                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-                                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-                                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                                <SelectedRowStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                                <AlternatingRowStyle BackColor="#DCDCDC" />
                             </asp:GridView>
                         </div>
                     </div>
