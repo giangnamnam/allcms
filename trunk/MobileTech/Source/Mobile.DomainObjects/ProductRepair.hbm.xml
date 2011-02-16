@@ -14,13 +14,14 @@
     <property name="ProductIMEI" column="ProductIMEI" not-null="false" type="string" insert="true" update="true" />
     <property name="ProductFaultReport" column="ProductFaultReport" not-null="false" type="string" insert="true" update="true" />
     <property name="ProductNoSim" column="ProductNoSim" not-null="false" type="Boolean" insert="true" update="true" />
-    <property name="ProductWB" column="ProductWB" not-null="false" type="Boolean" insert="true" update="true" />
-    <property name="ProductNB" column="ProductNB" not-null="false" type="Boolean" insert="true" update="true" />
+    <property name="ProductWB" column="ProductWB" not-null="false" type="string" insert="true" update="true" />
+    <property name="ProductNB" column="ProductNB" not-null="false" type="string" insert="true" update="true" />
     <property name="ProductMemoryCard" column="ProductMemoryCard" not-null="false" type="Boolean" insert="true" update="true" />
     <property name="ProductExteriorCondition" column="ProductExteriorCondition" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoLabourCode" column="MemoLabourCode" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoPartsCode" column="MemoPartsCode" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoTotalInCludingGST" column="MemoTotalInCludingGST" not-null="false" type="string" insert="true" update="true" />
+    <property name="PartsFixed" column="PartsFixed" not-null="false" type="string" insert="true" update="true" />
     <property name="SignName" column="SignName" not-null="false" type="string" insert="true" update="true" />
     <property name="SignDate" column="SignDate" not-null="false" type="DateTime" insert="true" update="true" />
     <property name="SignCustomerName" column="SignCustomerName" not-null="false" type="string" insert="true" update="true" />

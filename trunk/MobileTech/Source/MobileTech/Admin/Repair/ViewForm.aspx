@@ -1,38 +1,16 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true" Inherits="MobileTech.Admin.Repair.InputView" Codebehind="InputView.aspx.cs" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
-        .style1
-        {
-            width: 110px;
-            height: 51px;
-        }
-        .style2
-        {
-            height: 51px;
-        }
-    </style>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="sidebar">
-        <ul class="sideNav">
-            <li><a id="A1" href="Default.aspx" class="active" runat="server">Search Repair</a></li>
-            <li><a id="A2" href="InputView.aspx" runat="server">Input View</a></li>
-        </ul>
-    </div>
-   <asp:Panel ID="pnlAdd" Width="100%" runat="server">
-        <table width="100%" border="0">
-            <tr>
-                <td style="font-weight: bold; font-size: small" class="style1">
-                    Status: (*)&nbsp;
-                </td>
-                <td class="style2">
-                    <asp:DropDownList ID="ddlStatus" runat="server" Width="300px" 
-                        oninit="ddlStatus_Init">
-                    </asp:DropDownList>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"
-                        ControlToValidate="ddlStatus"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewForm.aspx.cs" Inherits="MobileTech.Admin.Repair.ViewForm" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div align="center">
+        <asp:Panel ID="pnlAdd" Width="100%" runat="server">
+        <table width="1024px" border="0">
             <tr>
                 <td colspan="2">
                     <table width="100%" border="0">
@@ -46,9 +24,8 @@
                             </td>
                             <td style="width:25%">
                                 <span style="font-weight:bold; font-size:24px">No:</span>  
-                                <asp:TextBox ID="txtRepairNo" runat="server" ReadOnly="true" Font-Size="24" ForeColor="Red" Width="80"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
-                                        ControlToValidate="txtRepairNo"></asp:RequiredFieldValidator>
+                                <asp:Label ID="lblRepairNo" runat="server" Font-Size="24" ForeColor="Red"></asp:Label>
+                               
                                 <br /><br />
                                 <span style="font-size:16px">Rockingham<br />
                                 Service Agreement<br /></span>
@@ -152,8 +129,7 @@
                                         </td>
                                         <td align="center" style="width:50%">
                                            Exterior Condition: (New > Total Damaged) <br />
-                                            <asp:RadioButtonList ID="radioExteriorCondition" runat="server" 
-                                                oninit="radioExteriorCondition_Init">
+                                            <asp:RadioButtonList ID="radioExteriorCondition" runat="server">
                                             </asp:RadioButtonList>
                                         </td>
                                     </tr>
@@ -215,30 +191,16 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:CheckBoxList ID="chkPartsFixed" runat="server" oninit="chkPartsFixed_Init" 
+                    <asp:CheckBoxList ID="chkPartsFixed" runat="server"
                         RepeatColumns="7" RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
                     
                 </td>
             </tr>
-             <tr>
-                <td colspan="2" style="height:10px;">
-                </td>
-            </tr>
-            <tr>
-                <td align="right">
-                     <asp:Button ID="btnViewForm" runat="server" Text="View Form"  Width="90px" 
-                         OnClientClick="javascript:window.open('ViewForm.aspx')"/>
-                </td>
-                <td align="center">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" Width="90px" />
-                    <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="90px" Visible="false"
-                        OnClick="btnDelete_Click" OnClientClick="return confirm('Are you sure you want to delete it?');" />
-                    <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="90px" CausesValidation="False"
-                        OnClick="btnCancel_Click" />
-                </td>
-            </tr>
+             
         </table>
     </asp:Panel>
-    
-</asp:Content>
+    </div>
+    </form>
+</body>
+</html>

@@ -8,6 +8,7 @@ namespace Mobile.Repository
     public interface IProductRepairRepository : IRepositoryBase<ProductRepair>
     {
         IList<ProductRepair> GetProductRepairList(string name, string repairNo, int? status);
+       string GetProductRepairMaxID();
 
         bool CheckProductRepairNameExisted(string ProductRepairName, int? excludeProductRepairID);
 

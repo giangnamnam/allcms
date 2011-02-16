@@ -28,6 +28,16 @@ namespace Mobile.Repository
             query.AddOrder(new Order("ModifiedDate", true));
             return query.List<ProductRepair>();
         }
+
+        public string GetProductRepairMaxID()
+        {
+            IQuery query = Session.CreateQuery("Select Max(ID) from ProductRepair");
+            if (query.List().Count > 0)
+                return string.Format("{0:0000}", (int)query.List()[0] + 1);
+            else
+                return "0001";
+        }
+
         public bool CheckProductRepairNameExisted(string ProductRepairName, int? excludeProductRepairID)
         {
             ICriteria query = Session.CreateCriteria<ProductRepair>();

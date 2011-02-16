@@ -14,5 +14,11 @@ namespace MobileTech
             grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, string.Empty, null);
             grvProductList.DataBind();
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, txtRepairNo.Text, null);
+            grvProductList.DataBind();
+        }
     }
 }

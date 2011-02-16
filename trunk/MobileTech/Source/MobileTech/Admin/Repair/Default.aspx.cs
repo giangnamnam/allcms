@@ -21,7 +21,7 @@ namespace MobileTech.Admin.Repair
         {
             int? status=0;
             ProductRepairStatus enumStatus = (ProductRepairStatus)Enum.Parse(typeof(ProductRepairStatus), ddlStatus.SelectedValue);
-            if (enumStatus != null)
+            //if (enumStatus != null)
             {
                 status = enumStatus.GetHashCode();
             }
