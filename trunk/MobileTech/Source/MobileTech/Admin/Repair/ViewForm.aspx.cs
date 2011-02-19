@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mobile.DomainObjects;
+using System.Text;
 
 namespace MobileTech.Admin.Repair
 {
@@ -42,6 +43,30 @@ namespace MobileTech.Admin.Repair
             chkNoSim.Checked = repair.ProductNoSim;
             lblWB.Text = repair.ProductWB;
             lblNB.Text = repair.ProductNB;
+            if (repair.ProductMemoryCard)
+            {
+                lblMemoryCardY.Font.Bold = true;
+                lblMemoryCardY.Font.Size = new FontUnit(14);
+            }
+            else
+            {
+                lblMemoryCardN.Font.Bold = true;
+                lblMemoryCardN.Font.Size = new FontUnit(14);
+            }
+            if (repair.ProductExteriorCondition != null)
+            {
+                StringBuilder condition=new StringBuilder();
+                for (int i = 10; i >= 1; i--)
+                {
+                    
+                    if (i == int.Parse(repair.ProductExteriorCondition))
+                    {
+                        condition.Append(string.Format("   <b>{0}</b>", i));
+                    }
+                    else condition.Append("   " + i.ToString());
+                }
+                lblExteriorCondition.InnerHtml = condition.ToString();
+            }
             
             lblLabourCost.Text = repair.MemoLabourCode;
             lblPartsCode.Text = repair.MemoPartsCode;
