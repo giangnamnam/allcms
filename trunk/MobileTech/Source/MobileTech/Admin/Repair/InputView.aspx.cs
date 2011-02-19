@@ -68,6 +68,8 @@ namespace MobileTech.Admin.Repair
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Control c=this.FindControl("txtCusDate1");
+
             if (!IsPostBack)
             {
                 ViewState.Remove(CurrentIDName);
@@ -81,7 +83,9 @@ namespace MobileTech.Admin.Repair
                         mCurrentID = id;
                         SetValue();
                         btnDelete.Visible = true;
+                        btnViewForm.Visible = true;
                         ViewState.Add(CurrentIDName, mCurrentID);
+                        Session[CurrentIDName] = mCurrentID;
                     }
                 }
 
@@ -109,7 +113,7 @@ namespace MobileTech.Admin.Repair
 
                 txtCusName.Text = repair.CustomerName;
                 if (repair.CustomerDate.HasValue)
-                    txtCusDate.Text = repair.CustomerDate.Value.ToShortDateString();
+                    txtCusDate.Value = repair.CustomerDate.Value.ToShortDateString();
                 txtCusContact.Text = repair.CustomerContact;
 
                 txtProductModel.Text = repair.ProductModel;
@@ -152,7 +156,7 @@ namespace MobileTech.Admin.Repair
         void PopulateControl()
         {
             txtCusContact.Text = "";
-            txtCusDate.Text = "";
+            txtCusDate.Value = "";
             txtLabourCost.Text = "";
             txtNB.Text = "";
             txtPartsCode.Text = "";
@@ -225,8 +229,8 @@ namespace MobileTech.Admin.Repair
                     repair.StaffName = txtStaffName.Text;
 
                     repair.CustomerName = txtCusName.Text;
-                    if (txtCusDate.Text.Length > 0)
-                        repair.CustomerDate = DateTime.Parse(txtCusDate.Text);
+                    if (txtCusDate.Value.Length > 0)
+                        repair.CustomerDate = DateTime.Parse(txtCusDate.Value);
                     repair.CustomerContact = txtCusContact.Text;
 
                     repair.ProductModel = txtProductModel.Text;
@@ -267,8 +271,8 @@ namespace MobileTech.Admin.Repair
                         repair.StaffName = txtStaffName.Text;
 
                         repair.CustomerName = txtCusName.Text;
-                        if (txtCusDate.Text.Length > 0)
-                            repair.CustomerDate = DateTime.Parse(txtCusDate.Text);
+                        if (txtCusDate.Value.Length > 0)
+                            repair.CustomerDate = DateTime.Parse(txtCusDate.Value);
                         repair.CustomerContact = txtCusContact.Text;
 
                         repair.ProductModel = txtProductModel.Text;

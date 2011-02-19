@@ -41,94 +41,76 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.Label lblRepairNo;
         
         /// <summary>
-        /// txtStaffName control.
+        /// lblStaffName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStaffName;
+        protected global::System.Web.UI.WebControls.Label lblStaffName;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// lblCusName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label lblCusName;
         
         /// <summary>
-        /// txtCusName control.
+        /// lblCusDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCusName;
+        protected global::System.Web.UI.WebControls.Label lblCusDate;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// lblCusContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.Label lblCusContact;
         
         /// <summary>
-        /// txtCusDate control.
+        /// lblProductModel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCusDate;
+        protected global::System.Web.UI.WebControls.Label lblProductModel;
         
         /// <summary>
-        /// txtCusContact control.
+        /// lblProductColour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCusContact;
+        protected global::System.Web.UI.WebControls.Label lblProductColour;
         
         /// <summary>
-        /// txtProductModel control.
+        /// lblProductIMEI control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductModel;
+        protected global::System.Web.UI.WebControls.Label lblProductIMEI;
         
         /// <summary>
-        /// txtPrductColour control.
+        /// lblProductFaultReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrductColour;
-        
-        /// <summary>
-        /// txtProductIMEI control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductIMEI;
-        
-        /// <summary>
-        /// txtProductFaultReport control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductFaultReport;
+        protected global::System.Web.UI.WebControls.Label lblProductFaultReport;
         
         /// <summary>
         /// chkNoSim control.
@@ -140,22 +122,22 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.CheckBox chkNoSim;
         
         /// <summary>
-        /// txtWB control.
+        /// lblWB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtWB;
+        protected global::System.Web.UI.WebControls.Label lblWB;
         
         /// <summary>
-        /// txtNB control.
+        /// lblNB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNB;
+        protected global::System.Web.UI.WebControls.Label lblNB;
         
         /// <summary>
         /// radioMemoryCard control.
@@ -176,31 +158,31 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.RadioButtonList radioExteriorCondition;
         
         /// <summary>
-        /// txtLabourCost control.
+        /// lblLabourCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLabourCost;
+        protected global::System.Web.UI.WebControls.Label lblLabourCost;
         
         /// <summary>
-        /// txtPartsCode control.
+        /// lblPartsCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPartsCode;
+        protected global::System.Web.UI.WebControls.Label lblPartsCode;
         
         /// <summary>
-        /// txtTotalIncludingGST control.
+        /// lblTotalIncludingGST control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotalIncludingGST;
+        protected global::System.Web.UI.WebControls.Label lblTotalIncludingGST;
         
         /// <summary>
         /// chkPartsFixed control.
