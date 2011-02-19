@@ -44,9 +44,16 @@
                     <tr>
                         <td>
                         </td>
-                        <td align="right">
-                            Staff Name:
-                            <asp:Label ID="lblStaffName" runat="server" Font-Bold="true"></asp:Label>
+                        <td>
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td style="width:50%">
+                                    </td>
+                                    <td>
+                                        Staff Name: <asp:Label ID="lblStaffName" runat="server" Font-Bold="true" Width="400"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                     <tr>
@@ -103,7 +110,7 @@
                                 <tr>
                                     <td colspan="2" valign="top">
                                         Fault Report:
-                                        <asp:Label ID="lblProductFaultReport" runat="server" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="lblProductFaultReport" runat="server" Font-Bold="true" Height="50"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -128,16 +135,15 @@
                                                 <td align="center">
                                                     Memory Card
                                                     <br />
-                                                    <asp:RadioButtonList ID="radioMemoryCard" runat="server" RepeatDirection="Horizontal">
-                                                        <asp:ListItem Text="Y" Value="Y" Selected="True"></asp:ListItem>
-                                                        <asp:ListItem Text="N" Value="N"></asp:ListItem>
-                                                    </asp:RadioButtonList>
+                                                    <asp:Label ID="lblMemoryCardY" runat="server" Text="Y"></asp:Label>
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <asp:Label ID="lblMemoryCardN" runat="server" Text="N"></asp:Label>
+                                                    
                                                 </td>
                                                 <td align="center" style="width: 50%">
                                                     Exterior Condition: (New > Total Damaged)
                                                     <br />
-                                                    <asp:RadioButtonList ID="radioExteriorCondition" runat="server">
-                                                    </asp:RadioButtonList>
+                                                    <label id="lblExteriorCondition" runat="server"></label>
                                                 </td>
                                             </tr>
                                         </table>
@@ -159,10 +165,10 @@
                         <td colspan="2">
                             <table width="100%" border="1">
                                 <tr>
-                                    <td>
+                                    <td style="width:50%">
                                         Labour Cost:
                                     </td>
-                                    <td>
+                                    <td style="width:50%">
                                         $<asp:Label ID="lblLabourCost" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>

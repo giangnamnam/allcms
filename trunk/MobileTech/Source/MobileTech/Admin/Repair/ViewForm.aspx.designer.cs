@@ -140,22 +140,31 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.Label lblNB;
         
         /// <summary>
-        /// radioMemoryCard control.
+        /// lblMemoryCardY control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radioMemoryCard;
+        protected global::System.Web.UI.WebControls.Label lblMemoryCardY;
         
         /// <summary>
-        /// radioExteriorCondition control.
+        /// lblMemoryCardN control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList radioExteriorCondition;
+        protected global::System.Web.UI.WebControls.Label lblMemoryCardN;
+        
+        /// <summary>
+        /// lblExteriorCondition control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblExteriorCondition;
         
         /// <summary>
         /// lblLabourCost control.
