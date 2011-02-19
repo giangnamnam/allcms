@@ -46,7 +46,7 @@
                         </td>
                         <td align="right">
                             Staff Name:
-                            <asp:Label ID="lblStaffName" runat="server"></asp:Label>
+                            <asp:Label ID="lblStaffName" runat="server" Font-Bold="true"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -60,15 +60,15 @@
                                 <tr>
                                     <td>
                                         Name:
-                                        <asp:Label ID="lblCusName" runat="server"></asp:Label>
+                                        <asp:Label ID="lblCusName" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                     <td>
-                                        Date:<asp:Label ID="lblCusDate" runat="server"></asp:Label>
+                                        Date:<asp:Label ID="lblCusDate" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        Contact:<asp:Label ID="lblCusContact" runat="server"></asp:Label>
+                                        Contact:<asp:Label ID="lblCusContact" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                     <td>
                                     </td>
@@ -90,19 +90,20 @@
                             <table width="100%" border="1">
                                 <tr>
                                     <td>
-                                        Model:<asp:Label ID="lblProductModel" runat="server"></asp:Label>
+                                        Model:<asp:Label ID="lblProductModel" runat="server" Font-Bold="true" Width="150px"></asp:Label>
+                                        
                                         Colour:
-                                        <asp:Label ID="lblProductColour" runat="server"></asp:Label>
+                                        <asp:Label ID="lblProductColour" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                     <td>
                                         IMEI:
-                                        <asp:Label ID="lblProductIMEI" runat="server"></asp:Label>
+                                        <asp:Label ID="lblProductIMEI" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" valign="top">
                                         Fault Report:
-                                        <asp:Label ID="lblProductFaultReport" runat="server"></asp:Label>
+                                        <asp:Label ID="lblProductFaultReport" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -112,17 +113,17 @@
                                                 <td align="center">
                                                     No Sim
                                                     <br />
-                                                    <asp:CheckBox ID="chkNoSim" runat="server" />
+                                                    <asp:CheckBox ID="chkNoSim" runat="server" Font-Bold="true"/>
                                                 </td>
                                                 <td align="center">
                                                     WB
                                                     <br />
-                                                    <asp:Label ID="lblWB" runat="server"></asp:Label>
+                                                    <asp:Label ID="lblWB" runat="server" Font-Bold="true"></asp:Label>
                                                 </td>
                                                 <td align="center">
                                                     NB
                                                     <br />
-                                                    <asp:Label ID="lblNB" runat="server"></asp:Label>
+                                                    <asp:Label ID="lblNB" runat="server" Font-Bold="true"></asp:Label>
                                                 </td>
                                                 <td align="center">
                                                     Memory Card
@@ -162,7 +163,7 @@
                                         Labour Cost:
                                     </td>
                                     <td>
-                                        $<asp:Label ID="lblLabourCost" runat="server"></asp:Label>
+                                        $<asp:Label ID="lblLabourCost" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -170,7 +171,7 @@
                                         Parts Code:
                                     </td>
                                     <td>
-                                        $<asp:Label ID="lblPartsCode" runat="server"></asp:Label>
+                                        $<asp:Label ID="lblPartsCode" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -178,7 +179,7 @@
                                         Total including GST (Go ahead & Confirmed)
                                     </td>
                                     <td>
-                                        $<asp:Label ID="lblTotalIncludingGST" runat="server"></asp:Label>
+                                        $<asp:Label ID="lblTotalIncludingGST" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                             </table>

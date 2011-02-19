@@ -113,7 +113,7 @@ namespace MobileTech.Admin.Repair
 
                 txtCusName.Text = repair.CustomerName;
                 if (repair.CustomerDate.HasValue)
-                    txtCusDate.Value = repair.CustomerDate.Value.ToShortDateString();
+                    txtCusDate.Value = repair.CustomerDate.Value.ToString("dd-MM-yyyy");
                 txtCusContact.Text = repair.CustomerContact;
 
                 txtProductModel.Text = repair.ProductModel;
@@ -230,7 +230,11 @@ namespace MobileTech.Admin.Repair
 
                     repair.CustomerName = txtCusName.Text;
                     if (txtCusDate.Value.Length > 0)
-                        repair.CustomerDate = DateTime.Parse(txtCusDate.Value);
+                    {
+                        string[] date = txtCusDate.Value.Split('-');
+                        repair.CustomerDate = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+
+                    }
                     repair.CustomerContact = txtCusContact.Text;
 
                     repair.ProductModel = txtProductModel.Text;
@@ -272,7 +276,11 @@ namespace MobileTech.Admin.Repair
 
                         repair.CustomerName = txtCusName.Text;
                         if (txtCusDate.Value.Length > 0)
-                            repair.CustomerDate = DateTime.Parse(txtCusDate.Value);
+                        {
+                            string[] date = txtCusDate.Value.Split('-');
+                            repair.CustomerDate = new DateTime(int.Parse(date[2]),int.Parse(date[1]),int.Parse(date[0]));
+
+                        }
                         repair.CustomerContact = txtCusContact.Text;
 
                         repair.ProductModel = txtProductModel.Text;
