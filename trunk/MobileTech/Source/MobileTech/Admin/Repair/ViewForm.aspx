@@ -206,6 +206,27 @@
                             </asp:CheckBoxList>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="2" style="height:10px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="background-color:Silver; height:20px;">
+                            <strong style="color:White">Terms & Conditions</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                             <ol>
+                                 <li>
+                                    1. All phones carry an inspection fee of $20 non-refundable at the time of book-in. 3 months warranty provided for the repaired parts only; but not
+                                    including physical or liquid damage. We accept no responsibility for any other existing problems.
+                                    
+                                        </li>
+                                        <li>2. All information in the phone will be lost due </li>
+                                    </ol>
+                         </td>
+                     </tr>
                 </table>
             </asp:Panel>
         </div>
