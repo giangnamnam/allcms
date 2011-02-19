@@ -14,7 +14,8 @@ namespace MobileTech.Admin.Repair
         {
             if (!IsPostBack)
             {
-                int id = 0;
+                int id = 5;
+                SetValue(id);
                 if (Session["CurrentID"] != null)
                 {
                     int.TryParse(Session["CurrentID"].ToString(), out id);

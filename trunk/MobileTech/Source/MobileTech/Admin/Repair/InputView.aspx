@@ -272,9 +272,11 @@
             if (mm < 10) { mm = '0' + mm }
             return dd + '-' + mm + '-' + yyyy;
         }
-        var cusDate = document.aspnetForm.ctl00_ContentPlaceHolder1_txtCusDate;
-        cusDate.value = GetDate();
 
+        var cusDate = document.aspnetForm.ctl00_ContentPlaceHolder1_txtCusDate;
+        if (cusDate.value == null) {
+            cusDate.value = GetDate();
+        }
         //For Calendar
         document.onmousedown = function(e) {
             var n = !e ? self.event.srcElement.name : e.target.name;
