@@ -944,6 +944,7 @@
     <Content Include="Images\title.png" />
     <Content Include="Ipad.aspx" />
     <Content Include="menu.css" />
+    <Content Include="Calendar\normal_vn.js" />
     <Content Include="Plans.aspx" />
     <Content Include="Repair.aspx" />
     <Content Include="RepairList.aspx" />

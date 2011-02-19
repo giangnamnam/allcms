@@ -12,10 +12,8 @@ var gPosOffset=[0,0];	// Offsets used to adjust the pop-up postion, [leftOffset,
 var gbFixedPos=false;	// true: pop the calendar absolutely at gPosOffset; false: pop it relatively.
 
 // ---- Common Options ----
-//var gMonths=["Th&#225;ng 01","Th&#225;ng 02","Th&#225;ng 03","Th&#225;ng 04","Th&#225;ng 05","Th&#225;ng 06","Th&#225;ng 07","Th&#225;ng 08","Th&#225;ng 09","Th&#225;ng 10","Th&#225;ng 11","Th&#225;ng 12"];
-var gMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-//var gWeekDay=["CN","Hai","Ba","T&#432;","N&#259;m","S&#225;u","B&#7843;y"];	// weekday caption from Sunday to Saturday
-var gWeekDay = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]; // weekday caption from Sunday to Saturday
+var gMonths=["Th&#225;ng 01","Th&#225;ng 02","Th&#225;ng 03","Th&#225;ng 04","Th&#225;ng 05","Th&#225;ng 06","Th&#225;ng 07","Th&#225;ng 08","Th&#225;ng 09","Th&#225;ng 10","Th&#225;ng 11","Th&#225;ng 12"];
+var gWeekDay=["CN","Hai","Ba","T&#432;","N&#259;m","S&#225;u","B&#7843;y"];	// weekday caption from Sunday to Saturday
 var curDate = new Date();
 
 var gBegin=[1900,1,1];	// static calendar range begin from [Year,Month,Date]
@@ -41,8 +39,7 @@ var gsNavPrev="<INPUT type='button' value='&lt;' class='MonthNav' onclick='fPrev
 var gsNavNext="<INPUT type='button' value='&gt;' class='MonthNav' onclick='fNextMonth();this.blur();'>";	// the content of the right month navigator
 
 var gbHideBottom=false;	// true: hide the bottom section; false: show it with gsBottom.
-//var gsBottom="<A href='javascript:void(0)' class='Today' onclick='if(!NN4)this.blur();if(!fSetDate(gToday[0],gToday[1],gToday[2]))alert(\"You may not pick this day!\");return false;' onmouseover='return true;' title='Ng&#224;y h&#244;m nay'>H&#244;m nay : "+gToday[2]+" - "+gMonths[gToday[1]-1]+" - "+gToday[0]+"</A>";	// the content of the bottom section.
-var gsBottom = "<A href='javascript:void(0)' class='Today' onclick='if(!NN4)this.blur();if(!fSetDate(gToday[0],gToday[1],gToday[2]))alert(\"You may not pick this day!\");return false;' onmouseover='return true;' title='Today'>Today is " + gToday[2] + " " + gMonths[gToday[1] - 1] + ", " + gToday[0] + "</A>"; // the content of the bottom section.
+var gsBottom="<A href='javascript:void(0)' class='Today' onclick='if(!NN4)this.blur();if(!fSetDate(gToday[0],gToday[1],gToday[2]))alert(\"You may not pick this day!\");return false;' onmouseover='return true;' title='Ng&#224;y h&#244;m nay'>H&#244;m nay : "+gToday[2]+" - "+gMonths[gToday[1]-1]+" - "+gToday[0]+"</A>";	// the content of the bottom section.
 
 var giCellWidth=18;	// calendar cell width;
 var giCellHeight=14;	// calendar cell height;
