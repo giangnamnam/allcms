@@ -493,6 +493,12 @@
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIGlitz.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\Atlas\Release\AtlasUIMap.js" />
     <Content Include="Admin\UserManagement\ScriptLibrary\TextChangedBehavior.js" />
+    <Content Include="Calendar\agenda.js" />
+    <Content Include="Calendar\calbtn.gif" />
+    <Content Include="Calendar\ipopeng.htm" />
+    <Content Include="Calendar\normal.css" />
+    <Content Include="Calendar\normal.js" />
+    <Content Include="Calendar\plugins.js" />
     <Content Include="Contact.aspx" />
     <Content Include="FCKeditor\editor\css\behaviors\disablehandles.htc" />
     <Content Include="FCKeditor\editor\css\behaviors\hiddenfield.gif" />
