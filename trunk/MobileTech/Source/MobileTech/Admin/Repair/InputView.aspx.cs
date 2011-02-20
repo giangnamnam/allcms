@@ -35,6 +35,7 @@ namespace MobileTech.Admin.Repair
 
         protected void chkPartsFixed_Init(object sender, EventArgs e)
         {
+            
             chkPartsFixed.Items.Add(new ListItem("LCD", "LCD"));
             chkPartsFixed.Items.Add(new ListItem("Ribbon", "Ribbon"));
             chkPartsFixed.Items.Add(new ListItem("Connector", "Connector"));
