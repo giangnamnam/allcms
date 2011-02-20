@@ -202,8 +202,15 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:CheckBoxList ID="chkPartsFixed" runat="server" RepeatColumns="7" RepeatDirection="Horizontal">
+                            <asp:CheckBoxList ID="chkPartsFixed" runat="server"  OnInit="chkPartsFixed_Init" RepeatColumns="7" RepeatDirection="Horizontal">
                             </asp:CheckBoxList>
+                            <br />
+                            Others:
+                             <input id="Text6" type="text" style=" width:100%; border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                             <br />
+                             <input id="Text7" type="text" style=" width:100%; border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
                         </td>
                     </tr>
                     <tr>
@@ -219,14 +226,87 @@
                         <td colspan="2">
                              <ol>
                                  <li>
-                                    1. All phones carry an inspection fee of $20 non-refundable at the time of book-in. 3 months warranty provided for the repaired parts only; but not
+                                    All phones carry an inspection fee of $20 non-refundable at the time of book-in. 3 months warranty provided for the repaired parts only; but not
                                     including physical or liquid damage. We accept no responsibility for any other existing problems.
-                                    
-                                        </li>
-                                        <li>2. All information in the phone will be lost due </li>
-                                    </ol>
-                         </td>
-                     </tr>
+                                
+                                
+                                </li>
+                                <li>All information in the phone will be lost due to repairs or unlock, and customers
+                                    take the responsibility of the 5% risk that phone can not be powered on after repair.</li>
+                                <li>It is the customer's own responsibility to back up any infomation saved onto
+                                    the phone such as phone numbers, pictures, messages, music etc since any data loss
+                                    can not be retrieved.</li>
+                                <li>All phone repairs will void manufacturer's original 12 month warranty.</li>
+                                <li>The Uncollected goods Act 1995 give us the right to recycle un collected goods
+                                    30 days from written notification to pick-up as Mobile Tech.</li>
+                                <li>Warranty repairs for Mobile Tech will only be undertaken if the original tax
+                                    invoice is provide as proof of purchase for that repair. Network unlocks only means
+                                    the Pre-Paid mobile phone can use different Sim Cards. Security unlocks are Personal
+                                    code unlocks only. We cannot unlock call-barring. If the phone been blocked or restricted
+                                    by network, owner should le us know about that and contact police. After GMS hand-set
+                                    unlocked, 3G Sim can not be actived in that.</li>
+                                <li>We don't normally give refunds if you simply change your mind or make a wrong
+                                    selection.</li>
+                                <li>Lost of the orginal agreement will hold the customer responsible for the lost
+                                    of their handset.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-size:14px">
+                            I, the undersigned, have read, fully understood and accept the Terms & Conditions
+                            relating to my request for any Repairs performed, in signing thie document.
+                            <br />
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        Name:
+                                    </td>
+                                    <td>
+                                        <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                                    </td>
+                                    <td>
+                                        Signature:
+                                    </td>
+                                    <td>
+                                        <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                                    </td>
+                                    <td>
+                                        Date:
+                                    </td>
+                                    <td>
+                                        <input id="Text3" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            Mobile Tech accept non-responsibility for other coming up problems. Mobile Tech
+                            provide 3 months warranty for The repaired parts only, but no including the physical
+                            or liquid damage.
+                            <br />
+                            <table width="100%">
+                                <tr>
+                                    <td style="width:400px">
+                                        Customer signature for phone pickup and satisfaction:
+                                    </td>
+                                    <td>
+                                        <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                                    </td>
+                                    <td>
+                                        Date:
+                                    </td>
+                                    <td>
+                                        <input id="Text5" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width: medium" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
                 </table>
             </asp:Panel>
         </div>
