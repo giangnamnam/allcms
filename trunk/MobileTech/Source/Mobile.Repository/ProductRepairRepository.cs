@@ -33,7 +33,7 @@ namespace Mobile.Repository
         {
             IQuery query = Session.CreateQuery("Select Max(ID) from ProductRepair");
             if (query.List().Count > 0)
-                return string.Format("{0:0000}", (int)query.List()[0] + 1);
+                return string.Format("{0:0000000000}", (int)query.List()[0] + 1);
             else
                 return "0001";
         }

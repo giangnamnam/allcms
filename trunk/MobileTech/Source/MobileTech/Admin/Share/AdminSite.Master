@@ -22,13 +22,13 @@
                 <!-- Use the "active" class for the active menu item  -->
                 <%--<li><a href="../Product/" class="active">Product</a></li>--%>
                 <li><a href="../Repair" class="active">Repair</a></li>
-                <li><a href="../Service">Service</a></li>
-                <li><a href="../Accessories">Accessories</a></li>
-                <li><a href="../Contact">Contact</a></li>
+                <li><a id="menuService" runat="server" href="../Service">Service</a></li>
+                <li><a id="menuAccessories" runat="server" href="../Accessories">Accessories</a></li>
+                <li><a id="menuContact" runat="server" href="../Contact">Contact</a></li>
                 <li>
-                    <a href="../SiteManagement">Site</a>
+                    <a id="menuSite" runat="server" href="../SiteManagement">Site</a>
                 </li>
-                <li><a href="../UserManagement/UserList.aspx">User</a></li>
+                <li><a id="menuUser" runat="server" href="../UserManagement/UserList.aspx">User</a></li>
                 <li><a href="../UserManagement/ChangePassword.aspx">Change Password</a></li>
                 <li class="logout">
                     <asp:HyperLink ID="hplLogout" runat="server" NavigateUrl="~/Admin/Logout.aspx" ForeColor="YellowGreen">Logout</asp:HyperLink>

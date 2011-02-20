@@ -15,9 +15,14 @@ namespace MobileTech.Admin.Repair
         {
             if (!IsPostBack)
             {
-                int id = 5;
-                SetValue(id);
-                if (Session["CurrentID"] != null)
+                int id = 0;
+                string temp = Request.QueryString["ID"];
+                if (temp != null && temp != string.Empty)
+                {
+                    int.TryParse(temp, out id);
+                    SetValue(id);
+                }
+                else if (Session["CurrentID"] != null)
                 {
                     int.TryParse(Session["CurrentID"].ToString(), out id);
                     SetValue(id);

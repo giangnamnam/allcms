@@ -41,6 +41,51 @@ namespace MobileTech.Admin.Share {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmSubmit;
         
         /// <summary>
+        /// menuService control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuService;
+        
+        /// <summary>
+        /// menuAccessories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuAccessories;
+        
+        /// <summary>
+        /// menuContact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuContact;
+        
+        /// <summary>
+        /// menuSite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuSite;
+        
+        /// <summary>
+        /// menuUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor menuUser;
+        
+        /// <summary>
         /// hplLogout control.
         /// </summary>
         /// <remarks>

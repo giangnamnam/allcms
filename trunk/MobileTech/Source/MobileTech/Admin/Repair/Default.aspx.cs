@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mobile.Common;
+using Mobile.DomainObjects;
 
 namespace MobileTech.Admin.Repair
 {
@@ -19,7 +20,7 @@ namespace MobileTech.Admin.Repair
 
         void BindingData()
         {
-            int? status=0;
+            int? status = 0;
             ProductRepairStatus enumStatus = (ProductRepairStatus)Enum.Parse(typeof(ProductRepairStatus), ddlStatus.SelectedValue);
             //if (enumStatus != null)
             {
@@ -39,7 +40,7 @@ namespace MobileTech.Admin.Repair
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -62,6 +63,21 @@ namespace MobileTech.Admin.Repair
         protected void gridProduct_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
 
+
+        }
+
+        protected void gridProduct_ItemCreated(object sender, DataGridItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor= 'lightgreen';");
+                e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor= 'white';");
+                e.Item.Attributes["onclick"] = "window.open('ViewForm.aspx?ID=" + (e.Item.DataItem as ProductRepair).ID + "')";
+            }
+        }
+
+        protected void gridProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
