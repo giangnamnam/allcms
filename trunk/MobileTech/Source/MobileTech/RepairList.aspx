@@ -43,7 +43,8 @@
                             </table>
                             <asp:GridView ID="grvProductList" runat="server" AllowPaging="True" AllowSorting="True"
                                 AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None"
-                                BorderWidth="1px" CellPadding="3" Width="100%" GridLines="Vertical">
+                                BorderWidth="1px" CellPadding="3" Width="100%" GridLines="Vertical" 
+                                onrowcreated="grvProductList_RowCreated">
                                 <RowStyle ForeColor="Black" BackColor="#EEEEEE" />
                                 <Columns>
                                     <asp:BoundField DataField="RepairNo" HeaderText="RepairNo"></asp:BoundField>

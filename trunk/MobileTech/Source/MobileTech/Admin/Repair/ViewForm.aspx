@@ -5,11 +5,21 @@
 <head runat="server">
     <title>View Form</title>
     <link href="../Styles/css/transdmin.css" rel="Stylesheet" type="text/css" media="screen" />
+    <!-- the button itself will not print  -->
+<style type="text/css">
+    @media print {
+    input.noPrint { display: none; }
+    }
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div align="center">
         <div id="wrapper">
+ 
+<!-- Print Button  -->
+<input class="noPrint" type="button" value="Print This Page" onclick="window.print()" />
+        
             <asp:Panel ID="pnlAdd" Width="100%" runat="server">
                 <table width="1024px" border="0">
                     <tr>
@@ -26,7 +36,7 @@
                                     </td>
                                     <td style="width: 25%">
                                         <span style="font-weight: bold; font-size: 24px">No:</span>
-                                        <asp:Label ID="lblRepairNo" runat="server" Font-Size="24" ForeColor="Red"></asp:Label>
+                                        <asp:Label ID="lblRepairNo" runat="server" Font-Size="20" ForeColor="Red"></asp:Label>
                                         <br />
                                         <br />
                                         <span style="font-size: 16px">Rockingham<br />
@@ -57,8 +67,8 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="background-color: Silver; height: 20px;">
-                            <strong style="color: White">Customer Information </strong>
+                        <td colspan="2" align="left" style="background-color:Silver; height: 20px;">
+                            <strong style="color: White"> Customer Information</strong>
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +98,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="background-color: Silver; height: 20px;">
+                        <td colspan="2" align="left" style="background-color: Silver; height: 20px;">
                             <strong style="color: White">Product Information </strong>
                         </td>
                     </tr>
@@ -157,7 +167,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="background-color: Silver; height: 20px;">
+                        <td colspan="2" align="left" style="background-color: Silver; height: 20px;">
                             <strong style="color: White">Memo</strong>
                         </td>
                     </tr>
@@ -196,7 +206,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="background-color: Silver; height: 20px;">
+                        <td colspan="2" align="left" style="background-color: Silver; height: 20px;">
                             <strong style="color: White">Parts Fixed</strong>
                         </td>
                     </tr>
@@ -218,7 +228,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="background-color:Silver; height:20px;">
+                        <td colspan="2" align="left" style="background-color:Silver; height:20px;">
                             <strong style="color:White">Terms & Conditions</strong>
                         </td>
                     </tr>
@@ -230,30 +240,31 @@
                                     including physical or liquid damage. We accept no responsibility for any other existing problems.
                                 
                                 
+                                
+                                
                                 </li>
                                 <li>All information in the phone will be lost due to repairs or unlock, and customers
                                     take the responsibility of the 5% risk that phone can not be powered on after repair.</li>
-                                <li>It is the customer's own responsibility to back up any infomation saved onto
-                                    the phone such as phone numbers, pictures, messages, music etc since any data loss
-                                    can not be retrieved.</li>
+                                <li>It is the customer's own responsibility to back up any infomation saved onto the
+                                    phone such as phone numbers, pictures, messages, music etc since any data loss can
+                                    not be retrieved.</li>
                                 <li>All phone repairs will void manufacturer's original 12 month warranty.</li>
-                                <li>The Uncollected goods Act 1995 give us the right to recycle un collected goods
-                                    30 days from written notification to pick-up as Mobile Tech.</li>
-                                <li>Warranty repairs for Mobile Tech will only be undertaken if the original tax
-                                    invoice is provide as proof of purchase for that repair. Network unlocks only means
-                                    the Pre-Paid mobile phone can use different Sim Cards. Security unlocks are Personal
+                                <li>The Uncollected goods Act 1995 give us the right to recycle un collected goods 30
+                                    days from written notification to pick-up as Mobile Tech.</li>
+                                <li>Warranty repairs for Mobile Tech will only be undertaken if the original tax invoice
+                                    is provide as proof of purchase for that repair. Network unlocks only means the
+                                    Pre-Paid mobile phone can use different Sim Cards. Security unlocks are Personal
                                     code unlocks only. We cannot unlock call-barring. If the phone been blocked or restricted
                                     by network, owner should le us know about that and contact police. After GMS hand-set
                                     unlocked, 3G Sim can not be actived in that.</li>
-                                <li>We don't normally give refunds if you simply change your mind or make a wrong
-                                    selection.</li>
-                                <li>Lost of the orginal agreement will hold the customer responsible for the lost
-                                    of their handset.</li>
+                                <li>We don't normally give refunds if you simply change your mind or make a wrong selection.</li>
+                                <li>Lost of the orginal agreement will hold the customer responsible for the lost of
+                                    their handset.</li>
                             </ol>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-size:14px">
+                        <td colspan="2" style="font-size: 14px">
                             I, the undersigned, have read, fully understood and accept the Terms & Conditions
                             relating to my request for any Repairs performed, in signing thie document.
                             <br />
@@ -289,7 +300,7 @@
                             <br />
                             <table width="100%">
                                 <tr>
-                                    <td style="width:400px">
+                                    <td style="width: 400px">
                                         Customer signature for phone pickup and satisfaction:
                                     </td>
                                     <td>

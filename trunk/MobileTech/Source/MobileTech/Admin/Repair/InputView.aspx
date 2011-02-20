@@ -48,8 +48,8 @@
                             </td>
                             <td style="width: 25%">
                                 <span style="font-weight: bold; font-size: 24px">No:</span>
-                                <asp:TextBox ID="txtRepairNo" runat="server" ReadOnly="true" Font-Size="24" ForeColor="Red"
-                                    Width="80"></asp:TextBox>
+                                <asp:TextBox ID="txtRepairNo" runat="server" ReadOnly="true" Font-Size="20" ForeColor="Red"
+                                    Width="180"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
                                     ControlToValidate="txtRepairNo"></asp:RequiredFieldValidator>
                                 <br />

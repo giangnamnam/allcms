@@ -57,7 +57,9 @@
         <asp:DataGrid ID="gridProduct" runat="server" Width="100%" AllowPaging="True" AutoGenerateColumns="False"
             BorderColor="#3366CC" BorderWidth="1px" BackColor="White" CellPadding="4" OnEditCommand="gridProduct_EditCommand"
             OnPageIndexChanged="gridProduct_PageIndexChanged" OnItemDataBound="gridProduct_ItemDataBound"
-            AllowCustomPaging="True" BorderStyle="None">
+            AllowCustomPaging="True" BorderStyle="None" 
+            onitemcreated="gridProduct_ItemCreated" 
+            onselectedindexchanged="gridProduct_SelectedIndexChanged">
             <SelectedItemStyle ForeColor="#CCFF99" BackColor="#009999" Font-Bold="True"></SelectedItemStyle>
             <HeaderStyle Font-Bold="True" BackColor="#003399" ForeColor="#CCCCFF"></HeaderStyle>
             <FooterStyle BackColor="#99CCCC" ForeColor="#003399"></FooterStyle>

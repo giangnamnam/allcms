@@ -20,5 +20,14 @@ namespace MobileTech
             grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, txtRepairNo.Text, null);
             grvProductList.DataBind();
         }
+
+        protected void grvProductList_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow || e.Row.RowType == DataControlRowType.EmptyDataRow)
+            {
+                e.Row.Attributes.Add("onmouseover", "this.style.backgroundColor= 'lightgreen';");
+                e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor= 'white';");
+            }
+        }
     }
 }
