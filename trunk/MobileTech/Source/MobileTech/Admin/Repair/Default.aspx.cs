@@ -72,7 +72,10 @@ namespace MobileTech.Admin.Repair
             {
                 e.Item.Attributes.Add("onmouseover", "this.style.backgroundColor= 'lightgreen';");
                 e.Item.Attributes.Add("onmouseout", "this.style.backgroundColor= 'white';");
-                e.Item.Attributes["onclick"] = "window.open('ViewForm.aspx?ID=" + (e.Item.DataItem as ProductRepair).ID + "')";
+                if (e.Item.DataItem != null)
+                {
+                    e.Item.Attributes["ondblclick"] = "window.open('ViewForm.aspx?ID=" + (e.Item.DataItem as ProductRepair).ID + "')";
+                }
             }
         }
 

@@ -4,17 +4,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div id="sidebar">
+    <%--<div id="sidebar">
         <ul class="sideNav">
             <li><a id="A1" href="Default.aspx" class="active" runat="server">Search Repair</a></li>
             <li><a id="A2" href="InputView.aspx" runat="server">Input View</a></li>
         </ul>
     </div>
-    <br />
+    <br />--%>
     <div>
         <table>
             <tr>
-                <td style="width:100px">
+                <td style="width:100px" >
                     
                 </td>
                 <td style="width:50px">

@@ -21,7 +21,8 @@
             <ul id="mainNav">
                 <!-- Use the "active" class for the active menu item  -->
                 <%--<li><a href="../Product/" class="active">Product</a></li>--%>
-                <li><a href="../Repair" class="active">Repair</a></li>
+                <li><a id="menuSearchRepair" href="../Repair" class="active">Search Repair</a></li>
+                <li><a id="menuInputView" href="../Repair/InputView.aspx" class="active">Input View</a></li>
                 <li><a id="menuService" runat="server" href="../Service">Service</a></li>
                 <li><a id="menuAccessories" runat="server" href="../Accessories">Accessories</a></li>
                 <li><a id="menuContact" runat="server" href="../Contact">Contact</a></li>

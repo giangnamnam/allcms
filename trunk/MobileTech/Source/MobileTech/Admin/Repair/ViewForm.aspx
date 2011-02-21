@@ -18,7 +18,7 @@
         <div id="wrapper">
  
 <!-- Print Button  -->
-<input class="noPrint" type="button" value="Print This Page" onclick="window.print()" />
+<input class="noPrint" style="color:Red" type="button" value="Print This Page" onclick="window.print()" />
         
             <asp:Panel ID="pnlAdd" Width="100%" runat="server">
                 <table width="1024px" border="0">
@@ -216,11 +216,12 @@
                             </asp:CheckBoxList>
                             <br />
                             Others:
-                             <input id="Text6" type="text" style=" width:100%; border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                             <input id="Text8" type="text" style="width:100%; border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                             
                              <br />
-                             <input id="Text7" type="text" style=" width:100%; border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                             <input id="Text6" type="text" style="width:100%; border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                         </td>
                     </tr>
                     <tr>
@@ -274,22 +275,22 @@
                                         Name:
                                     </td>
                                     <td>
-                                        <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                                         <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                                     </td>
                                     <td>
                                         Signature:
                                     </td>
                                     <td>
                                         <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                                     </td>
                                     <td>
                                         Date:
                                     </td>
                                     <td>
                                         <input id="Text3" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                                     </td>
                                 </tr>
                             </table>
@@ -303,16 +304,16 @@
                                     <td style="width: 400px">
                                         Customer signature for phone pickup and satisfaction:
                                     </td>
-                                    <td>
-                                        <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                                    <td style="width: 300px">
+                                         <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                                     </td>
                                     <td>
-                                        Date:
+                                        Date: 
                                     </td>
                                     <td>
-                                        <input id="Text5" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width: medium" />
+                                         <input id="Text5" type="text" style="border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
                                     </td>
                                 </tr>
                             </table>
@@ -320,6 +321,9 @@
                     </tr>
                 </table>
             </asp:Panel>
+            
+            <!-- Print Button  -->
+<input class="noPrint" style="color:Red" type="button" value="Print This Page" onclick="window.print()" />
         </div>
     </div>
     </form>
