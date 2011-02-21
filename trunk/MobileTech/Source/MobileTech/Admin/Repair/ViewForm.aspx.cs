@@ -84,6 +84,7 @@ namespace MobileTech.Admin.Repair
             if (repair.ProductMemoryCard)
             {
                 lblMemoryCardY.Font.Bold = true;
+                lblMemoryCardY.Font.Underline = true;
                 lblMemoryCardY.Font.Size = new FontUnit(14);
             }
             else
@@ -99,7 +100,7 @@ namespace MobileTech.Admin.Repair
                     
                     if (i == int.Parse(repair.ProductExteriorCondition))
                     {
-                        condition.Append(string.Format("   <b>{0}</b>", i));
+                        condition.Append(string.Format("   <span style='font-size:16px; font-weight:bold;'>{0}</span>", i));
                     }
                     else condition.Append("   " + i.ToString());
                 }
