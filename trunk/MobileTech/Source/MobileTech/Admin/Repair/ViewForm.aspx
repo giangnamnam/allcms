@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>View Form</title>
-    <link href="../Styles/css/transdmin.css" rel="Stylesheet" type="text/css" media="screen" />
+    <link href="../Styles/css/transdmin.css" rel="Stylesheet" type="text/css"  media="all"/>
     <!-- the button itself will not print  -->
 <style type="text/css">
     @media print {
@@ -21,7 +21,7 @@
 <input class="noPrint" style="color:Red" type="button" value="Print This Page" onclick="window.print()" />
         
             <asp:Panel ID="pnlAdd" Width="100%" runat="server">
-                <table width="1024px" border="0">
+                <table width="630px" border="0">
                     <tr>
                         <td colspan="2">
                             <table width="100%" border="0">
@@ -32,7 +32,7 @@
                                     <td align="center">
                                         <span style="font-weight: bold; font-size: 52px">Mobile Tech</span>
                                         <hr />
-                                        <span style="font-weight: bold; font-size: 24px">PLANs, CONNECTION & REPAIRS</span>
+                                        <span style="font-weight: bold; font-size: 16px">PLANs, CONNECTION & REPAIRS</span>
                                     </td>
                                     <td style="width: 25%">
                                         <span style="font-weight: bold; font-size: 24px">No:</span>
@@ -60,7 +60,7 @@
                                     <td style="width:50%">
                                     </td>
                                     <td>
-                                        Staff Name: <asp:Label ID="lblStaffName" runat="server" Font-Bold="true" Width="400"></asp:Label>
+                                        Staff Name: <asp:Label ID="lblStaffName" runat="server" Font-Bold="true" Width="200"></asp:Label>
                                     </td>
                                 </tr>
                             </table>
@@ -75,17 +75,17 @@
                         <td colspan="2">
                             <table width="100%" border="1">
                                 <tr>
-                                    <td>
-                                        Name:
+                                    <td style="width:50%">
+                                        Name:&nbsp;&nbsp;&nbsp;
                                         <asp:Label ID="lblCusName" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
-                                    <td>
-                                        Date:<asp:Label ID="lblCusDate" runat="server" Font-Bold="true"></asp:Label>
+                                    <td style="width:50%">
+                                        Date:&nbsp; <asp:Label ID="lblCusDate" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        Contact:<asp:Label ID="lblCusContact" runat="server" Font-Bold="true"></asp:Label>
+                                        Contact: <asp:Label ID="lblCusContact" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                     <td>
                                     </td>
@@ -107,20 +107,20 @@
                             <table width="100%" border="1">
                                 <tr>
                                     <td>
-                                        Model:<asp:Label ID="lblProductModel" runat="server" Font-Bold="true" Width="150px"></asp:Label>
-                                        
-                                        Colour:
+                                        Model:&nbsp;
+                                        <asp:Label ID="lblProductModel" runat="server" Font-Bold="true" Width="150px"></asp:Label>
+                                        Colour:&nbsp;&nbsp;
                                         <asp:Label ID="lblProductColour" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                     <td>
-                                        IMEI:
+                                        IMEI:&nbsp;&nbsp;
                                         <asp:Label ID="lblProductIMEI" runat="server" Font-Bold="true"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" valign="top">
                                         Fault Report:
-                                        <asp:Label ID="lblProductFaultReport" runat="server" Font-Bold="true" Height="50"></asp:Label>
+                                        <asp:Label ID="lblProductFaultReport" runat="server" Height="20"></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -150,7 +150,7 @@
                                                     <asp:Label ID="lblMemoryCardN" runat="server" Text="N"></asp:Label>
                                                     
                                                 </td>
-                                                <td align="center" style="width: 50%">
+                                                <td align="center" style="width: 50%;">
                                                     Exterior Condition: (New > Total Damaged)
                                                     <br />
                                                     <label id="lblExteriorCondition" runat="server"></label>
@@ -212,16 +212,16 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <asp:CheckBoxList ID="chkPartsFixed" runat="server"  OnInit="chkPartsFixed_Init" RepeatColumns="7" RepeatDirection="Horizontal">
+                            <asp:CheckBoxList ID="chkPartsFixed" runat="server"  OnInit="chkPartsFixed_Init" RepeatColumns="5" RepeatDirection="Horizontal">
                             </asp:CheckBoxList>
-                            <br />
+                            
                             Others:
-                             <input id="Text8" type="text" style="width:100%; border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                             <input id="Text8" type="text" style="width:80%; border-left-style: none; border-right-style: none;
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                              
-                             <br />
+                             <%--<br />
                              <input id="Text6" type="text" style="width:100%; border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />--%>
                         </td>
                     </tr>
                     <tr>
@@ -234,38 +234,38 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                             <ol>
-                                 <li>
-                                    All phones carry an inspection fee of $20 non-refundable at the time of book-in. 3 months warranty provided for the repaired parts only; but not
+                        <td colspan="2" align="left">
+                            <b>1. </b> All phones carry an inspection fee of $20 non-refundable at the time of book-in. 3 months warranty provided for the repaired parts only; but not
                                     including physical or liquid damage. We accept no responsibility for any other existing problems.
-                                
-                                
-                                
-                                
-                                </li>
-                                <li>All information in the phone will be lost due to repairs or unlock, and customers
-                                    take the responsibility of the 5% risk that phone can not be powered on after repair.</li>
-                                <li>It is the customer's own responsibility to back up any infomation saved onto the
+                                    <br />
+                            <b>2. </b>  All information in the phone will be lost due to repairs or unlock, and customers
+                                    take the responsibility of the 5% risk that phone can not be powered on after repair.
+                                    <br />
+                            <b>3. </b>  It is the customer's own responsibility to back up any infomation saved onto the
                                     phone such as phone numbers, pictures, messages, music etc since any data loss can
-                                    not be retrieved.</li>
-                                <li>All phone repairs will void manufacturer's original 12 month warranty.</li>
-                                <li>The Uncollected goods Act 1995 give us the right to recycle un collected goods 30
-                                    days from written notification to pick-up as Mobile Tech.</li>
-                                <li>Warranty repairs for Mobile Tech will only be undertaken if the original tax invoice
+                                    not be retrieved.
+                                    <br />
+                            <b>4. </b>  All phone repairs will void manufacturer's original 12 month warranty.
+                                    <br />
+                            <b>5. </b>  The Uncollected goods Act 1995 give us the right to recycle un collected goods 30
+                                    days from written notification to pick-up as Mobile Tech.
+                                    <br />
+                            <b>6. </b>  Warranty repairs for Mobile Tech will only be undertaken if the original tax invoice
                                     is provide as proof of purchase for that repair. Network unlocks only means the
                                     Pre-Paid mobile phone can use different Sim Cards. Security unlocks are Personal
                                     code unlocks only. We cannot unlock call-barring. If the phone been blocked or restricted
                                     by network, owner should le us know about that and contact police. After GMS hand-set
-                                    unlocked, 3G Sim can not be actived in that.</li>
-                                <li>We don't normally give refunds if you simply change your mind or make a wrong selection.</li>
-                                <li>Lost of the orginal agreement will hold the customer responsible for the lost of
-                                    their handset.</li>
-                            </ol>
+                                    unlocked, 3G Sim can not be actived in that.
+                                    <br />
+                             <b>7. </b>  We don't normally give refunds if you simply change your mind or make a wrong selection.
+                                    <br />
+                            <b>8. </b>  Lost of the orginal agreement will hold the customer responsible for the lost of
+                                    their handset.
+                                    <br />&nbsp;<br />
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="font-size: 14px">
+                        <td colspan="2" align="left">
                             I, the undersigned, have read, fully understood and accept the Terms & Conditions
                             relating to my request for any Repairs performed, in signing thie document.
                             <br />
@@ -276,21 +276,21 @@
                                     </td>
                                     <td>
                                          <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                                     </td>
                                     <td>
                                         Signature:
                                     </td>
                                     <td>
                                         <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                                     </td>
                                     <td>
                                         Date:
                                     </td>
                                     <td>
                                         <input id="Text3" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                                     </td>
                                 </tr>
                             </table>
@@ -306,14 +306,14 @@
                                     </td>
                                     <td style="width: 300px">
                                          <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                                     </td>
                                     <td>
                                         Date: 
                                     </td>
                                     <td>
                                          <input id="Text5" type="text" style="border-left-style: none; border-right-style: none;
-                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dashed" />
+                                            border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />
                                     </td>
                                 </tr>
                             </table>

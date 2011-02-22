@@ -100,7 +100,7 @@ namespace MobileTech.Admin.Repair
                     
                     if (i == int.Parse(repair.ProductExteriorCondition))
                     {
-                        condition.Append(string.Format("   <span style='font-size:16px; font-weight:bold;'>{0}</span>", i));
+                        condition.Append(string.Format("   <span style='font-size:16px; font-weight:bold; text-decoration: underline;'>{0}</span>", i));
                     }
                     else condition.Append("   " + i.ToString());
                 }
