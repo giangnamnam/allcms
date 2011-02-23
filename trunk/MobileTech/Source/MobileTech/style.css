@@ -133,6 +133,10 @@ body
 {
 	color: #55e546;
 }
+#RepairTracking a:hover, #RepairTracking a.selected
+{
+	color: #55e546;
+}
 #contactMapLink a:hover, #contactMapLink a.selected
 {
 	color: #55e546;
