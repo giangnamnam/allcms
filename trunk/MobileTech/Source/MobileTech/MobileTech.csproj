@@ -356,6 +356,13 @@
     <Compile Include="RepairList.aspx.designer.cs">
       <DependentUpon>RepairList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RepairTracking.aspx.cs">
+      <DependentUpon>RepairTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RepairTracking.aspx.designer.cs">
+      <DependentUpon>RepairTracking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services.aspx.cs">
       <DependentUpon>Services.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -948,6 +955,7 @@
     <Content Include="Plans.aspx" />
     <Content Include="Repair.aspx" />
     <Content Include="RepairList.aspx" />
+    <Content Include="RepairTracking.aspx" />
     <Content Include="reset.css" />
     <Content Include="Services.aspx" />
     <Content Include="style.css" />

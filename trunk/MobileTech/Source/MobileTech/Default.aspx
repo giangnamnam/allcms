@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <table>
+    <table width="100%">
         <tr>
             <td id="image">
                 <img src="Images/h1.png" />
@@ -16,6 +16,16 @@
                 </ul>
                 <div class="re-more" style="height: 22px;">
                     <a href="About.aspx">Read more</a></div>
+                <br />
+                <br />
+                <asp:Panel ID="Panel1" runat="server" DefaultButton="btnTrackItem">
+                    <div id="RepairTracking" class="re-more" style="vertical-align: middle">
+                        
+                        <asp:TextBox ID="txtRepairNo" runat="server" Width="120px"></asp:TextBox>
+                            <br />
+                            <asp:LinkButton ID="btnTrackItem" runat="server" OnClick="btnTrackItem_Click">Track Items</asp:LinkButton>
+                    </div>
+                </asp:Panel>
             </td>
         </tr>
     </table>

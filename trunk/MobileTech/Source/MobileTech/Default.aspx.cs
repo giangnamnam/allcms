@@ -16,5 +16,10 @@ namespace MobileTech
         {
             lblShortAbout.InnerHtml = ProductService.GetSystemConfiguration().ShortAbout;
         }
+
+        protected void btnTrackItem_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RepairTracking.aspx?RepairNo=" + txtRepairNo.Text);
+        }
     }
 }

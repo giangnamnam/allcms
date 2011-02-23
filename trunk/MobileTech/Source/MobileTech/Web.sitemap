@@ -11,5 +11,8 @@
     <siteMapNode url="Unclock.aspx" title="Unclock"  description="Unclock Description" />
     <siteMapNode url="Repair.aspx" title="Repair"  description="Repair Description" />
     <siteMapNode url="Ipad.aspx" title="Ipad"  description="Ipad Description" />
+
+    <siteMapNode url="RepairList.aspx" title="Repair List"  description="Repair List" />
+    <siteMapNode url="RepairTracking.aspx" title="Track Items"  description="Tracking Summary" />
   </siteMapNode>
 </siteMap>

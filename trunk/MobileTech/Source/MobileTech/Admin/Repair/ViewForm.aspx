@@ -14,10 +14,7 @@
                 display: none;
             }
         }
-        .style1
-        {
-            width: 359px;
-        }
+        
     </style>
 </head>
 <body>
@@ -287,22 +284,22 @@
                                         <td>
                                             Name:
                                         </td>
-                                        <td>
+                                        <td style="width: 175px">
                                             <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
                                         <td>
                                             Signature:
                                         </td>
-                                        <td>
+                                        <td style="width: 175px">
                                             <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
                                         <td>
                                             Date:
                                         </td>
-                                        <td>
-                                            <input id="Text3" type="text" style="border-left-style: none; border-right-style: none;
+                                        <td style="width: 130px">
+                                            <input id="Text3" type="text" style="width: 130px; border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
                                     </tr>
@@ -314,18 +311,18 @@
                                 <br />
                                 <table width="100%">
                                     <tr>
-                                        <td class="style1">
+                                        <td>
                                             Customer signature for phone pickup and satisfaction:
                                         </td>
-                                        <td style="width: 100px">
+                                        <td>
                                             <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
                                         <td>
                                             Date:
                                         </td>
-                                        <td>
-                                            <input id="Text5" type="text" style="border-left-style: none; border-right-style: none;
+                                        <td style="width: 130px">
+                                            <input id="Text5" type="text" style="width: 130px; border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
                                     </tr>
