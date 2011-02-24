@@ -339,9 +339,9 @@ body
 	BORDER-TOP: #006 1px solid; BORDER-RIGHT: #006 1px solid;
 	float:right;
 	width:50px; height:20px;
-	text-align:center
+	text-align:center;
 	
 }
 .searchbutton:hover {
-	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+	BACKGROUND-COLOR: #ffffff; COLOR: #00aeff
 }
