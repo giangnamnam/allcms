@@ -19,11 +19,12 @@
                 <br />
                 <br />
                 <asp:Panel ID="Panel1" runat="server" DefaultButton="btnTrackItem">
-                    <div id="RepairTracking" class="re-more" style="vertical-align: middle">
-                        
+                    <div id="RepairTracking1" style="vertical-align: middle; text-align:left; float:right; margin-right: 20px;">
+                        <label runat="server" id="Label1" style="line-height: 22px; color:White; font-weight:bold">Tracking your items</label>
+                            <br />
                         <asp:TextBox ID="txtRepairNo" runat="server" Width="120px"></asp:TextBox>
                             <br />
-                            <asp:LinkButton ID="btnTrackItem" runat="server" OnClick="btnTrackItem_Click">Track Items</asp:LinkButton>
+                        <asp:LinkButton ID="btnTrackItem" CssClass="searchbutton" runat="server" OnClick="btnTrackItem_Click">Track</asp:LinkButton>
                     </div>
                 </asp:Panel>
             </td>

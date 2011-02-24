@@ -7,7 +7,7 @@
                 <div id="RepairTracking" style="vertical-align: middle">
                     
                     <asp:TextBox ID="txtRepairNo" runat="server" Width="80px"></asp:TextBox>
-                        <asp:LinkButton ID="btnTrackItem" runat="server" OnClick="btnTrackItem_Click">Track Items</asp:LinkButton>
+                        <asp:LinkButton ID="btnTrackItem" runat="server" OnClick="btnTrackItem_Click">Track</asp:LinkButton>
                 </div>
             </asp:Panel>
         </li>

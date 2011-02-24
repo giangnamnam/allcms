@@ -326,3 +326,22 @@ body
 	font-size: 12px;
 }
 
+.joinbuttons A {
+	BORDER-BOTTOM: #bcbcbc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #bcbcbc 1px solid; PADDING-BOTTOM: 2px; LINE-HEIGHT: 22px; TEXT-TRANSFORM: uppercase; BACKGROUND-COLOR: #dddddd; MARGIN: 2px 2px 4px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; COLOR: #000000; BORDER-TOP: #bcbcbc 1px solid; BORDER-RIGHT: #bcbcbc 1px solid; TEXT-DECORATION: none; PADDING-TOP: 2px
+}
+.joinbuttons A:hover {
+	BACKGROUND-COLOR: white; COLOR: #000000
+}
+.searchbutton {
+	BORDER-BOTTOM: #006 1px solid; BORDER-LEFT: #006 1px solid; 
+	BACKGROUND-COLOR: #dddddd; color:Black; 
+	FONT-SIZE: 12px; font-weight:bold;
+	BORDER-TOP: #006 1px solid; BORDER-RIGHT: #006 1px solid;
+	float:right;
+	width:50px; height:20px;
+	text-align:center
+	
+}
+.searchbutton:hover {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+}
