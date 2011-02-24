@@ -1,20 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LeftMenu.ascx.cs" Inherits="MobileTech.UIControls.LeftMenu" %>
 <div style="width: 100%; height: 400px">
-    <strong style="color: White">Repair</strong>
+    <strong style="color: White">Tracking your items</strong>
     <ul class="sub-nav-a">
-        <li class="style-nav-a">
-            <asp:Panel runat="server" DefaultButton="btnTrackItem">
-                <div id="RepairTracking" style="vertical-align: middle">
-                    
-                    <asp:TextBox ID="txtRepairNo" runat="server" Width="80px"></asp:TextBox>
-                        <asp:LinkButton ID="btnTrackItem" runat="server" OnClick="btnTrackItem_Click">Track</asp:LinkButton>
-                </div>
-            </asp:Panel>
-        </li>
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btnTrackItem">
+            <div id="RepairTracking1" style="vertical-align: middle; text-align: left; float: right;
+                margin-right: 5px; margin-top:7px">
+                <asp:TextBox ID="txtRepairNo" runat="server" Width="120px"></asp:TextBox>
+                &nbsp;
+                <asp:LinkButton ID="btnTrackItem" CssClass="searchbutton" runat="server" OnClick="btnTrackItem_Click">Track</asp:LinkButton>
+            </div>
+        </asp:Panel>
     </ul>
-    <ul class="sub-nav-a">
+    <%-- <ul class="sub-nav-a">
         <li class="style-nav-a"><a href="RepairList.aspx">Repair List</a></li>
-    </ul>
+    </ul>--%>
     <strong style="color: White">Accessories</strong>
     <asp:DataList ID="lstAccessories" DataKeyField="ID" runat="server" RepeatColumns="1"
         Width="205px">
