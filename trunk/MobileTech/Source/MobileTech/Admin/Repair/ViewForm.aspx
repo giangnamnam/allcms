@@ -281,21 +281,21 @@
                                 <br />
                                 <table width="100%">
                                     <tr>
-                                        <td>
+                                        <td style="font-weight:bold">
                                             Name:
                                         </td>
                                         <td style="width: 175px">
                                             <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td>
+                                        <td style="font-weight:bold">
                                             Signature:
                                         </td>
                                         <td style="width: 175px">
                                             <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td>
+                                        <td style="font-weight:bold">
                                             Date:
                                         </td>
                                         <td style="width: 130px">
@@ -318,7 +318,7 @@
                                             <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td>
+                                        <td style="font-weight:bold">
                                             Date:
                                         </td>
                                         <td style="width: 130px">
