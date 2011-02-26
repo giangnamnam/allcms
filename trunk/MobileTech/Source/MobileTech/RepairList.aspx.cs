@@ -11,13 +11,13 @@ namespace MobileTech
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, string.Empty, null);
+            grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, string.Empty, null, null, null, null);
             grvProductList.DataBind();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, txtRepairNo.Text, null);
+            grvProductList.DataSource = ProductService.GetProductRepair(string.Empty, txtRepairNo.Text, null, null, null, null);
             grvProductList.DataBind();
         }
 

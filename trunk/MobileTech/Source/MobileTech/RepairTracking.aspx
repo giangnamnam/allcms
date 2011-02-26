@@ -26,20 +26,34 @@
                         <div class="content-news">
                             <asp:Label ID="lblNotes" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             <table width="100%" id="TableRepairContent" runat="server">
-                                <tr>
-                                    <td style="width: 20%">
-                                        Repair No.:
-                                    </td>
-                                    <td style="width: 80%">
-                                        <asp:Label ID="lblRepairNo" runat="server" Font-Bold="true"></asp:Label>
-                                    </td>
-                                </tr>
                                  <tr>
-                                    <td>
-                                        Status:
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lblStatus" runat="server" Font-Bold="true"></asp:Label>
+                                    <td colspan="2">
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td style="width: 15%">Repair No.:</td>
+                                                <td style="width: 35%"><asp:Label ID="lblRepairNo" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td style="width: 15%"> Status:</td>
+                                                <td style="width: 35%"><asp:Label ID="lblStatus" runat="server" Font-Bold="true"></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shop Name:</td>
+                                                <td><asp:Label ID="lblShopName" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td> Phone (T):</td>
+                                                <td><asp:Label ID="lblPhoneT" runat="server" Font-Bold="true"></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone (F):</td>
+                                                <td><asp:Label ID="lblPhoneF" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td> Phone (M):</td>
+                                                <td><asp:Label ID="lblPhoneM" runat="server" Font-Bold="true"></asp:Label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email:</td>
+                                                <td><asp:Label ID="lblEmail" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td> Address:</td>
+                                                <td><asp:Label ID="lbAddress" runat="server" Font-Bold="true"></asp:Label></td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                                 <tr>
@@ -98,7 +112,7 @@
                                             <tr>
                                                 <td colspan="2" valign="top">
                                                     Fault Report:
-                                                    <asp:Label ID="lblProductFaultReport" runat="server" Height="30"></asp:Label>
+                                                    <asp:Label ID="lblProductFaultReport" runat="server" Height="40"></asp:Label>
                                                 </td>
                                             </tr>
                                             <tr>

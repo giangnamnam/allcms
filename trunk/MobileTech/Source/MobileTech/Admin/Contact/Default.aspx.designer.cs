@@ -59,13 +59,31 @@ namespace MobileTech.Admin.Contact {
         protected global::System.Web.UI.WebControls.TextBox txtGoogleAddress;
         
         /// <summary>
-        /// txtPhone control.
+        /// txtPhone1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone1;
+        
+        /// <summary>
+        /// txtPhone2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPhone2;
+        
+        /// <summary>
+        /// txtMobilePhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMobilePhone;
         
         /// <summary>
         /// txtEmail control.

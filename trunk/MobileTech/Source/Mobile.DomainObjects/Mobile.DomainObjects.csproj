@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="UsersInContacts.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Company.hbm.xml" />
@@ -93,6 +94,9 @@
       <Project>{92A9B3C4-B76C-45BC-8868-04435E677F12}</Project>
       <Name>Mobile.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UsersInContacts.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

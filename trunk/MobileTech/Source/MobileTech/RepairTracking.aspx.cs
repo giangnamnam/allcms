@@ -19,7 +19,7 @@ namespace MobileTech
                 string temp = Request.QueryString["RepairNo"];
                 if (temp != null && temp != string.Empty)
                 {
-                    IList<ProductRepair> list = ProductService.GetProductRepair(string.Empty, temp, null);
+                    IList<ProductRepair> list = ProductService.GetProductRepair(string.Empty, temp, null, null, null, null);
                     foreach (ProductRepair item in list)
                     {
                         if (item.RepairNo.Equals(temp))
@@ -109,6 +109,18 @@ namespace MobileTech
 
             //    }
             //}
+
+            //Set Contact
+            Mobile.DomainObjects.Contact c = repair.Contact;
+            if (c != null)
+            {
+                lblShopName.Text = c.ContactName;
+                lbAddress.Text = c.ContactAddress;
+                lblEmail.Text = c.ContactEmail;
+                lblPhoneM.Text = c.ContactMobilePhone;
+                lblPhoneT.Text = c.ContactPhone1;
+                lblPhoneF.Text = c.ContactPhone2;
+            }
 
         }
     }

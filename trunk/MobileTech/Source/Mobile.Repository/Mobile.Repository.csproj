@@ -74,6 +74,7 @@
     <Compile Include="IProductStatus.cs" />
     <Compile Include="IServiceRepository.cs" />
     <Compile Include="ISystemConfigurationRepository.cs" />
+    <Compile Include="IUsersInContactsRepository.cs" />
     <Compile Include="ProductColor.cs" />
     <Compile Include="ProductRepairRepository.cs" />
     <Compile Include="ProductRepository.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Base\SessionManager.cs" />
     <Compile Include="ServiceRepository.cs" />
     <Compile Include="SystemConfigurationRepository.cs" />
+    <Compile Include="UsersInContactsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mobile.Common\Mobile.Common.csproj">

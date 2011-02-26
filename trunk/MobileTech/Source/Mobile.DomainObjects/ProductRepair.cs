@@ -20,6 +20,12 @@ namespace Mobile.DomainObjects
             set;
         }
 
+        public virtual Contact Contact
+        {
+            get;
+            set;
+        }
+
         public virtual string StaffName
         {
             get;
@@ -111,6 +117,11 @@ namespace Mobile.DomainObjects
             set;
         }
         public virtual string PartsFixed
+        {
+            get;
+            set;
+        }
+        public virtual string PartsFixedOthers
         {
             get;
             set;

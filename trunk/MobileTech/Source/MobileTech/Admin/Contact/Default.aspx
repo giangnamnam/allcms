@@ -20,7 +20,7 @@
             <asp:BoundField DataField="ContactGoogleAddress" HeaderText="Google Address" SortExpression="ContactGoogleAddress">
                 <ItemStyle Width="200px" VerticalAlign="Middle" />
             </asp:BoundField>
-            <asp:BoundField DataField="ContactPhone" HeaderText="Contact Phone" SortExpression="ContactPhone">
+            <asp:BoundField DataField="ContactPhone1" HeaderText="Contact Phone" SortExpression="ContactPhone1">
                 <ItemStyle Width="200px" VerticalAlign="Middle" />
             </asp:BoundField>
             <asp:BoundField DataField="ContactEmail" HeaderText="Email" SortExpression="ContactEmail">
@@ -45,7 +45,9 @@
             <asp:Parameter Name="ContactName" Type="String" />
             <asp:Parameter Name="ContactAddress" Type="String" />
             <asp:Parameter Name="ContactGoogleAddress" Type="String" />
-            <asp:Parameter Name="ContactPhone" Type="String" />
+            <asp:Parameter Name="ContactPhone1" Type="String" />
+            <asp:Parameter Name="ContactPhone2" Type="String" />
+            <asp:Parameter Name="ContactMobilePhone" Type="String" />
             <asp:Parameter Name="ContactEmail" Type="String" />
         </UpdateParameters>
         <SelectParameters>
@@ -54,7 +56,9 @@
             <asp:Parameter Name="ContactName" Type="String" />
             <asp:Parameter Name="ContactAddress" Type="String" />
             <asp:Parameter Name="ContactGoogleAddress" Type="String" />
-            <asp:Parameter Name="ContactPhone" Type="String" />
+            <asp:Parameter Name="ContactPhone1" Type="String" />
+            <asp:Parameter Name="ContactPhone2" Type="String" />
+            <asp:Parameter Name="ContactMobilePhone" Type="String" />
             <asp:Parameter Name="ContactEmail" Type="String" />
         </InsertParameters>
     </asp:ObjectDataSource>
@@ -89,10 +93,26 @@
         </tr>
         <tr>
             <td>
-                Phone
+                Phone 1 (T)
             </td>
             <td>
-                <asp:TextBox ID="txtPhone" runat="server" Width="200"></asp:TextBox>
+                <asp:TextBox ID="txtPhone1" runat="server" Width="200"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone 2 (F)
+            </td>
+            <td>
+                <asp:TextBox ID="txtPhone2" runat="server" Width="200"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mobile Phone (M)
+            </td>
+            <td>
+                <asp:TextBox ID="txtMobilePhone" runat="server" Width="200"></asp:TextBox>
             </td>
         </tr>
         <tr>

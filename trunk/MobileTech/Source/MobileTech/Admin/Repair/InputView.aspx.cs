@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mobile.Common;
 using System.Text;
+using System.Web.Security;
 
 namespace MobileTech.Admin.Repair
 {
@@ -35,7 +36,7 @@ namespace MobileTech.Admin.Repair
 
         protected void chkPartsFixed_Init(object sender, EventArgs e)
         {
-            
+
             chkPartsFixed.Items.Add(new ListItem("LCD", "LCD"));
             chkPartsFixed.Items.Add(new ListItem("Ribbon", "Ribbon"));
             chkPartsFixed.Items.Add(new ListItem("Connector", "Connector"));
@@ -69,7 +70,7 @@ namespace MobileTech.Admin.Repair
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Control c=this.FindControl("txtCusDate1");
+            Control c = this.FindControl("txtCusDate1");
 
             if (!IsPostBack)
             {
@@ -94,8 +95,41 @@ namespace MobileTech.Admin.Repair
                 if (btnDelete.Visible == false)
                 {
                     txtRepairNo.Text = ProductService.GetProductRepairMaxID();
+
+                    SetContact();
                 }
             }
+        }
+
+        void SetContact()
+        {
+            bool isSet = false;
+            IList<Mobile.DomainObjects.UsersInContacts> list = ProductService.GetUsersInContacts(Membership.GetUser().UserName);
+            if (list != null && list.Count > 0)
+            {
+                Mobile.DomainObjects.UsersInContacts contact = list[0];
+                if (contact.Contact != null)
+                {
+                    lblContactName.InnerText = contact.Contact.ContactName;
+                    lblContactAddress.InnerText = contact.Contact.ContactAddress;
+                    lblContactEmail.InnerText = contact.Contact.ContactEmail;
+                    lblContactMobilePhone.InnerText = contact.Contact.ContactMobilePhone;
+                    lblContactPhone1.InnerText = contact.Contact.ContactPhone1;
+                    lblContactPhone2.InnerText = contact.Contact.ContactPhone2;
+
+                    isSet = true;
+                }
+            }
+            if (isSet == false)
+            {
+                lblContactName.InnerText = "";
+                lblContactAddress.InnerText = "";
+                lblContactEmail.InnerText = "";
+                lblContactMobilePhone.InnerText = "";
+                lblContactPhone1.InnerText = "";
+                lblContactPhone2.InnerText = "";
+            }
+            txtStaffName.Text = Membership.GetUser().Comment;
         }
 
         #region Set Value
@@ -133,6 +167,7 @@ namespace MobileTech.Admin.Repair
                 txtPartsCode.Text = repair.MemoPartsCode;
                 txtTotalIncludingGST.Text = repair.MemoTotalInCludingGST;
 
+                txtPartsFixedOthers.Value = repair.PartsFixedOthers;
                 if (repair.PartsFixed != null)
                 {
                     string[] part = repair.PartsFixed.Split('@');
@@ -148,6 +183,17 @@ namespace MobileTech.Admin.Repair
                         }
 
                     }
+                }
+                //Set Contact
+                Mobile.DomainObjects.Contact c = repair.Contact;
+                if (c != null)
+                {
+                    lblContactName.InnerText = c.ContactName;
+                    lblContactAddress.InnerText = c.ContactAddress;
+                    lblContactEmail.InnerText = c.ContactEmail;
+                    lblContactMobilePhone.InnerText = c.ContactMobilePhone;
+                    lblContactPhone1.InnerText = c.ContactPhone1;
+                    lblContactPhone2.InnerText = c.ContactPhone2;
                 }
             }
         }
@@ -169,28 +215,12 @@ namespace MobileTech.Admin.Repair
             txtStaffName.Text = "";
             txtTotalIncludingGST.Text = "";
             txtWB.Text = "";
-
+            txtPartsFixedOthers.Value = "";
+            
+            SetContact();
             txtRepairNo.Text = ProductService.GetProductRepairMaxID();
         }
         #endregion
-
-        protected void GenerateMsWordDoc(object sender, EventArgs e)
-        {
-            //string strBody = "<html>" +
-            //    "<body>" +
-            //        "<div>Your name is: <b>" + "Thanh Tú" + "</b></div>" +
-            //        "<table width='100%' style='background-color:#cfcfcf;'><tr><td>1st Cell body data</td><td>2nd cell body data</td></tr></table>" +
-            //        "Ms Word document generated successfully." +
-            //    "</body>" +
-            //    "</html>";
-            //string fileName = "MsWordSample.doc";
-            //// You can add whatever you want to add as the HTML and it will be generated as Ms Word docs
-            //Response.AppendHeader("Content-Type", "application/msword");
-            //Response.AppendHeader("Content-disposition", "attachment; filename=" + fileName);
-            //Response.Write(strBody);
-
-
-        }
 
         #region Cancel
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -261,6 +291,14 @@ namespace MobileTech.Admin.Repair
                         }
                     }
                     repair.PartsFixed = part.ToString();
+                    repair.PartsFixedOthers = txtPartsFixedOthers.Value;
+
+                    //Contact
+                    IList<Mobile.DomainObjects.UsersInContacts> list = ProductService.GetUsersInContacts(Membership.GetUser().UserName);
+                    if (list != null && list.Count > 0)
+                    {
+                        repair.Contact = list[0].Contact;
+                    }
 
                     ProductService.InsertProductRepair(repair);
                     PopulateControl();
@@ -279,7 +317,7 @@ namespace MobileTech.Admin.Repair
                         if (txtCusDate.Value.Length > 0)
                         {
                             string[] date = txtCusDate.Value.Split('-');
-                            repair.CustomerDate = new DateTime(int.Parse(date[2]),int.Parse(date[1]),int.Parse(date[0]));
+                            repair.CustomerDate = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
 
                         }
                         repair.CustomerContact = txtCusContact.Text;
@@ -307,7 +345,7 @@ namespace MobileTech.Admin.Repair
                             }
                         }
                         repair.PartsFixed = part.ToString();
-
+                        repair.PartsFixedOthers = txtPartsFixedOthers.Value;
                         ProductService.UpdateProductRepair(repair);
                     }
                     Response.Redirect("Default.aspx");

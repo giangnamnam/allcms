@@ -38,18 +38,17 @@
                                             <hr />
                                             <span style="font-weight: bold; font-size: 16px">PLANs, CONNECTION & REPAIRS</span>
                                         </td>
-                                        <td style="width: 25%">
-                                            <span style="font-weight: bold; font-size: 24px">No:</span>
-                                            <asp:Label ID="lblRepairNo" runat="server" Font-Size="20" ForeColor="Red"></asp:Label>
+                                        <td style="width: 25%" align="left">
+                                            <span style="font-weight: bold; font-size: 18px">No:</span>
+                                            <asp:Label ID="lblRepairNo" runat="server" Font-Size="16" ForeColor="Red"></asp:Label>
                                             <br />
                                             <br />
-                                            <span style="font-size: 16px">Rockingham<br />
-                                                Service Agreement<br />
-                                            </span>T: <span style="font-weight: bold; font-size: 18px">9528 2888</span><br />
-                                            F: 9528 3888<br />
-                                            M: 0409 888 827<br />
-                                            E: mobiletech6@bigpond.com<br />
-                                            A: Rockingham Shopping Centre K036, 1 Council Ave
+                                            <span style="font-size: 16px"><label id="lblContactName" runat="server"></label><br />
+                                            </span>T: <span style="font-weight: bold; font-size: 14px"><label id="lblContactPhone1" runat="server"></label></span><br />
+                                            F: <label id="lblContactPhone2" runat="server"></label><br />
+                                            M: <label id="lblContactMobilePhone" runat="server"></label><br />
+                                            E: <label id="lblContactEmail" runat="server"></label><br />
+                                            A: <label id="lblContactAddress" runat="server"></label>
                                         </td>
                                     </tr>
                                 </table>
@@ -223,8 +222,9 @@
                                     RepeatDirection="Horizontal">
                                 </asp:CheckBoxList>
                                 Others:
-                                <input id="Text8" type="text" style="width: 80%; border-left-style: none; border-right-style: none;
-                                    border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
+                                <asp:Label ID="lblPartsFixedOthers" runat="server" style="width: 80%;" Height="20"></asp:Label>
+                                <%--<input id="Text8" type="text" style="width: 80%; border-left-style: none; border-right-style: none;
+                                    border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />--%>
                                 <%--<br />
                              <input id="Text6" type="text" style="width:100%; border-left-style: none; border-right-style: none;
                                             border-top-style: none; border-bottom-width:thin; border-bottom-style:dotted" />--%>

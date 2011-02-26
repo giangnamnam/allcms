@@ -32,7 +32,17 @@ namespace Mobile.DomainObjects
             set;
         }
 
-        public virtual string ContactPhone
+        public virtual string ContactPhone1
+        {
+            get;
+            set;
+        }
+        public virtual string ContactPhone2
+        {
+            get;
+            set;
+        }
+        public virtual string ContactMobilePhone
         {
             get;
             set;

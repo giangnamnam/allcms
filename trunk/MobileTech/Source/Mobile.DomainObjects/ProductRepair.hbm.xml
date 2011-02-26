@@ -22,6 +22,7 @@
     <property name="MemoPartsCode" column="MemoPartsCode" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoTotalInCludingGST" column="MemoTotalInCludingGST" not-null="false" type="string" insert="true" update="true" />
     <property name="PartsFixed" column="PartsFixed" not-null="false" type="string" insert="true" update="true" />
+    <property name="PartsFixedOthers" column="PartsFixedOthers" not-null="false" type="string" insert="true" update="true" />
     <property name="SignName" column="SignName" not-null="false" type="string" insert="true" update="true" />
     <property name="SignDate" column="SignDate" not-null="false" type="DateTime" insert="true" update="true" />
     <property name="SignCustomerName" column="SignCustomerName" not-null="false" type="string" insert="true" update="true" />
@@ -31,5 +32,8 @@
     
     <property name="Status" column="Status" not-null="false" type="int" insert="true" update="true" />
     
+    <many-to-one name="Contact" class="Mobile.DomainObjects.Contact, Mobile.DomainObjects" not-null="false" lazy="false">
+      <column name="ContactID" />
+    </many-to-one>
   </class>
 </hibernate-mapping>

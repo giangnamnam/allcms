@@ -127,6 +127,19 @@ namespace MobileTech.Admin.Repair
 
                 }
             }
+            lblPartsFixedOthers.Text = repair.PartsFixedOthers;
+
+            //Set Contact
+            Mobile.DomainObjects.Contact c = repair.Contact;
+            if (c != null)
+            {
+                lblContactName.InnerText = c.ContactName;
+                lblContactAddress.InnerText = c.ContactAddress;
+                lblContactEmail.InnerText = c.ContactEmail;
+                lblContactMobilePhone.InnerText = c.ContactMobilePhone;
+                lblContactPhone1.InnerText = c.ContactPhone1;
+                lblContactPhone2.InnerText = c.ContactPhone2;
+            }
 
         }
     }
