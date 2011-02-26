@@ -41,6 +41,60 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.Label lblRepairNo;
         
         /// <summary>
+        /// lblContactName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactName;
+        
+        /// <summary>
+        /// lblContactPhone1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactPhone1;
+        
+        /// <summary>
+        /// lblContactPhone2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactPhone2;
+        
+        /// <summary>
+        /// lblContactMobilePhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactMobilePhone;
+        
+        /// <summary>
+        /// lblContactEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactEmail;
+        
+        /// <summary>
+        /// lblContactAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblContactAddress;
+        
+        /// <summary>
         /// lblStaffName control.
         /// </summary>
         /// <remarks>
@@ -201,5 +255,14 @@ namespace MobileTech.Admin.Repair {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList chkPartsFixed;
+        
+        /// <summary>
+        /// lblPartsFixedOthers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPartsFixedOthers;
     }
 }

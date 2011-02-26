@@ -20,7 +20,9 @@ namespace MobileTech.Admin.Contact
                 ObjectDataSourceContact.InsertParameters["ContactName"].DefaultValue = txtName.Text; ;
                 ObjectDataSourceContact.InsertParameters["ContactAddress"].DefaultValue = txtAddress.Text;
                 ObjectDataSourceContact.InsertParameters["ContactGoogleAddress"].DefaultValue = txtGoogleAddress.Text;
-                ObjectDataSourceContact.InsertParameters["ContactPhone"].DefaultValue = txtPhone.Text;
+                ObjectDataSourceContact.InsertParameters["ContactPhone1"].DefaultValue = txtPhone1.Text;
+                ObjectDataSourceContact.InsertParameters["ContactPhone2"].DefaultValue = txtPhone2.Text;
+                ObjectDataSourceContact.InsertParameters["ContactMobilePhone"].DefaultValue = txtMobilePhone.Text;
                 ObjectDataSourceContact.InsertParameters["ContactEmail"].DefaultValue = txtEmail.Text;
 
 
@@ -31,7 +33,9 @@ namespace MobileTech.Admin.Contact
                 txtName.Text = "";
                 txtAddress.Text = "";
                 txtGoogleAddress.Text = "";
-                txtPhone.Text = "";
+                txtPhone1.Text = "";
+                txtPhone2.Text = "";
+                txtMobilePhone.Text = "";
                 txtEmail.Text = "";
             }
         }

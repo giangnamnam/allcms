@@ -95,6 +95,12 @@ namespace MobileTech
             set;
         }
 
+        public virtual IUsersInContactsRepository UsersInContactsRepository
+        {
+            get;
+            set;
+        }
+
         public virtual IProductRepairRepository ProductRepairRepository
         {
             get;
@@ -319,7 +325,7 @@ namespace MobileTech
         }
         [DataObjectMethod(DataObjectMethodType.Update, true)]
         public static void UpdateContact(int id, string ContactName, string ContactAddress,
-            string ContactGoogleAddress, string ContactPhone, string ContactEmail)
+            string ContactGoogleAddress, string ContactPhone1, string ContactPhone2, string ContactMobilePhone, string ContactEmail)
         {
             Contact contact = Instance.ContactRepository.GetObjectByID<int>(id);
             if (contact != null)
@@ -327,7 +333,9 @@ namespace MobileTech
                 contact.ContactName = ContactName;
                 contact.ContactAddress = ContactAddress;
                 contact.ContactGoogleAddress = ContactGoogleAddress;
-                contact.ContactPhone = ContactPhone;
+                contact.ContactPhone1 = ContactPhone1;
+                contact.ContactPhone2 = ContactPhone2;
+                contact.ContactMobilePhone = ContactMobilePhone;
                 contact.ContactEmail = ContactEmail;
 
                 Instance.ContactRepository.Update(contact);
@@ -346,15 +354,41 @@ namespace MobileTech
         }
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
         public static void InsertContact(string ContactName, string ContactAddress,
-            string ContactGoogleAddress, string ContactPhone, string ContactEmail)
+            string ContactGoogleAddress, string ContactPhone1, string ContactPhone2, string ContactMobilePhone, string ContactEmail)
         {
             Contact contact = new Contact();
             contact.ContactName = ContactName;
             contact.ContactAddress = ContactAddress;
             contact.ContactGoogleAddress = ContactGoogleAddress;
-            contact.ContactPhone = ContactPhone;
+            contact.ContactPhone1 = ContactPhone1;
+            contact.ContactPhone2 = ContactPhone2;
+            contact.ContactMobilePhone = ContactMobilePhone;
             contact.ContactEmail = ContactEmail;
             Instance.ContactRepository.Add(contact);
+        }
+        #endregion
+
+        #region UsersInContacts
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public static IList<UsersInContacts> GetUsersInContacts(string userName)
+        {
+            return Instance.UsersInContactsRepository.GetUsersInContactsList(userName);
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteUsersInContacts(int id)
+        {
+            UsersInContacts contact = Instance.UsersInContactsRepository.GetObjectByID<int>(id);
+            if (contact != null)
+            {
+                Instance.UsersInContactsRepository.Delete(contact);
+            }
+
+        }
+        [DataObjectMethod(DataObjectMethodType.Insert, false)]
+        public static void InsertUsersInContacts(UsersInContacts userInContract)
+        {
+            Instance.UsersInContactsRepository.Add(userInContract);
         }
         #endregion
 
@@ -370,9 +404,9 @@ namespace MobileTech
             return Instance.ProductRepairRepository.GetProductRepairMaxID();
         }
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public static IList<ProductRepair> GetProductRepair(string name, string repairNo, int? status)
+        public static IList<ProductRepair> GetProductRepair(string name, string repairNo, int? status, int? shopId, DateTime? fromDate, DateTime? toDate)
         {
-            return Instance.ProductRepairRepository.GetProductRepairList(name, repairNo,status);
+            return Instance.ProductRepairRepository.GetProductRepairList(name, repairNo, status, shopId, fromDate, toDate);
         }
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public static ProductRepair GetProductRepair(int id)

@@ -26,7 +26,24 @@ namespace MobileTech.Admin.Repair
             {
                 status = enumStatus.GetHashCode();
             }
-            gridProduct.DataSource = ProductService.GetProductRepair(txtName.Text, txtRepairNo.Text, status);
+            int? shopId = null;
+            if (ddlShop.SelectedValue != null)
+                shopId = int.Parse(ddlShop.SelectedValue);
+            DateTime? fromDate = null;
+            if (txtFromDate.Value.Length > 0)
+            {
+                string[] date = txtFromDate.Value.Split('-');
+                fromDate = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+
+            }
+            DateTime? toDate = null;
+            if (txtToDate.Value.Length > 0)
+            {
+                string[] date = txtToDate.Value.Split('-');
+                toDate = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+
+            }
+            gridProduct.DataSource = ProductService.GetProductRepair(txtName.Text, txtRepairNo.Text, status, shopId, fromDate, toDate);
             gridProduct.DataBind();
         }
 
@@ -82,6 +99,14 @@ namespace MobileTech.Admin.Repair
         protected void gridProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ddlShop_Init(object sender, EventArgs e)
+        {
+            foreach (Mobile.DomainObjects.Contact item in ProductService.GetContact())
+            {
+                ddlShop.Items.Add(new ListItem(item.ContactName, item.ID.ToString()));
+            }
         }
 
 

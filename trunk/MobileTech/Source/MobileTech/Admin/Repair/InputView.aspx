@@ -54,13 +54,12 @@
                                     ControlToValidate="txtRepairNo"></asp:RequiredFieldValidator>
                                 <br />
                                 <br />
-                                <span style="font-size: 16px">Rockingham<br />
-                                    Service Agreement<br />
-                                </span>T: <span style="font-weight: bold; font-size: 18px">9528 2888</span><br />
-                                F: 9528 3888<br />
-                                M: 0409 888 827<br />
-                                E: mobiletech6@bigpond.com<br />
-                                A: Rockingham Shopping Centre K036, 1 Council Ave
+                                <span style="font-size: 16px"><label id="lblContactName" runat="server"></label><br />
+                                </span>T: <span style="font-weight: bold; font-size: 18px"><label id="lblContactPhone1" runat="server"></label></span><br />
+                                F: <label id="lblContactPhone2" runat="server"></label><br />
+                                M: <label id="lblContactMobilePhone" runat="server"></label><br />
+                                E: <label id="lblContactEmail" runat="server"></label><br />
+                                A: <label id="lblContactAddress" runat="server"></label>
                             </td>
                         </tr>
                     </table>
@@ -232,6 +231,7 @@
                     <asp:CheckBoxList ID="chkPartsFixed" runat="server" OnInit="chkPartsFixed_Init" RepeatColumns="7"
                         RepeatDirection="Horizontal">
                     </asp:CheckBoxList>
+                    Others: <input id="txtPartsFixedOthers" runat="server" type="text" style="width: 80%; height:20px"/>
                 </td>
             </tr>
             <tr>

@@ -9,7 +9,7 @@ namespace Mobile.Repository
 {
     public class ProductRepairRepository : RepositoryBase<ProductRepair>, IProductRepairRepository
     {
-        public IList<ProductRepair> GetProductRepairList(string name, string repairNo, int? status)
+        public IList<ProductRepair> GetProductRepairList(string name, string repairNo, int? status, int? shopId, DateTime? fromDate, DateTime? toDate)
         {
             ICriteria query = Session.CreateCriteria<ProductRepair>();
             if (status.HasValue)
@@ -17,14 +17,25 @@ namespace Mobile.Repository
                 query.Add(Expression.Eq("Status", status.Value));
             }
 
-            if (name!=string.Empty && name.Length>0)
+            if (name != string.Empty && name.Length > 0)
             {
-                query.Add(Expression.Like("CustomerName", string.Format("{0}%",name)));
+                query.Add(Expression.Like("CustomerName", string.Format("{0}%", name)));
             }
             if (repairNo != string.Empty && repairNo.Length > 0)
             {
                 query.Add(Expression.Like("RepairNo", string.Format("{0}%", repairNo)));
             }
+
+            if (shopId.HasValue)
+            {
+                query.Add(Expression.Eq("Contact.ID", shopId.Value));
+            }
+
+            if (fromDate.HasValue && toDate.HasValue)
+            {
+                query.Add(Expression.Between("CustomerDate", fromDate.Value, toDate.Value));
+            }
+
             query.AddOrder(new Order("ModifiedDate", true));
             return query.List<ProductRepair>();
         }
@@ -32,7 +43,7 @@ namespace Mobile.Repository
         public string GetProductRepairMaxID()
         {
             IQuery query = Session.CreateQuery("Select Max(ID) from ProductRepair");
-            if (query.List().Count > 0)
+            if (query.List().Count > 0 && query.List()[0] != null)
                 return string.Format("{0:0000000000}", (int)query.List()[0] + 1);
             else
                 return "0001";
@@ -59,9 +70,8 @@ namespace Mobile.Repository
         /// <returns>True: Can delete; False: Can not delete.</returns>
         public bool CheckProductRepairCanDelete(int id)
         {
-            ICriteria query = Session.CreateCriteria<ProductRepair>();
-            query.Add(Expression.Eq("ProductRepair.ID", id));
-            return query.List().Count <= 0 ? true : false;
-        }       
+            return true;
+
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Mobile.Repository
         /// <returns>True: Can delete; False: Can not delete.</returns>
         public bool CheckContactCanDelete(int id)
         {
-            ICriteria query = Session.CreateCriteria<Contact>();
+            ICriteria query = Session.CreateCriteria<UsersInContacts>();
             query.Add(Expression.Eq("Contact.ID", id));
             return query.List().Count <= 0 ? true : false;
         }       

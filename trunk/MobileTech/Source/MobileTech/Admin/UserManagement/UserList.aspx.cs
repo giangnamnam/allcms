@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
 
+
 namespace MobileTech.Admin.UserManagement
 {
     public partial class UserList : System.Web.UI.Page
@@ -119,8 +120,9 @@ namespace MobileTech.Admin.UserManagement
             {
                 ObjectDataSourceMembershipUser.InsertParameters["UserName"].DefaultValue = TextBoxUserName.Text;
                 ObjectDataSourceMembershipUser.InsertParameters["password"].DefaultValue = TextBoxPassword.Text;
-                ObjectDataSourceMembershipUser.InsertParameters["passwordQuestion"].DefaultValue = TextBoxPasswordQuestion.Text;
-                ObjectDataSourceMembershipUser.InsertParameters["passwordAnswer"].DefaultValue = TextBoxPasswordAnswer.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["comment"].DefaultValue = TextBoxFirstName.Text + " " + TextBoxLastName.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["passwordQuestion"].DefaultValue = "abc";
+                ObjectDataSourceMembershipUser.InsertParameters["passwordAnswer"].DefaultValue = "abc";
                 ObjectDataSourceMembershipUser.InsertParameters["email"].DefaultValue = TextBoxEmail.Text;
                 ObjectDataSourceMembershipUser.InsertParameters["isApproved"].DefaultValue = CheckboxApproval.Checked == true ? "true" : "false";
 
@@ -132,11 +134,22 @@ namespace MobileTech.Admin.UserManagement
                 {
                     Roles.AddUserToRole(TextBoxUserName.Text, roleName);
                 }
+
+                //Add new UsersInContracts
+                Mobile.DomainObjects.UsersInContacts userInContract = new Mobile.DomainObjects.UsersInContacts();
+                userInContract.UserName = TextBoxUserName.Text;
+                if (ddlShop.SelectedValue!=null)
+                {
+                    int id = int.Parse(ddlShop.SelectedValue);
+                    userInContract.Contact = ProductService.Instance.ContactRepository.GetObjectByID(id);
+                }
+                ProductService.InsertUsersInContacts(userInContract);
+
                 TextBoxUserName.Text = "";
                 TextBoxPassword.Text = "";
                 TextBoxEmail.Text = "";
-                TextBoxPasswordAnswer.Text = "";
-                TextBoxPasswordQuestion.Text = "";
+                TextBoxFirstName.Text = "";
+                TextBoxLastName.Text = "";
                 CheckboxApproval.Checked = false;
             }
         }
@@ -189,14 +202,14 @@ namespace MobileTech.Admin.UserManagement
         {
             if (e.Exception != null)
             {
-                LabelInsertMessage.Text = e.Exception.InnerException.Message + " Insert Failed";
+                LabelInsertMessage.Text = e.Exception.InnerException.Message + ". Insert Failed";
                 LabelInsertMessage.ForeColor = System.Drawing.Color.Red;
 
                 e.ExceptionHandled = true;
             }
             else
             {
-                LabelInsertMessage.Text = "Member " + TextBoxUserName.Text + " Inserted Successfully.";
+                LabelInsertMessage.Text = "Member " + TextBoxUserName.Text + ". Inserted Successfully.";
                 LabelInsertMessage.ForeColor = System.Drawing.Color.Green;
             }
         }
@@ -229,6 +242,14 @@ namespace MobileTech.Admin.UserManagement
             if (TextBoxSearchUser.Text.Length > 0)
             {
                 GridViewMemberUser.DataBind();
+            }
+        }
+
+        protected void ddlShop_Init(object sender, EventArgs e)
+        {
+            foreach (Mobile.DomainObjects.Contact item in ProductService.GetContact())
+            {
+                ddlShop.Items.Add(new ListItem(item.ContactName, item.ID.ToString()));
             }
         }
     }

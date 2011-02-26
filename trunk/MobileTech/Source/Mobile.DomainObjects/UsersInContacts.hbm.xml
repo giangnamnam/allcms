@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="RMS.DomainObjects" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Mobile.DomainObjects.UsersInContacts, Mobile.DomainObjects" table="UsersInContacts" lazy="true" >
+    <id name="ID" type="Int32" column="ID">
+      <generator class="identity" />
+    </id>
+    <property name="UserName" column="UserName" not-null="false" type="string" insert="true" update="true" />
+
+    <many-to-one name="Contact" class="Mobile.DomainObjects.Contact, Mobile.DomainObjects" not-null="false" lazy="false">
+      <column name="ContactID" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -46,22 +46,23 @@
                         <asp:GridView ID="GridViewMemberUser" runat="server" OnSelectedIndexChanged="GridViewMembershipUser_SelectedIndexChanged"
                             OnRowDeleted="GridViewMembership_RowDeleted" AllowPaging="True" AutoGenerateColumns="False"
                             DataKeyNames="UserName" DataSourceID="ObjectDataSourceMembershipUser" AllowSorting="True"
-                            CellPadding="1" Font-Size="Small" Width="95%" ForeColor="#333333" GridLines="None"
+                            CellPadding="1" Font-Size="Small" Width="95%" ForeColor="#333333" GridLines="None" RowStyle-HorizontalAlign="Left"
                             BorderColor="White">
                             <Columns>
                                 
-                                <asp:BoundField DataField="UserName" HeaderText="UserName" ReadOnly="True" SortExpression="UserName" />
+                                <asp:BoundField DataField="UserName" HeaderText="User Name" ReadOnly="True" SortExpression="UserName" />
+                                <asp:BoundField DataField="Comment" HeaderText="Full Name" SortExpression="Comment" ItemStyle-Width="200"/>
                                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                 <%--<asp:BoundField DataField="PasswordQuestion" HeaderText="PasswordQuestion" ReadOnly="True"
                                     SortExpression="PasswordQuestion" />--%>
                                 <%--<asp:BoundField DataField="Comment" HeaderText="Comment" SortExpression="Comment" />--%>
-                                <asp:BoundField DataField="CreationDate" HeaderText="CreationDate" ReadOnly="True"
-                                    SortExpression="CreationDate" />
-                                <asp:CheckBoxField DataField="IsApproved" HeaderText="IsApproved" SortExpression="IsApproved" />
+                                <asp:BoundField DataField="CreationDate" HeaderText="Creation Date" ReadOnly="True"
+                                    SortExpression="CreationDate" Visible="False"/>
+                                <asp:CheckBoxField DataField="IsApproved" HeaderText="Is Approved" SortExpression="IsApproved" Visible="False"/>
                                 <asp:BoundField DataField="LastLockoutDate" Visible="False" HeaderText="LastLockoutDate"
                                     ReadOnly="True" SortExpression="LastLockoutDate" />
-                                <asp:BoundField DataField="LastLoginDate" HeaderText="LastLoginDate" SortExpression="LastLoginDate" />
-                                <asp:CheckBoxField DataField="IsOnline" Visible="False" HeaderText="IsOnline" ReadOnly="True"
+                                <asp:BoundField DataField="LastLoginDate" HeaderText="Last Login Date" SortExpression="LastLoginDate" />
+                                <asp:CheckBoxField DataField="IsOnline" Visible="False" HeaderText="Is Online" ReadOnly="True"
                                     SortExpression="IsOnline" />
                                 <asp:CheckBoxField DataField="IsLockedOut" HeaderText="IsLockedOut" ReadOnly="True"
                                     SortExpression="IsLockedOut" Visible="False" />
@@ -157,23 +158,25 @@
                                         Width="100%" ForeColor="#333333" GridLines="None">
                                         <RowStyle BackColor="#EFF3FB" />
                                         <Columns>
-                                            <asp:CommandField ShowDeleteButton="True" DeleteText="Delete Role" />
-                                            <asp:TemplateField>
+                                            <asp:CommandField ShowDeleteButton="True" DeleteText="Delete Role" Visible="false"/>
+                                            <asp:TemplateField Visible="false">
                                                 <ItemTemplate>
-                                                    <asp:Button ID="Button1" runat="server" CausesValidation="false" Width="250px" OnClick="ToggleInRole_Click"
+                                                   <asp:Button ID="Button1" runat="server" CausesValidation="false" Width="250px" OnClick="ToggleInRole_Click"
                                                         Text='<%# ShowInRoleStatus( (string) Eval("UserName"),(string) Eval("RoleName")) %>' />
+                                                    
                                                 </ItemTemplate>
                                                 <ItemStyle HorizontalAlign="Left" />
                                                 <HeaderTemplate>
                                                     Status of roles for selected user
                                                 </HeaderTemplate>
                                             </asp:TemplateField>
+                                            
+                                            <asp:BoundField DataField="RoleName" ReadOnly="True" Visible="true" HeaderText="Role Name"
+                                                SortExpression="RoleName" />
+                                            <asp:CheckBoxField DataField="UserInRole" HeaderText="User In Role" Visible="true"
+                                                SortExpression="UserInRole" />
                                             <asp:BoundField DataField="NumberOfUsersInRole" HeaderText="Number Of Users In Role"
                                                 SortExpression="NumberOfUsersInRole" />
-                                            <asp:BoundField DataField="RoleName" ReadOnly="True" Visible="False" HeaderText="RoleName"
-                                                SortExpression="RoleName" />
-                                            <asp:CheckBoxField DataField="UserInRole" HeaderText="UserInRole" Visible="False"
-                                                SortExpression="UserInRole" />
                                         </Columns>
                                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                                         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
@@ -233,6 +236,32 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <asp:Label ID="Label5" Text="Shop:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:DropDownList ID="ddlShop" runat="server" Width="140px" 
+                                                        oninit="ddlShop_Init">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>
+                                                    <asp:Label ID="Label8" Text="First Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="TextBoxFirstName" runat="server" Width="140px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label6" Text="Last Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="TextBoxLastName" runat="server" Width="140px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <%--<tr>
+                                                <td>
                                                     <asp:Label ID="Label5" Text="Password Question:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
@@ -246,7 +275,7 @@
                                                 <td>
                                                     <asp:TextBox ID="TextBoxPasswordAnswer" runat="server" Width="140px"></asp:TextBox>
                                                 </td>
-                                            </tr>
+                                            </tr>--%>
                                             <tr>
                                                 <td>
                                                     <asp:Label ID="Label2" Text="Email:" runat="server"></asp:Label>
