@@ -4,25 +4,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using System.Web.Configuration;
 
 
 namespace MobileTech.Admin.UserManagement
 {
     public partial class UserList : System.Web.UI.Page
     {
+        const string SplitName = "@@@";
         protected void Page_Load(object sender, EventArgs e)
         {
 
             GridViewMemberUser.EditIndex = -1;
 
-            //if (CheckBoxAddUser.Checked)
-            //{
-            //    divCreateUsers.Visible = true;
-            //}
-            //else
-            //{
-            //    divCreateUsers.Visible = false;
-            //}
+            if (CheckBoxAddUser.Checked)
+            {
+                divCreateUsers.Visible = true;
+            }
+            else
+            {
+                divCreateUsers.Visible = false;
+            }
 
             //if (CheckBoxManageRoles.Checked)
             //{
@@ -68,12 +70,41 @@ namespace MobileTech.Admin.UserManagement
             GridView gv = (GridView)sender;
 
             // cover case where there is no current user
-            if (Membership.GetUser() != null)
-            {
-                ObjectDataSourceRoleObject.SelectParameters["UserName"].DefaultValue = Membership.GetUser().UserName;
-                ObjectDataSourceRoleObject.SelectParameters["ShowOnlyAssignedRolls"].DefaultValue = "true";
-            }
 
+            MembershipUser user = Membership.GetUser(string.Format("{0}", gv.SelectedValue));
+            if (user != null)
+            {
+
+                ObjectDataSourceRoleObject.SelectParameters["UserName"].DefaultValue = user.UserName;
+                ObjectDataSourceRoleObject.SelectParameters["ShowOnlyAssignedRolls"].DefaultValue = "true";
+
+                LabelUserName.Text = user.UserName;
+                int index = 0;
+                foreach (ListItem item in RadioButtonRoleList1.Items)
+                {
+                    if (Roles.IsUserInRole(item.Value))
+                        RadioButtonRoleList1.SelectedIndex = index;
+                }
+                IList<Mobile.DomainObjects.UsersInContacts> list = ProductService.GetUsersInContacts(user.UserName);
+                if (list.Count > 0)
+                {
+                    index = 0;
+                    foreach (ListItem item in ddlShop1.Items)
+                    {
+                        if (list[0].Contact.ContactName == item.Text)
+                            ddlShop1.SelectedIndex = index;
+                    }
+                }
+                
+                TextBoxEmail1.Text = user.Email;
+                if (user.Comment != null && user.Comment.Length > 0)
+                {
+                    TextBoxFirstName1.Text = user.Comment.Split(SplitName.ToCharArray())[0];
+                    TextBoxLastName1.Text = user.Comment.Split(SplitName.ToCharArray())[1];
+                }
+                CheckboxApproval1.Checked = user.IsApproved;
+
+            }
             GridViewRole.DataBind();
         }
         protected void ButtonCreateNewRole_Click(object sender, EventArgs e)
@@ -120,7 +151,7 @@ namespace MobileTech.Admin.UserManagement
             {
                 ObjectDataSourceMembershipUser.InsertParameters["UserName"].DefaultValue = TextBoxUserName.Text;
                 ObjectDataSourceMembershipUser.InsertParameters["password"].DefaultValue = TextBoxPassword.Text;
-                ObjectDataSourceMembershipUser.InsertParameters["comment"].DefaultValue = TextBoxFirstName.Text + " " + TextBoxLastName.Text;
+                ObjectDataSourceMembershipUser.InsertParameters["comment"].DefaultValue = TextBoxFirstName.Text + SplitName + TextBoxLastName.Text;
                 ObjectDataSourceMembershipUser.InsertParameters["passwordQuestion"].DefaultValue = "abc";
                 ObjectDataSourceMembershipUser.InsertParameters["passwordAnswer"].DefaultValue = "abc";
                 ObjectDataSourceMembershipUser.InsertParameters["email"].DefaultValue = TextBoxEmail.Text;
@@ -138,7 +169,7 @@ namespace MobileTech.Admin.UserManagement
                 //Add new UsersInContracts
                 Mobile.DomainObjects.UsersInContacts userInContract = new Mobile.DomainObjects.UsersInContacts();
                 userInContract.UserName = TextBoxUserName.Text;
-                if (ddlShop.SelectedValue!=null)
+                if (ddlShop.SelectedValue != null)
                 {
                     int id = int.Parse(ddlShop.SelectedValue);
                     userInContract.Contact = ProductService.Instance.ContactRepository.GetObjectByID(id);
@@ -202,7 +233,18 @@ namespace MobileTech.Admin.UserManagement
         {
             if (e.Exception != null)
             {
-                LabelInsertMessage.Text = e.Exception.InnerException.Message + ". Insert Failed";
+                if (e.Exception.InnerException.Message == "InvalidPassword")
+                {
+                    MembershipSection membershipConfig = (MembershipSection)WebConfigurationManager.GetSection("system.web/membership");
+                    var providerSettings = membershipConfig.Providers[membershipConfig.DefaultProvider];
+                    string minLength = providerSettings.Parameters["minRequiredPasswordLength"];
+                    string minAlpha = providerSettings.Parameters["minRequiredNonalphanumericCharacters"];
+
+                    LabelInsertMessage.Text = string.Format("Password must be at least {0} characters in length and contain at least {1} special character",
+                        minLength, minAlpha);
+                }
+                else LabelInsertMessage.Text = e.Exception.InnerException.Message + ". Insert Failed";
+                
                 LabelInsertMessage.ForeColor = System.Drawing.Color.Red;
 
                 e.ExceptionHandled = true;
@@ -242,6 +284,18 @@ namespace MobileTech.Admin.UserManagement
             if (TextBoxSearchUser.Text.Length > 0)
             {
                 GridViewMemberUser.DataBind();
+
+                TextBoxUserName.Text = "";
+                TextBoxPassword.Text = "";
+                TextBoxEmail.Text = "";
+                TextBoxFirstName.Text = "";
+                TextBoxLastName.Text = "";
+                CheckboxApproval.Checked = false;
+
+                TextBoxEmail1.Text = "";
+                TextBoxFirstName1.Text = "";
+                TextBoxLastName1.Text = "";
+                CheckboxApproval1.Checked = false;
             }
         }
 
@@ -251,6 +305,32 @@ namespace MobileTech.Admin.UserManagement
             {
                 ddlShop.Items.Add(new ListItem(item.ContactName, item.ID.ToString()));
             }
+        }
+
+        protected void RadioButtonRoleList1_Init(object sender, EventArgs e)
+        {
+            foreach (string role in Roles.GetAllRoles())
+            {
+                RadioButtonRoleList1.Items.Add(new ListItem(role, role));
+            }
+            if (RadioButtonRoleList1.Items.Count > 0)
+            {
+                RadioButtonRoleList1.SelectedIndex = 0;
+
+            }
+        }
+
+        protected void ddlShop1_Init(object sender, EventArgs e)
+        {
+            foreach (Mobile.DomainObjects.Contact item in ProductService.GetContact())
+            {
+                ddlShop1.Items.Add(new ListItem(item.ContactName, item.ID.ToString()));
+            }
+        }
+
+        protected void ButtonUpdateUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

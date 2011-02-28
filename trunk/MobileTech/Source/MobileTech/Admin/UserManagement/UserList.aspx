@@ -51,7 +51,7 @@
                             <Columns>
                                 
                                 <asp:BoundField DataField="UserName" HeaderText="User Name" ReadOnly="True" SortExpression="UserName" />
-                                <asp:BoundField DataField="Comment" HeaderText="Full Name" SortExpression="Comment" ItemStyle-Width="200"/>
+                                <%--<asp:BoundField DataField="Comment" HeaderText="Full Name" SortExpression="Comment" ItemStyle-Width="200"/>--%>
                                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
                                 <%--<asp:BoundField DataField="PasswordQuestion" HeaderText="PasswordQuestion" ReadOnly="True"
                                     SortExpression="PasswordQuestion" />--%>
@@ -62,7 +62,7 @@
                                 <asp:BoundField DataField="LastLockoutDate" Visible="False" HeaderText="LastLockoutDate"
                                     ReadOnly="True" SortExpression="LastLockoutDate" />
                                 <asp:BoundField DataField="LastLoginDate" HeaderText="Last Login Date" SortExpression="LastLoginDate" />
-                                <asp:CheckBoxField DataField="IsOnline" Visible="False" HeaderText="Is Online" ReadOnly="True"
+                                <asp:CheckBoxField DataField="IsOnline" Visible="true" HeaderText="Is Online" ReadOnly="True"
                                     SortExpression="IsOnline" />
                                 <asp:CheckBoxField DataField="IsLockedOut" HeaderText="IsLockedOut" ReadOnly="True"
                                     SortExpression="IsLockedOut" Visible="False" />
@@ -147,7 +147,7 @@
                 <table style="font-weight: normal; font-size: 12px; font-family: Arial" bgcolor="white"
                     width="100%" border="0" cellpadding="1" cellspacing="2">
                     <tr valign="top" bgcolor="#CCFFFF">
-                        <td align="center" width="50%">
+                        <td align="center" width="40%">
                             <b>Management of roles</b><br /><br />
                             <asp:CheckBox ID="CheckBoxShowRolesAssigned" runat="server" AutoPostBack="True" Text="Show Roles Assigned Only" />
                             <br />
@@ -201,6 +201,92 @@
                                    
                             </div>
                         </td>--%>
+                        
+                        
+                        <td align="center" width="30%">
+                            <b>Update User</b><br />
+                            <br />
+                            <div runat="server" id="divUpdates">
+                              <%--  <atlas:UpdatePanel ID="UpdatePanelCreateUser" runat="server">
+                                    <ContentTemplate>--%>
+                                        <table cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td style="height: 28px">
+                                                    <asp:Label ID="Label3" Text="User Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td style="height: 28px">
+                                                    <asp:Label ID="LabelUserName" Text="" runat="server"></asp:Label>
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label7" Text="Role:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:RadioButtonList ID="RadioButtonRoleList1" runat="server" 
+                                                        RepeatDirection="Horizontal" oninit="RadioButtonRoleList1_Init">
+                                                    </asp:RadioButtonList>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label5" Text="Shop:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:DropDownList ID="ddlShop1" runat="server" Width="150px" 
+                                                        oninit="ddlShop1_Init">
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>
+                                                    <asp:Label ID="Label8" Text="First Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="TextBoxFirstName1" runat="server" Width="140px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label6" Text="Last Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="TextBoxLastName1" runat="server" Width="140px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label2" Text="Email:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="TextBoxEmail1" runat="server" Width="140px"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <asp:Label ID="Label9" Text="Approved:" runat="server"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:CheckBox ID="CheckboxApproval1" runat="server"></asp:CheckBox>
+                                                </td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <asp:Button ID="ButtonUpdateUser" runat="server" Text="Update" 
+                                                        onclick="ButtonUpdateUser_Click" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <asp:Label ID="LabelInsertMessage1" runat="server"></asp:Label>
+                                   <%-- </ContentTemplate>
+                                </atlas:UpdatePanel>--%>
+                            </div>
+                        </td>
+                        
                         <td align="center" width="30%">
                             <b>Creator of new user</b><br />
                             <br />
@@ -210,7 +296,7 @@
                                         <table cellpadding="2" cellspacing="2">
                                             <tr>
                                                 <td style="height: 28px">
-                                                    <asp:Label ID="Label3" Text="Username:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label10" Text="User Name:" runat="server"></asp:Label>
                                                 </td>
                                                 <td style="height: 28px">
                                                     <asp:TextBox ID="TextBoxUserName" runat="server" Width="140px"></asp:TextBox>
@@ -218,7 +304,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="height: 28px">
-                                                    <asp:Label ID="Label4" Text="Password:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label11" Text="Password:" runat="server"></asp:Label>
                                                 </td>
                                                 <td style="height: 28px">
                                                     <asp:TextBox ID="TextBoxPassword" TextMode="Password" runat="server" Width="140px"></asp:TextBox>
@@ -226,7 +312,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label7" Text="Role:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label12" Text="Role:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:RadioButtonList ID="RadioButtonRoleList" runat="server" RepeatDirection="Horizontal"
@@ -236,17 +322,17 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label5" Text="Shop:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label13" Text="Shop:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
-                                                    <asp:DropDownList ID="ddlShop" runat="server" Width="140px" 
+                                                    <asp:DropDownList ID="ddlShop" runat="server" Width="150px" 
                                                         oninit="ddlShop_Init">
                                                     </asp:DropDownList>
                                                 </td>
                                             </tr>
                                              <tr>
                                                 <td>
-                                                    <asp:Label ID="Label8" Text="First Name:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label14" Text="First Name:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="TextBoxFirstName" runat="server" Width="140px"></asp:TextBox>
@@ -254,7 +340,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label6" Text="Last Name:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label15" Text="Last Name:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="TextBoxLastName" runat="server" Width="140px"></asp:TextBox>
@@ -278,7 +364,7 @@
                                             </tr>--%>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label2" Text="Email:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label16" Text="Email:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="TextBoxEmail" runat="server" Width="140px"></asp:TextBox>
@@ -286,7 +372,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:Label ID="Label9" Text="Approved:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label17" Text="Approved:" runat="server"></asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:CheckBox ID="CheckboxApproval" runat="server"></asp:CheckBox>
@@ -316,8 +402,8 @@
                 cellpadding="1" cellspacing="2" bgcolor="white" width="100%">
                 <tr bgcolor="#CCFFFF">
                     <td align="left">
-                        <asp:CheckBox ID="CheckBoxManageRoles" Text="Manage Roles" runat="server" AutoPostBack="True"
-                            Checked="True" />
+                       <%-- <asp:CheckBox ID="CheckBoxManageRoles" Text="Manage Roles" runat="server" AutoPostBack="True"
+                            Checked="True" />--%>
                     </td>
                     <td align="right">
                         <asp:CheckBox ID="CheckBoxAddUser" TextAlign="left" Text="Create New Users" runat="server"
