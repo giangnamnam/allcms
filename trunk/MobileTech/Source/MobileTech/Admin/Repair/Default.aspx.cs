@@ -20,14 +20,14 @@ namespace MobileTech.Admin.Repair
 
         void BindingData()
         {
-            int? status = 0;
-            ProductRepairStatus enumStatus = (ProductRepairStatus)Enum.Parse(typeof(ProductRepairStatus), ddlStatus.SelectedValue);
-            //if (enumStatus != null)
+            int? status = null;
+            if (ddlStatus.SelectedValue != null && ddlStatus.SelectedValue != "All")
             {
+                ProductRepairStatus enumStatus = (ProductRepairStatus)Enum.Parse(typeof(ProductRepairStatus), ddlStatus.SelectedValue);
                 status = enumStatus.GetHashCode();
             }
             int? shopId = null;
-            if (ddlShop.SelectedValue != null)
+            if (ddlShop.SelectedValue != null && ddlShop.SelectedValue != "All")
                 shopId = int.Parse(ddlShop.SelectedValue);
             DateTime? fromDate = null;
             if (txtFromDate.Value.Length > 0)
@@ -49,6 +49,7 @@ namespace MobileTech.Admin.Repair
 
         protected void ddlStatus_Init(object sender, EventArgs e)
         {
+            ddlStatus.Items.Add(new ListItem("All", null));
             foreach (object value in Enum.GetValues(typeof(ProductRepairStatus)))
             {
                 ddlStatus.Items.Add(new ListItem(Enum.GetName(typeof(ProductRepairStatus), value), value.ToString()));
@@ -103,6 +104,7 @@ namespace MobileTech.Admin.Repair
 
         protected void ddlShop_Init(object sender, EventArgs e)
         {
+            ddlShop.Items.Add(new ListItem("All", null));
             foreach (Mobile.DomainObjects.Contact item in ProductService.GetContact())
             {
                 ddlShop.Items.Add(new ListItem(item.ContactName, item.ID.ToString()));

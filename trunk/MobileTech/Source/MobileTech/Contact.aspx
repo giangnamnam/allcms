@@ -105,7 +105,7 @@
                                                                 <%#Eval("ContactName")%></strong>
                                                             <br>
                                                             <%#Eval("ContactAddress")%><br>
-                                                            <%#Eval("ContactPhone")%><br>
+                                                            <%#Eval("ContactPhone1")%><br>
                                                             <a href="javascript: void(0)" onclick="window.open('<%#Eval("ContactGoogleAddress")%>', 'windowname1'); return false;">
                                                                 View map</a>
                                                             <br />

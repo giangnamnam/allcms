@@ -385,6 +385,18 @@ namespace MobileTech
             }
 
         }
+        [DataObjectMethod(DataObjectMethodType.Delete, true)]
+        public static void DeleteUsersInContacts(string userName)
+        {
+            IList<UsersInContacts> list= GetUsersInContacts(userName);
+            foreach (UsersInContacts contact in list)
+            {
+                if (contact != null)
+                {
+                    Instance.UsersInContactsRepository.Delete(contact);
+                }
+            }
+        }
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
         public static void InsertUsersInContacts(UsersInContacts userInContract)
         {

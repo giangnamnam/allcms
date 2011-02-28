@@ -20,7 +20,13 @@
             <asp:BoundField DataField="ContactGoogleAddress" HeaderText="Google Address" SortExpression="ContactGoogleAddress">
                 <ItemStyle Width="200px" VerticalAlign="Middle" />
             </asp:BoundField>
-            <asp:BoundField DataField="ContactPhone1" HeaderText="Contact Phone" SortExpression="ContactPhone1">
+            <asp:BoundField DataField="ContactPhone1" HeaderText="Phone (T)" SortExpression="ContactPhone1">
+                <ItemStyle Width="200px" VerticalAlign="Middle" />
+            </asp:BoundField>
+             <asp:BoundField DataField="ContactPhone2" HeaderText="Phone (F)" SortExpression="ContactPhone2">
+                <ItemStyle Width="200px" VerticalAlign="Middle" />
+            </asp:BoundField>
+             <asp:BoundField DataField="ContactMobilePhone" HeaderText="Phone (M)" SortExpression="ContactMobilePhone">
                 <ItemStyle Width="200px" VerticalAlign="Middle" />
             </asp:BoundField>
             <asp:BoundField DataField="ContactEmail" HeaderText="Email" SortExpression="ContactEmail">

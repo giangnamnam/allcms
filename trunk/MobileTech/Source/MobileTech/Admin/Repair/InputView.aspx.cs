@@ -129,7 +129,7 @@ namespace MobileTech.Admin.Repair
                 lblContactPhone1.InnerText = "";
                 lblContactPhone2.InnerText = "";
             }
-            txtStaffName.Text = Membership.GetUser().Comment;
+            txtStaffName.Text = Membership.GetUser().Comment.Replace("@@@"," ");
         }
 
         #region Set Value
