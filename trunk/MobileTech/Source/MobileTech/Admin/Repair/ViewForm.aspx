@@ -24,7 +24,7 @@
             <!-- Print Button  -->
             <input class="noPrint" style="color: Red" type="button" value="Print This Page" onclick="window.print()" />
             <asp:Panel ID="pnlAdd" Width="100%" runat="server">
-                <div align="center">
+                <div >
                     <table width="630px" border="0">
                         <tr>
                             <td colspan="2">
