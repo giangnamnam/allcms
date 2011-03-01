@@ -17,7 +17,7 @@
 
     <table border="1" cellpadding="1" cellspacing="2" width="100%">
         <tr>
-            <td align="center" style="height: 300px">
+            <td align="center" style="height: 200px; vertical-align:top">
                 <b>
                     <br />
                     List of the site users</b><br />
@@ -74,8 +74,8 @@
                                     Visible="False" SortExpression="ProviderName" />
                                 <asp:TemplateField ShowHeader="False">
                                     <ItemTemplate>
-                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
-                                            CommandName="Edit" Text="Edit"></asp:LinkButton>
+                                        <%--<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                                            CommandName="Edit" Text="Edit"></asp:LinkButton>--%>
                                         &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" 
                                             CommandName="Select" Text="Select"></asp:LinkButton>
                                         &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" 

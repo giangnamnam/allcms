@@ -129,7 +129,8 @@ namespace MobileTech.Admin.Repair
                 lblContactPhone1.InnerText = "";
                 lblContactPhone2.InnerText = "";
             }
-            txtStaffName.Text = Membership.GetUser().Comment.Replace("@@@"," ");
+            if (Membership.GetUser().Comment != null && Membership.GetUser().Comment.Length > 0)
+                txtStaffName.Text = Membership.GetUser().Comment.Replace("@", " ");
         }
 
         #region Set Value
@@ -216,7 +217,7 @@ namespace MobileTech.Admin.Repair
             txtTotalIncludingGST.Text = "";
             txtWB.Text = "";
             txtPartsFixedOthers.Value = "";
-            
+
             SetContact();
             txtRepairNo.Text = ProductService.GetProductRepairMaxID();
         }
