@@ -23,7 +23,8 @@ namespace MobileTech.Admin.Share
                 hplLogout.Text = Membership.GetUser().UserName + " - Logout";
             }
 
-            if (Roles.IsUserInRole(Membership.GetUser().UserName, MyConst.Technician_Role))
+            if (Roles.IsUserInRole(Membership.GetUser().UserName, MyConst.Technician_Role) &&
+                !Roles.IsUserInRole(Membership.GetUser().UserName, MyConst.Admin_Role))
             {
                 menuAccessories.Visible = false;
                 menuContact.Visible = false;
