@@ -147,7 +147,7 @@
                 <table style="font-weight: normal; font-size: 12px; font-family: Arial" bgcolor="white"
                     width="100%" border="0" cellpadding="1" cellspacing="2">
                     <tr valign="top" bgcolor="#CCFFFF">
-                        <td align="center" width="40%">
+                        <%--<td align="center" width="40%">
                             <b>Management of roles</b><br /><br />
                             <asp:CheckBox ID="CheckBoxShowRolesAssigned" runat="server" AutoPostBack="True" Text="Show Roles Assigned Only" />
                             <br />
@@ -188,7 +188,9 @@
                                 
                             
                             
-                        </td>
+                        </td>--%>
+                        
+                        
                        <%--<td align="center" width="20%">
                             <div runat="server" id="divCreateRoles">
                                
@@ -214,8 +216,8 @@
                                                 <td style="height: 28px">
                                                     <asp:Label ID="Label3" Text="User Name:" runat="server"></asp:Label>
                                                 </td>
-                                                <td style="height: 28px">
-                                                    <asp:Label ID="LabelUserName" Text="" runat="server"></asp:Label>
+                                                <td style="height: 28px" align="left">
+                                                    <asp:Label ID="LabelUserName" Text="" runat="server" Font-Bold="true"></asp:Label>
                                                 </td>
                                             </tr>
                                            
@@ -277,7 +279,7 @@
                                                 <td></td>
                                                 <td>
                                                     <asp:Button ID="ButtonUpdateUser" runat="server" Text="Update" 
-                                                        onclick="ButtonUpdateUser_Click" />
+                                                        onclick="ButtonUpdateUser_Click" Enabled="false" />
                                                 </td>
                                             </tr>
                                         </table>
@@ -286,7 +288,40 @@
                                 </atlas:UpdatePanel>--%>
                             </div>
                         </td>
-                        
+                        <td align="center" width="10%">
+                            <div runat="server" id="divResetPassword" visible="false">
+                               
+                                        <b>Set Password</b><br />
+                                        <br />
+                                         <table cellpadding="2" cellspacing="2">
+                                            <tr>
+                                                <td style="height: 28px">
+                                                    <asp:Label ID="Label4" Text="User Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td style="height: 28px" align="left">
+                                                    <asp:Label ID="LabelUserName2" Text="" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td style="height: 28px">
+                                                    <asp:Label ID="Label19" Text="User Name:" runat="server"></asp:Label>
+                                                </td>
+                                                <td style="height: 28px" align="left">
+                                                    <asp:TextBox ID="TextBoxPassword2" runat="server"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 28px">
+                                                </td>
+                                                <td style="height: 28px" align="left">
+                                                    <asp:Button ID="ButtonResetPassword" runat="server" Text="Set" Enabled="false" 
+                                                        onclick="ButtonResetPassword_Click" />
+                                                </td>
+                                            </tr>
+                                        </table>    
+                                  <asp:Label ID="LabelSetPassword" runat="server"></asp:Label>
+                            </div>
+                        </td>
                         <td align="center" width="30%">
                             <b>Creator of new user</b><br />
                             <br />
@@ -430,8 +465,8 @@
         <SelectParameters>
             <asp:ControlParameter ControlID="GridViewMemberUser" Name="UserName" PropertyName="SelectedValue"
                 Type="String" />
-            <asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
-                PropertyName="Checked" Type="Boolean" />
+            <%--<asp:ControlParameter ControlID="CheckBoxShowRolesAssigned" Name="ShowOnlyAssignedRolls"
+                PropertyName="Checked" Type="Boolean" />--%>
         </SelectParameters>
         <InsertParameters>
             <asp:Parameter Name="RoleName" Type="String" />

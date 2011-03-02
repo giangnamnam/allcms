@@ -66,6 +66,7 @@ namespace MobileTech.Admin.UserManagement
         {
 
             LabelInsertMessage.Text = "";
+            LabelSetPassword.Text = "";
 
             GridView gv = (GridView)sender;
 
@@ -76,14 +77,18 @@ namespace MobileTech.Admin.UserManagement
             {
 
                 ObjectDataSourceRoleObject.SelectParameters["UserName"].DefaultValue = user.UserName;
-                ObjectDataSourceRoleObject.SelectParameters["ShowOnlyAssignedRolls"].DefaultValue = "true";
+                //ObjectDataSourceRoleObject.SelectParameters["ShowOnlyAssignedRolls"].DefaultValue = "true";
 
                 LabelUserName.Text = user.UserName;
+                LabelUserName2.Text = user.UserName;
                 int index = 0;
                 foreach (ListItem item in RadioButtonRoleList1.Items)
                 {
-                    if (Roles.IsUserInRole(item.Value))
+                    if (Roles.IsUserInRole(user.UserName, item.Value))
+                    {
                         RadioButtonRoleList1.SelectedIndex = index;
+                        break;
+                    }
                     index++;
                 }
                 IList<Mobile.DomainObjects.UsersInContacts> list = ProductService.GetUsersInContacts(user.UserName);
@@ -97,7 +102,7 @@ namespace MobileTech.Admin.UserManagement
                         index++;
                     }
                 }
-                
+
                 TextBoxEmail1.Text = user.Email;
                 if (user.Comment != null && user.Comment.Length > 0)
                 {
@@ -106,8 +111,10 @@ namespace MobileTech.Admin.UserManagement
                 }
                 CheckboxApproval1.Checked = user.IsApproved;
 
+                ButtonUpdateUser.Enabled = true;
+                ButtonResetPassword.Enabled = true;
             }
-            GridViewRole.DataBind();
+            //GridViewRole.DataBind();
         }
         protected void ButtonCreateNewRole_Click(object sender, EventArgs e)
         {
@@ -144,7 +151,7 @@ namespace MobileTech.Admin.UserManagement
             {
                 Roles.AddUserToRole(userName, roleName);
             }
-            GridViewRole.DataBind();
+            // GridViewRole.DataBind();
         }
 
         protected void ButtonNewUser_Click(object sender, EventArgs e)
@@ -169,7 +176,7 @@ namespace MobileTech.Admin.UserManagement
                     Roles.RemoveUserFromRoles(userName, Roles.GetRolesForUser(userName));
                 }
                 Roles.AddUserToRole(userName, roleName);
-               
+
 
                 //Add new UsersInContracts
                 Mobile.DomainObjects.UsersInContacts userInContract = new Mobile.DomainObjects.UsersInContacts();
@@ -193,7 +200,14 @@ namespace MobileTech.Admin.UserManagement
         protected void GridViewMembership_RowDeleted(object sender, GridViewDeletedEventArgs e)
         {
             FindFirstUserName();  // Current user is deleted so need to select a new user as current
-            GridViewRole.DataBind(); // update roll lists to reflect new counts
+            //GridViewRole.DataBind(); // update roll lists to reflect new counts
+
+            TextBoxEmail1.Text = "";
+            TextBoxFirstName1.Text = "";
+            TextBoxLastName1.Text = "";
+            CheckboxApproval1.Checked = false;
+            ButtonUpdateUser.Enabled = false;
+            ButtonResetPassword.Enabled = false;
         }
 
 
@@ -249,7 +263,7 @@ namespace MobileTech.Admin.UserManagement
                         minLength, minAlpha);
                 }
                 else LabelInsertMessage.Text = e.Exception.InnerException.Message + ". Insert Failed";
-                
+
                 LabelInsertMessage.ForeColor = System.Drawing.Color.Red;
 
                 e.ExceptionHandled = true;
@@ -301,6 +315,8 @@ namespace MobileTech.Admin.UserManagement
                 TextBoxFirstName1.Text = "";
                 TextBoxLastName1.Text = "";
                 CheckboxApproval1.Checked = false;
+                ButtonUpdateUser.Enabled = false;
+                ButtonResetPassword.Enabled = false;
             }
         }
 
@@ -331,7 +347,8 @@ namespace MobileTech.Admin.UserManagement
         protected void ButtonUpdateUser_Click(object sender, EventArgs e)
         {
             if (LabelUserName.Text.Length > 0)
-            {   string userName=LabelUserName.Text;
+            {
+                string userName = LabelUserName.Text;
                 //Update
                 ObjectDataSourceMembershipUser.UpdateParameters["UserName"].DefaultValue = userName;
                 ObjectDataSourceMembershipUser.UpdateParameters["comment"].DefaultValue = TextBoxFirstName1.Text + SplitName + TextBoxLastName1.Text;
@@ -345,10 +362,22 @@ namespace MobileTech.Admin.UserManagement
                 string roleName = RadioButtonRoleList1.SelectedValue;
                 if (Roles.GetRolesForUser(userName).Length > 0)
                 {
-                    Roles.RemoveUserFromRoles(userName, Roles.GetRolesForUser(userName));
+                    string[] roles = Roles.GetRolesForUser(userName);
+                    if (userName.ToLower() == "admin")
+                    {
+                        //Bảo toàn admin role, không cho end user remove.
+                        foreach (string role in roles)
+                        {
+                            if (role.ToLower() != "admin")
+                                Roles.RemoveUserFromRole(userName, role);
+                        }
+                    }
+                    else Roles.RemoveUserFromRoles(userName, Roles.GetRolesForUser(userName));
                 }
-                Roles.AddUserToRole(userName, roleName);
-                
+                if (!Roles.IsUserInRole(userName, roleName))
+                {
+                    Roles.AddUserToRole(userName, roleName);
+                }
 
                 //Update new UsersInContracts
                 ProductService.DeleteUsersInContacts(userName);
@@ -367,6 +396,45 @@ namespace MobileTech.Admin.UserManagement
                 //TextBoxFirstName1.Text = "";
                 //TextBoxLastName1.Text = "";
                 //CheckboxApproval1.Checked = false;
+            }
+        }
+
+        protected void ButtonResetPassword_Click(object sender, EventArgs e)
+        {
+            if (LabelUserName2.Text.Length > 0 && TextBoxPassword2.Text.Length > 0)
+            {
+                MembershipUser user = Membership.GetUser(LabelUserName2.Text);
+                if (user != null)
+                {
+                    bool notShowError = false;
+                    try
+                    {
+                        notShowError=user.ChangePasswordQuestionAndAnswer(TextBoxPassword2.Text, "abc", "abc");
+                        LabelSetPassword.Text = "Member " + TextBoxUserName.Text + ". Set Password Successfully.";
+                        LabelSetPassword.ForeColor = System.Drawing.Color.Green;
+                    }
+                    catch (Exception ex)
+                    {
+                        if (ex.InnerException.Message == "InvalidPassword")
+                        {
+                            notShowError = false;
+                            
+                        }
+                        else LabelSetPassword.Text = ex.InnerException.Message + ". Set Failed";
+
+                        LabelSetPassword.ForeColor = System.Drawing.Color.Red;
+                    }
+                    if (notShowError == false)
+                    {
+                        MembershipSection membershipConfig = (MembershipSection)WebConfigurationManager.GetSection("system.web/membership");
+                        var providerSettings = membershipConfig.Providers[membershipConfig.DefaultProvider];
+                        string minLength = providerSettings.Parameters["minRequiredPasswordLength"];
+                        string minAlpha = providerSettings.Parameters["minRequiredNonalphanumericCharacters"];
+
+                        LabelSetPassword.Text = string.Format("Password must be at least {0} characters in length and contain at least {1} special character",
+                            minLength, minAlpha);
+                    }
+                }
             }
         }
     }
