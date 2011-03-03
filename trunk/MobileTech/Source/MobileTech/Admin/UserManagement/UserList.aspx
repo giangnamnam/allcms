@@ -288,8 +288,8 @@
                                 </atlas:UpdatePanel>--%>
                             </div>
                         </td>
-                        <td align="center" width="10%">
-                            <div runat="server" id="divResetPassword" visible="false">
+                        <td align="center" width="30%">
+                            <div runat="server" id="divResetPassword">
                                
                                         <b>Set Password</b><br />
                                         <br />
@@ -304,10 +304,10 @@
                                             </tr>
                                              <tr>
                                                 <td style="height: 28px">
-                                                    <asp:Label ID="Label19" Text="User Name:" runat="server"></asp:Label>
+                                                    <asp:Label ID="Label19" Text="New Password:" runat="server"></asp:Label>
                                                 </td>
                                                 <td style="height: 28px" align="left">
-                                                    <asp:TextBox ID="TextBoxPassword2" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="TextBoxPassword2" runat="server" TextMode="Password"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -315,7 +315,7 @@
                                                 </td>
                                                 <td style="height: 28px" align="left">
                                                     <asp:Button ID="ButtonResetPassword" runat="server" Text="Set" Enabled="false" 
-                                                        onclick="ButtonResetPassword_Click" />
+                                                        onclick="ButtonResetPassword_Click" Width="70"/>
                                                 </td>
                                             </tr>
                                         </table>    

@@ -409,31 +409,33 @@ namespace MobileTech.Admin.UserManagement
                     bool notShowError = false;
                     try
                     {
-                        notShowError=user.ChangePasswordQuestionAndAnswer(TextBoxPassword2.Text, "abc", "abc");
-                        LabelSetPassword.Text = "Member " + TextBoxUserName.Text + ". Set Password Successfully.";
-                        LabelSetPassword.ForeColor = System.Drawing.Color.Green;
+                        user.UnlockUser();
+                        string passOld = user.ResetPassword();
+                        notShowError = user.ChangePassword(passOld, TextBoxPassword2.Text);
+                        if (notShowError == false)
+                        {
+                            MembershipSection membershipConfig = (MembershipSection)WebConfigurationManager.GetSection("system.web/membership");
+                            var providerSettings = membershipConfig.Providers[membershipConfig.DefaultProvider];
+                            string minLength = providerSettings.Parameters["minRequiredPasswordLength"];
+                            string minAlpha = providerSettings.Parameters["minRequiredNonalphanumericCharacters"];
+
+                            LabelSetPassword.Text = string.Format("Password must be at least {0} characters in length and contain at least {1} special character",
+                                minLength, minAlpha);
+                            LabelSetPassword.ForeColor = System.Drawing.Color.Red;
+                        }
+                        else
+                        {
+                            LabelSetPassword.Text = "Member " + LabelUserName2.Text + " Set Password Successfully.";
+                            LabelSetPassword.ForeColor = System.Drawing.Color.Green;
+                        }
                     }
                     catch (Exception ex)
                     {
-                        if (ex.InnerException.Message == "InvalidPassword")
-                        {
-                            notShowError = false;
-                            
-                        }
-                        else LabelSetPassword.Text = ex.InnerException.Message + ". Set Failed";
+                        LabelSetPassword.Text = ex.Message;
 
                         LabelSetPassword.ForeColor = System.Drawing.Color.Red;
                     }
-                    if (notShowError == false)
-                    {
-                        MembershipSection membershipConfig = (MembershipSection)WebConfigurationManager.GetSection("system.web/membership");
-                        var providerSettings = membershipConfig.Providers[membershipConfig.DefaultProvider];
-                        string minLength = providerSettings.Parameters["minRequiredPasswordLength"];
-                        string minAlpha = providerSettings.Parameters["minRequiredNonalphanumericCharacters"];
 
-                        LabelSetPassword.Text = string.Format("Password must be at least {0} characters in length and contain at least {1} special character",
-                            minLength, minAlpha);
-                    }
                 }
             }
         }
