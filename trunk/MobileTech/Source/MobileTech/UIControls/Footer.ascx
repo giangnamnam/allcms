@@ -10,7 +10,7 @@
     <div class="counter-a">
         Follow us on</div>
     <div class="counter-a">
-        <a href="http://www.facebook.com/">
+        <a href="http://www.facebook.com/pages/Mobile-Tech/134646383264560">
             <img src="Images/facebook.png" style="margin-top: 15px;" /></a></div>
 </div>
 <div id="partner-table" style="height: 60px;" class="clearfix">
