@@ -46,7 +46,7 @@ namespace Mobile.Repository
             if (query.List().Count > 0 && query.List()[0] != null)
                 return string.Format("{0:0000000000}", (int)query.List()[0] + 1);
             else
-                return "0001";
+                return "0000000001";
         }
 
         public bool CheckProductRepairNameExisted(string ProductRepairName, int? excludeProductRepairID)
