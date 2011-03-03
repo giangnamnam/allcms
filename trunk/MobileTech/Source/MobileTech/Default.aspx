@@ -57,9 +57,9 @@
             <img src="Images/img2.png" /><span class="pro-info" style="height: 50px"><h3 class="pro-title">
                 Unlock</h3>
                 <p class="pro-content">
-                    Text text text text text text text
+                    Going abroad? Unlock it
                     <br />
-                    text text
+                    with Mobile Tech
                     <br />
                     &nbsp;
                 </p>
@@ -83,9 +83,9 @@
             <img src="Images/img4.png" /><span class="pro-info" style="height: 50px"><h3 class="pro-title">
                 Ipad</h3>
                 <p class="pro-content">
-                    Text text text text text text text
+                    Change the way you work
                     <br />
-                    text text
+                    
                     <br />
                     &nbsp;
                 </p>
