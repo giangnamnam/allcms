@@ -4,13 +4,14 @@
 <div id="counter" style="height: 50px">
     <div class="counter-a">
         Visitor count</div>
-    <div class="counter-a" style="color:#FFFF33; font-size:20px">
-        <label class="counter-a" style="color:#FFFF33; font-size:20px" runat="server" id="lblVisitorCount">
-                            </label></div>
+    <div class="counter-a" style="color: #FFFF33; font-size: 20px">
+        <label class="counter-a" style="color: #FFFF33; font-size: 20px" runat="server" id="lblVisitorCount">
+        </label>
+    </div>
     <div class="counter-a">
         Follow us on</div>
     <div class="counter-a">
-        <a href="http://www.facebook.com/pages/Mobile-Tech/134646383264560">
+        <a href="http://www.facebook.com/pages/Mobile-Tech/134646383264560" target="_blank">
             <img src="Images/facebook.png" style="margin-top: 15px;" /></a></div>
 </div>
 <div id="partner-table" style="height: 60px;" class="clearfix">
