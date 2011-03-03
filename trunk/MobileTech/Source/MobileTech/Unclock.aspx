@@ -19,7 +19,7 @@
                     <div class="title" style="margin-top: 4px; vertical-align: middle">
                         <h2>
                             <p style="color: White; font-size: medium; vertical-align: middle"">
-                                Unclock</p>
+                                Unlock</p>
                         </h2>
                     </div>
                     <div id="content-small">
