@@ -71,7 +71,7 @@
             <img src="Images/img3.png" /><span class="pro-info" style="height: 50px"><h3 class="pro-title">
                 Accsessories</h3>
                 <p class="pro-content">
-                    Fint out our latest items for your mobile
+                    Find out our latest items for your mobile
                     <br />
                     <br />
                 </p>
