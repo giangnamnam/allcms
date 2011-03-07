@@ -30,11 +30,10 @@ namespace MobileTech
         string GetBody()
         {
             StringBuilder result = new StringBuilder();
-            result.AppendLine("Customer name: " + txtFullName.Value.Trim() + "<br />");
-            result.AppendLine("Address: " + txtAddress.Value.Trim() + "<br />");
-            result.AppendLine("Phone: " + txtPhone.Value.Trim() + "<br />");
-            result.AppendLine("Content: " + "<br />");
-            result.AppendLine(txtContent.Value.Trim());
+            result.AppendLine("<b>Customer Name:</b> " + txtFullName.Value.Trim() + "<br />");
+            result.AppendLine("<b>Address:</b> " + txtAddress.Value.Trim() + "<br />");
+            result.AppendLine("<b>Phone:</b> " + txtPhone.Value.Trim() + "<br />");
+            result.AppendLine("<b>Content:</b> " + txtContent.Value.Trim() + "<br />");
             return result.ToString();
         }
         void SendMail()
