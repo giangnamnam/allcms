@@ -196,9 +196,7 @@
                             </td>
                             <td>
                                 $<asp:TextBox ID="txtLabourCost" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                <asp:RangeValidator ID="RangeValidator2" runat="server" 
-                                    ControlToValidate="txtLabourCost" ErrorMessage="Number" SetFocusOnError="True" 
-                                    Type="Currency"></asp:RangeValidator>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -207,9 +205,7 @@
                             </td>
                             <td>
                                 $<asp:TextBox ID="txtPartsCode" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                <asp:RangeValidator ID="RangeValidator1" runat="server" 
-                                    ControlToValidate="txtPartsCode" ErrorMessage="Number" SetFocusOnError="True" 
-                                    Type="Currency"></asp:RangeValidator>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -226,9 +222,7 @@
                             </td>
                             <td>
                                 $<asp:TextBox ID="txtDeposited" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                <asp:RangeValidator ID="RangeValidator3" runat="server" 
-                                    ControlToValidate="txtPartsCode" ErrorMessage="Number" SetFocusOnError="True" 
-                                    Type="Currency"></asp:RangeValidator>
+                                
                             </td>
                         </tr>
                          <tr>
