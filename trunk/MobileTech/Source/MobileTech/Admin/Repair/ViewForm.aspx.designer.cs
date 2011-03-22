@@ -176,22 +176,22 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.CheckBox chkNoSim;
         
         /// <summary>
-        /// lblWB control.
+        /// chkWB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblWB;
+        protected global::System.Web.UI.WebControls.CheckBox chkWB;
         
         /// <summary>
-        /// lblNB control.
+        /// chkNB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNB;
+        protected global::System.Web.UI.WebControls.CheckBox chkNB;
         
         /// <summary>
         /// lblMemoryCardY control.

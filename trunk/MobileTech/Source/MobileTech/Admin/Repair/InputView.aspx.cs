@@ -157,8 +157,15 @@ namespace MobileTech.Admin.Repair
                 txtProductIMEI.Text = repair.ProductIMEI;
                 txtProductFaultReport.Text = repair.ProductFaultReport;
                 chkNoSim.Checked = repair.ProductNoSim;
-                txtWB.Text = repair.ProductWB;
-                txtNB.Text = repair.ProductNB;
+
+                bool isWB = false;
+                bool.TryParse(repair.ProductWB, out isWB);
+                chkWB.Checked = isWB;
+
+                bool isNB = false;
+                bool.TryParse(repair.ProductNB, out isNB);
+                chkNB.Checked = isNB;
+
                 radioMemoryCard.SelectedIndex = repair.ProductMemoryCard == true ? 0 : 1;
                 if (repair.ProductExteriorCondition != null)
                 {
@@ -166,7 +173,8 @@ namespace MobileTech.Admin.Repair
                 }
                 txtLabourCost.Text = repair.MemoLabourCode;
                 txtPartsCode.Text = repair.MemoPartsCode;
-                txtTotalIncludingGST.Text = repair.MemoTotalInCludingGST;
+
+                
 
                 txtPartsFixedOthers.Value = repair.PartsFixedOthers;
                 if (repair.PartsFixed != null)
@@ -206,7 +214,7 @@ namespace MobileTech.Admin.Repair
             txtCusContact.Text = "";
             txtCusDate.Value = "";
             txtLabourCost.Text = "";
-            txtNB.Text = "";
+            chkNB.Text = "";
             txtPartsCode.Text = "";
             txtPrductColour.Text = "";
             txtProductFaultReport.Text = "";
@@ -214,8 +222,7 @@ namespace MobileTech.Admin.Repair
             txtProductModel.Text = "";
             txtRepairNo.Text = "";
             txtStaffName.Text = "";
-            txtTotalIncludingGST.Text = "";
-            txtWB.Text = "";
+            chkWB.Text = "";
             txtPartsFixedOthers.Value = "";
 
             SetContact();
@@ -274,13 +281,16 @@ namespace MobileTech.Admin.Repair
                     repair.ProductIMEI = txtProductIMEI.Text;
                     repair.ProductFaultReport = txtProductFaultReport.Text;
                     repair.ProductNoSim = chkNoSim.Checked;
-                    repair.ProductWB = txtWB.Text;
-                    repair.ProductNB = txtNB.Text;
+                    repair.ProductWB = chkWB.Checked.ToString();
+                    repair.ProductNB = chkWB.Checked.ToString();
                     repair.ProductMemoryCard = radioMemoryCard.SelectedValue == "Y" ? true : false;
                     repair.ProductExteriorCondition = radioExteriorCondition.SelectedValue;
                     repair.MemoLabourCode = txtLabourCost.Text;
                     repair.MemoPartsCode = txtPartsCode.Text;
-                    repair.MemoTotalInCludingGST = txtTotalIncludingGST.Text;
+
+                    decimal labourCost = 0; decimal.TryParse(repair.MemoLabourCode, out labourCost);
+                    decimal partsCost = 0; decimal.TryParse(repair.MemoPartsCode, out partsCost);
+                    repair.MemoTotalInCludingGST = (labourCost + partsCost).ToString();
 
                     StringBuilder part = new StringBuilder();
                     foreach (ListItem item in chkPartsFixed.Items)
@@ -328,13 +338,17 @@ namespace MobileTech.Admin.Repair
                         repair.ProductIMEI = txtProductIMEI.Text;
                         repair.ProductFaultReport = txtProductFaultReport.Text;
                         repair.ProductNoSim = chkNoSim.Checked;
-                        repair.ProductWB = txtWB.Text;
-                        repair.ProductNB = txtNB.Text;
+                        repair.ProductWB = chkWB.Checked.ToString();
+                        repair.ProductNB = chkWB.Checked.ToString();
                         repair.ProductMemoryCard = radioMemoryCard.SelectedValue == "Y" ? true : false;
                         repair.ProductExteriorCondition = radioExteriorCondition.SelectedValue;
                         repair.MemoLabourCode = txtLabourCost.Text;
                         repair.MemoPartsCode = txtPartsCode.Text;
-                        repair.MemoTotalInCludingGST = txtTotalIncludingGST.Text;
+
+                        decimal labourCost = 0; decimal.TryParse(repair.MemoLabourCode, out labourCost);
+                        decimal partsCost = 0; decimal.TryParse(repair.MemoPartsCode, out partsCost);
+                        repair.MemoTotalInCludingGST = (labourCost + partsCost).ToString();
+
 
                         StringBuilder part = new StringBuilder();
                         foreach (ListItem item in chkPartsFixed.Items)

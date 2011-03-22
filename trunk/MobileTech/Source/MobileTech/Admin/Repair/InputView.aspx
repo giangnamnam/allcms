@@ -150,12 +150,12 @@
                                         <td align="center">
                                             WB
                                             <br />
-                                            <asp:TextBox ID="txtWB" runat="server" Width="90px"></asp:TextBox>
+                                            <asp:CheckBox ID="chkWB" runat="server" />
                                         </td>
                                         <td align="center">
                                             NB
                                             <br />
-                                            <asp:TextBox ID="txtNB" runat="server" Width="90px"></asp:TextBox>
+                                            <asp:CheckBox ID="chkNB" runat="server" />
                                         </td>
                                         <td align="center">
                                             Memory Card
@@ -195,15 +195,21 @@
                                 Labour Cost:
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtLabourCost" runat="server" Width="300px"></asp:TextBox>
+                                $<asp:TextBox ID="txtLabourCost" runat="server" Width="300px" Text="0.00"></asp:TextBox>
+                                <asp:RangeValidator ID="RangeValidator2" runat="server" 
+                                    ControlToValidate="txtLabourCost" ErrorMessage="Number" SetFocusOnError="True" 
+                                    Type="Currency"></asp:RangeValidator>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                Parts Code:
+                                Parts Cost:
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtPartsCode" runat="server" Width="300px"></asp:TextBox>
+                                $<asp:TextBox ID="txtPartsCode" runat="server" Width="300px" Text="0.00"></asp:TextBox>
+                                <asp:RangeValidator ID="RangeValidator1" runat="server" 
+                                    ControlToValidate="txtPartsCode" ErrorMessage="Number" SetFocusOnError="True" 
+                                    Type="Currency"></asp:RangeValidator>
                             </td>
                         </tr>
                         <tr>
@@ -211,7 +217,26 @@
                                 Total including GST (Go ahead & Confirmed)
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtTotalIncludingGST" runat="server" Width="300px"></asp:TextBox>
+                                = Labour Cost + Parts Cost:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Deposited:
+                            </td>
+                            <td>
+                                $<asp:TextBox ID="txtDeposited" runat="server" Width="300px" Text="0.00"></asp:TextBox>
+                                <asp:RangeValidator ID="RangeValidator3" runat="server" 
+                                    ControlToValidate="txtPartsCode" ErrorMessage="Number" SetFocusOnError="True" 
+                                    Type="Currency"></asp:RangeValidator>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                Remainder
+                            </td>
+                            <td>
+                                = Total - Deposited
                             </td>
                         </tr>
                     </table>

@@ -79,8 +79,15 @@ namespace MobileTech.Admin.Repair
             lblProductIMEI.Text = repair.ProductIMEI;
             lblProductFaultReport.Text = repair.ProductFaultReport;
             chkNoSim.Checked = repair.ProductNoSim;
-            lblWB.Text = repair.ProductWB;
-            lblNB.Text = repair.ProductNB;
+
+            bool isWB = false;
+            bool.TryParse(repair.ProductWB, out isWB);
+            chkWB.Checked = isWB;
+
+            bool isNB = false;
+            bool.TryParse(repair.ProductNB, out isNB);
+            chkNB.Checked = isNB;
+
             if (repair.ProductMemoryCard)
             {
                 lblMemoryCardY.Font.Bold = true;
