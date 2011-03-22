@@ -17,6 +17,6 @@ namespace Mobile.Common
 
     public enum ProductRepairStatus
     {
-         Pending = 1, InProcessing = 2, Repaired = 3
+        Pending = 1, In_Processing = 2, Repaired = 3, Paid = 4, Paid_and_Delivered = 5
     }
 }

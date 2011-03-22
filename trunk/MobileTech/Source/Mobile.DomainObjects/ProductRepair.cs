@@ -181,6 +181,12 @@ namespace Mobile.DomainObjects
                     case 3:
                         m_RepairToString = "Repaired";
                         break;
+                    case 4:
+                        m_RepairToString = "Paid";
+                        break;
+                    case 5:
+                        m_RepairToString = "Paid and Delivered";
+                        break;
                 }
                 return m_RepairToString;
             }
