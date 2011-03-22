@@ -257,15 +257,6 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.TextBox txtLabourCost;
         
         /// <summary>
-        /// RangeValidator2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator2;
-        
-        /// <summary>
         /// txtPartsCode control.
         /// </summary>
         /// <remarks>
@@ -275,15 +266,6 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.TextBox txtPartsCode;
         
         /// <summary>
-        /// RangeValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
-        
-        /// <summary>
         /// txtDeposited control.
         /// </summary>
         /// <remarks>
@@ -291,15 +273,6 @@ namespace MobileTech.Admin.Repair {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDeposited;
-        
-        /// <summary>
-        /// RangeValidator3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator3;
         
         /// <summary>
         /// chkPartsFixed control.
