@@ -116,6 +116,16 @@ namespace Mobile.DomainObjects
             get;
             set;
         }
+        public virtual string MemoDeposited
+        {
+            get;
+            set;
+        }
+        public virtual string MemoRemainder
+        {
+            get;
+            set;
+        }
         public virtual string PartsFixed
         {
             get;

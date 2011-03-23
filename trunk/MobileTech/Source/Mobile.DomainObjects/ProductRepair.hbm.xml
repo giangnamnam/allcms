@@ -21,6 +21,8 @@
     <property name="MemoLabourCode" column="MemoLabourCode" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoPartsCode" column="MemoPartsCode" not-null="false" type="string" insert="true" update="true" />
     <property name="MemoTotalInCludingGST" column="MemoTotalInCludingGST" not-null="false" type="string" insert="true" update="true" />
+    <property name="MemoDeposited" column="MemoDeposited" not-null="false" type="string" insert="true" update="true" />
+    <property name="MemoRemainder" column="MemoRemainder" not-null="false" type="string" insert="true" update="true" />
     <property name="PartsFixed" column="PartsFixed" not-null="false" type="string" insert="true" update="true" />
     <property name="PartsFixedOthers" column="PartsFixedOthers" not-null="false" type="string" insert="true" update="true" />
     <property name="SignName" column="SignName" not-null="false" type="string" insert="true" update="true" />

@@ -222,12 +222,11 @@
                             </td>
                             <td>
                                 $<asp:TextBox ID="txtDeposited" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                Remainder
+                                Remainder:
                             </td>
                             <td>
                                 = Total - Deposited
