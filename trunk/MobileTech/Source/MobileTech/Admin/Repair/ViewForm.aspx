@@ -14,7 +14,6 @@
                 display: none;
             }
         }
-        
     </style>
 </head>
 <body>
@@ -24,7 +23,7 @@
             <!-- Print Button  -->
             <input class="noPrint" style="color: Red" type="button" value="Print This Page" onclick="window.print()" />
             <asp:Panel ID="pnlAdd" Width="100%" runat="server">
-                <div >
+                <div>
                     <table width="630px" border="0">
                         <tr>
                             <td colspan="2">
@@ -43,12 +42,30 @@
                                             <asp:Label ID="lblRepairNo" runat="server" Font-Size="16" ForeColor="Red"></asp:Label>
                                             <br />
                                             <br />
-                                            <span style="font-size: 16px"><label id="lblContactName" runat="server"></label><br />
-                                            </span>T: <span style="font-weight: bold; font-size: 14px"><label id="lblContactPhone1" runat="server"></label></span><br />
-                                            F: <label id="lblContactPhone2" runat="server"></label><br />
-                                            M: <label id="lblContactMobilePhone" runat="server"></label><br />
-                                            E: <label id="lblContactEmail" runat="server"></label><br />
-                                            A: <label id="lblContactAddress" runat="server"></label>
+                                            <span style="font-size: 16px">
+                                                <label id="lblContactName" runat="server">
+                                                </label>
+                                                <br />
+                                            </span>T: <span style="font-weight: bold; font-size: 14px">
+                                                <label id="lblContactPhone1" runat="server">
+                                                </label>
+                                            </span>
+                                            <br />
+                                            F:
+                                            <label id="lblContactPhone2" runat="server">
+                                            </label>
+                                            <br />
+                                            M:
+                                            <label id="lblContactMobilePhone" runat="server">
+                                            </label>
+                                            <br />
+                                            E:
+                                            <label id="lblContactEmail" runat="server">
+                                            </label>
+                                            <br />
+                                            A:
+                                            <label id="lblContactAddress" runat="server">
+                                            </label>
                                         </td>
                                     </tr>
                                 </table>
@@ -136,17 +153,17 @@
                                                     <td align="center">
                                                         No Sim
                                                         <br />
-                                                        <asp:CheckBox ID="chkNoSim" runat="server" Font-Bold="true" />
+                                                        <asp:CheckBox ID="chkNoSim" runat="server" Font-Bold="true" Enabled="false"/>
                                                     </td>
                                                     <td align="center">
                                                         WB
                                                         <br />
-                                                        <asp:CheckBox ID="chkWB" runat="server" Font-Bold="true" />
+                                                        <asp:CheckBox ID="chkWB" runat="server" Font-Bold="true" Enabled="false"/>
                                                     </td>
                                                     <td align="center">
                                                         NB
                                                         <br />
-                                                        <asp:CheckBox ID="chkNB" runat="server" Font-Bold="true" />
+                                                        <asp:CheckBox ID="chkNB" runat="server" Font-Bold="true" Enabled="false"/>
                                                     </td>
                                                     <td align="center">
                                                         Memory Card
@@ -181,28 +198,43 @@
                             <td colspan="2" align="left">
                                 <table width="100%" border="1">
                                     <tr>
-                                        <td style="width: 50%">
+                                        <td style="width: 25%">
                                             Labour Cost:
                                         </td>
-                                        <td style="width: 50%">
+                                        <td style="width: 25%">
                                             $<asp:Label ID="lblLabourCost" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+                                        <td style="width: 25%">
                                             Parts Code:
                                         </td>
-                                        <td>
+                                        <td style="width: 25%">
                                             $<asp:Label ID="lblPartsCode" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td colspan="2" style="width: 50%">
                                             Total including GST (Go ahead & Confirmed)
                                         </td>
-                                        <td>
+                                        <td colspan="2" style="width: 50%">
                                             $<asp:Label ID="lblTotalIncludingGST" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 25%">
+                                            Deposited:
+                                        </td>
+                                        <td colspan="3">
+                                            $<asp:Label ID="lblDeposited" runat="server" Font-Bold="true"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 25%">
+                                            Remainder:
+                                        </td>
+                                        <td colspan="3">
+                                            $<asp:Label ID="lblRemainder" runat="server" Font-Bold="true"></asp:Label>
+                                        </td>
+                                        
                                     </tr>
                                 </table>
                             </td>
@@ -219,10 +251,10 @@
                         <tr>
                             <td colspan="2" align="left">
                                 <asp:CheckBoxList ID="chkPartsFixed" runat="server" OnInit="chkPartsFixed_Init" RepeatColumns="5"
-                                    RepeatDirection="Horizontal">
+                                    RepeatDirection="Horizontal" Enabled="false">
                                 </asp:CheckBoxList>
                                 Others:
-                                <asp:Label ID="lblPartsFixedOthers" runat="server" style="width: 80%;" Height="20"></asp:Label>
+                                <asp:Label ID="lblPartsFixedOthers" runat="server" Style="width: 80%;" Height="10"></asp:Label>
                                 <%--<input id="Text8" type="text" style="width: 80%; border-left-style: none; border-right-style: none;
                                     border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />--%>
                                 <%--<br />
@@ -281,21 +313,21 @@
                                 <br />
                                 <table width="100%">
                                     <tr>
-                                        <td style="font-weight:bold">
+                                        <td style="font-weight: bold">
                                             Name:
                                         </td>
                                         <td style="width: 175px">
                                             <input id="Text1" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td style="font-weight:bold">
+                                        <td style="font-weight: bold">
                                             Signature:
                                         </td>
                                         <td style="width: 175px">
                                             <input id="Text2" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td style="font-weight:bold">
+                                        <td style="font-weight: bold">
                                             Date:
                                         </td>
                                         <td style="width: 130px">
@@ -318,7 +350,7 @@
                                             <input id="Text4" type="text" style="border-left-style: none; border-right-style: none;
                                                 border-top-style: none; border-bottom-width: thin; border-bottom-style: dotted" />
                                         </td>
-                                        <td style="font-weight:bold">
+                                        <td style="font-weight: bold">
                                             Date:
                                         </td>
                                         <td style="width: 130px">

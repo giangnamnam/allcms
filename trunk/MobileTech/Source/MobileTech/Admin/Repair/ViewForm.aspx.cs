@@ -117,6 +117,8 @@ namespace MobileTech.Admin.Repair
             lblLabourCost.Text = repair.MemoLabourCode;
             lblPartsCode.Text = repair.MemoPartsCode;
             lblTotalIncludingGST.Text = repair.MemoTotalInCludingGST;
+            lblDeposited.Text = repair.MemoDeposited;
+            lblRemainder.Text = repair.MemoRemainder;
 
             if (repair.PartsFixed != null)
             {

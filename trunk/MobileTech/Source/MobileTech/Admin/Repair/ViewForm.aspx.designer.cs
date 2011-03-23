@@ -248,6 +248,24 @@ namespace MobileTech.Admin.Repair {
         protected global::System.Web.UI.WebControls.Label lblTotalIncludingGST;
         
         /// <summary>
+        /// lblDeposited control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDeposited;
+        
+        /// <summary>
+        /// lblRemainder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRemainder;
+        
+        /// <summary>
         /// chkPartsFixed control.
         /// </summary>
         /// <remarks>

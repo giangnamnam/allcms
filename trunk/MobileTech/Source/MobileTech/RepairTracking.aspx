@@ -122,17 +122,17 @@
                                                             <td align="center">
                                                                 No Sim
                                                                 <br />
-                                                                <asp:CheckBox ID="chkNoSim" runat="server" Font-Bold="true" />
+                                                                <asp:CheckBox ID="chkNoSim" runat="server" Font-Bold="true" Enabled="false" />
                                                             </td>
                                                             <td align="center">
                                                                 WB
                                                                 <br />
-                                                                <asp:Label ID="lblWB" runat="server" Font-Bold="true"></asp:Label>
+                                                                <asp:CheckBox ID="chkWB" runat="server" Font-Bold="true" Enabled="false"/>
                                                             </td>
                                                             <td align="center">
                                                                 NB
                                                                 <br />
-                                                                <asp:Label ID="lblNB" runat="server" Font-Bold="true"></asp:Label>
+                                                                <asp:CheckBox ID="chkNB" runat="server" Font-Bold="true" Enabled="false"/>
                                                             </td>
                                                             <td align="center">
                                                                 Memory Card
