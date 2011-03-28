@@ -68,8 +68,17 @@ namespace MobileTech.Admin.Repair
 
         protected void gridProduct_EditCommand(object source, DataGridCommandEventArgs e)
         {
-            Label lblID = e.Item.FindControl("lblID") as Label;
-            Response.Redirect("InputView.aspx?ID=" + lblID.Text.Trim());
+            string editText = ((LinkButton)e.CommandSource).Text;
+            if (editText == "View Form")
+            {
+                Label lblID = e.Item.FindControl("lblID") as Label;
+                Response.Redirect("ViewForm.aspx?ID=" + lblID.Text.Trim());
+            }
+            else
+            {
+                Label lblID = e.Item.FindControl("lblID") as Label;
+                Response.Redirect("InputView.aspx?ID=" + lblID.Text.Trim());
+            }
         }
 
         protected void gridProduct_PageIndexChanged(object source, DataGridPageChangedEventArgs e)

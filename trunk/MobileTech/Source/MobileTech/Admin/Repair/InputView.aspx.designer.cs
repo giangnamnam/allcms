@@ -254,7 +254,7 @@ namespace MobileTech.Admin.Repair {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLabourCost;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtLabourCost;
         
         /// <summary>
         /// txtPartsCode control.
@@ -263,7 +263,16 @@ namespace MobileTech.Admin.Repair {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPartsCode;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPartsCode;
+        
+        /// <summary>
+        /// txtTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTotal;
         
         /// <summary>
         /// txtDeposited control.
@@ -272,7 +281,16 @@ namespace MobileTech.Admin.Repair {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeposited;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDeposited;
+        
+        /// <summary>
+        /// txtRemainder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtRemainder;
         
         /// <summary>
         /// chkPartsFixed control.

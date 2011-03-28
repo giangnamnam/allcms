@@ -72,6 +72,13 @@ namespace MobileTech.Admin.Repair
         {
             Control c = this.FindControl("txtCusDate1");
 
+            //Disable cai nut delete trong cai Edit form doi voi Technician (Enable cai nut len neu la admin)
+            if (Roles.IsUserInRole(Membership.GetUser().UserName, MyConst.Admin_Role))
+            {
+                btnDelete.Visible = true;
+            }
+            else btnDelete.Visible = false;
+
             if (!IsPostBack)
             {
                 ViewState.Remove(CurrentIDName);
@@ -171,9 +178,9 @@ namespace MobileTech.Admin.Repair
                 {
                     radioExteriorCondition.SelectedIndex = 10 - int.Parse(repair.ProductExteriorCondition);
                 }
-                txtLabourCost.Text = repair.MemoLabourCode;
-                txtPartsCode.Text = repair.MemoPartsCode;
-                txtDeposited.Text = repair.MemoDeposited;
+                txtLabourCost.Value = repair.MemoLabourCode;
+                txtPartsCode.Value = repair.MemoPartsCode;
+                txtDeposited.Value = repair.MemoDeposited;
 
                 txtPartsFixedOthers.Value = repair.PartsFixedOthers;
                 if (repair.PartsFixed != null)
@@ -212,11 +219,11 @@ namespace MobileTech.Admin.Repair
         {
             txtCusContact.Text = "";
             txtCusDate.Value = "";
-            txtLabourCost.Text = "";
+            txtLabourCost.Value = "";
             chkNB.Checked = false;
             chkWB.Checked = false;
-            txtPartsCode.Text = "";
-            txtDeposited.Text = "";
+            txtPartsCode.Value = "";
+            txtDeposited.Value = "";
             txtPrductColour.Text = "";
             txtProductFaultReport.Text = "";
             txtProductIMEI.Text = "";
@@ -286,9 +293,9 @@ namespace MobileTech.Admin.Repair
                     repair.ProductNB = chkNB.Checked.ToString();
                     repair.ProductMemoryCard = radioMemoryCard.SelectedValue == "Y" ? true : false;
                     repair.ProductExteriorCondition = radioExteriorCondition.SelectedValue;
-                    repair.MemoLabourCode = txtLabourCost.Text;
-                    repair.MemoPartsCode = txtPartsCode.Text;
-                    repair.MemoDeposited = txtDeposited.Text;
+                    repair.MemoLabourCode = txtLabourCost.Value;
+                    repair.MemoPartsCode = txtPartsCode.Value;
+                    repair.MemoDeposited = txtDeposited.Value;
 
                     decimal labourCost = 0; decimal.TryParse(repair.MemoLabourCode, out labourCost);
                     decimal partsCost = 0; decimal.TryParse(repair.MemoPartsCode, out partsCost);
@@ -348,9 +355,9 @@ namespace MobileTech.Admin.Repair
                         repair.ProductNB = chkNB.Checked.ToString();
                         repair.ProductMemoryCard = radioMemoryCard.SelectedValue == "Y" ? true : false;
                         repair.ProductExteriorCondition = radioExteriorCondition.SelectedValue;
-                        repair.MemoLabourCode = txtLabourCost.Text;
-                        repair.MemoPartsCode = txtPartsCode.Text;
-                        repair.MemoDeposited = txtDeposited.Text;
+                        repair.MemoLabourCode = txtLabourCost.Value;
+                        repair.MemoPartsCode = txtPartsCode.Value;
+                        repair.MemoDeposited = txtDeposited.Value;
 
                         decimal labourCost = 0; decimal.TryParse(repair.MemoLabourCode, out labourCost);
                         decimal partsCost = 0; decimal.TryParse(repair.MemoPartsCode, out partsCost);
