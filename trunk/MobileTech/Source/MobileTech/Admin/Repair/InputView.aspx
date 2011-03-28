@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Share/AdminSite.Master" AutoEventWireup="true"
     Inherits="MobileTech.Admin.Repair.InputView" CodeBehind="InputView.aspx.cs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -195,8 +195,9 @@
                                 Labour Cost:
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtLabourCost" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                
+                                $<input id="txtLabourCost" onblur="this.value = IsNull(this.value); CalculateTotal(); CalculateRemainder()" onkeyup="this.value = IsNumber(this.value); CalculateTotal(); CalculateRemainder()"
+                                style="width: 300px" onfocus="this.value = IsNull(this.value)" maxlength="15" value="0.00"
+                                name="txtLabourCost" runat="server"/>
                             </td>
                         </tr>
                         <tr>
@@ -204,8 +205,9 @@
                                 Parts Cost:
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtPartsCode" runat="server" Width="300px" Text="0.00"></asp:TextBox>
-                                
+                                $<input id="txtPartsCode" onblur="this.value = IsNull(this.value); CalculateTotal(); CalculateRemainder()" onkeyup="this.value = IsNumber(this.value); CalculateTotal(); CalculateRemainder()"
+                                style="width: 300px" onfocus="this.value = IsNull(this.value)" maxlength="15" value="0.00"
+                                name="txtPartsCode" runat="server"/>
                             </td>
                         </tr>
                         <tr>
@@ -213,6 +215,8 @@
                                 Total including GST (Go ahead & Confirmed)
                             </td>
                             <td>
+                                $<input id="txtTotal" style="width: 100px"  maxlength="15" value="0.00"
+                                name="txtTotal" runat="server" readonly="true"/>
                                 = Labour Cost + Parts Cost:
                             </td>
                         </tr>
@@ -221,7 +225,9 @@
                                 Deposited:
                             </td>
                             <td>
-                                $<asp:TextBox ID="txtDeposited" runat="server" Width="300px" Text="0.00"></asp:TextBox>
+                                $<input id="txtDeposited" onblur="this.value = IsNull(this.value); CalculateRemainder()" onkeyup="this.value = IsNumber(this.value); CalculateRemainder();"
+                                style="width: 300px" onfocus="this.value = IsNull(this.value)" maxlength="15" value="0.00"
+                                name="txtDeposited" runat="server"/>
                             </td>
                         </tr>
                          <tr>
@@ -229,7 +235,8 @@
                                 Remainder:
                             </td>
                             <td>
-                                = Total - Deposited
+                                $<input id="txtRemainder" style="width: 100px"  maxlength="15" value="0.00"
+                                name="txtRemainder" runat="server" readonly="true"/>= Total - Deposited
                             </td>
                         </tr>
                     </table>
@@ -305,6 +312,45 @@
             } else if (n != "popcal") gfPop.fHideCal();
         }
         if (document.layers) document.captureEvents(Event.MOUSEDOWN);
+
+        //----------Numeric
+        function IsNumber(str) {
+            for (var i = 0; i < str.length; i++) {
+                var temp = str.substring(i, i + 1);
+                if (!(temp == ',') && !(temp == '.') && !(temp >= 0 && temp <= 9))
+                {
+                    alert("Please input numeric!");
+                    return str.substring(0, i);
+                }
+            }
+            return str;
+        }
+        function IsNull(str) {
+            if (str == "" || str == "0") {
+                return str = "0.00";
+            }
+            return str;
+        }
+
+        //Calculate Memo
+        CalculateTotal();
+        CalculateRemainder();
+        function CalculateTotal() {
+            var txtLabourCost = document.aspnetForm.ctl00_ContentPlaceHolder1_txtLabourCost;
+            var txtPartsCost = document.aspnetForm.ctl00_ContentPlaceHolder1_txtPartsCode;
+            if (txtLabourCost != null && txtPartsCost != null) {
+                var txtTotal = document.aspnetForm.ctl00_ContentPlaceHolder1_txtTotal;
+                txtTotal.value = parseFloat(txtLabourCost.value) + parseFloat(txtPartsCost.value)
+            }
+        }
+        function CalculateRemainder() {
+            var txtDeposited = document.aspnetForm.ctl00_ContentPlaceHolder1_txtDeposited;
+            var txtTotal = document.aspnetForm.ctl00_ContentPlaceHolder1_txtTotal;
+            if (txtDeposited != null && txtTotal != null) {
+                var txtRemainder = document.aspnetForm.ctl00_ContentPlaceHolder1_txtRemainder;
+                txtRemainder.value = parseFloat(txtTotal.value) - parseFloat(txtDeposited.value)
+            }
+        }
     </script>
 
 </asp:Content>

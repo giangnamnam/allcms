@@ -107,8 +107,12 @@
                 <asp:BoundColumn DataField="ProductModel" HeaderText="Model"></asp:BoundColumn>
                 <asp:BoundColumn DataField="CustomerDate" HeaderText="Date" DataFormatString="{0:dd-MM-yyyy}"></asp:BoundColumn>
                 <asp:BoundColumn DataField="StatusToString" HeaderText="Status"></asp:BoundColumn>
-                <asp:EditCommandColumn ButtonType="LinkButton" UpdateText="Update" CancelText="Cancel"
+                <asp:EditCommandColumn ButtonType="LinkButton" UpdateText="Update" CancelText="Cancel" 
                     ItemStyle-Width="70px" EditText="Edit">
+                    <ItemStyle Width="70px"></ItemStyle>
+                </asp:EditCommandColumn>
+                <asp:EditCommandColumn ButtonType="LinkButton" UpdateText="Update" CancelText="Cancel" 
+                    ItemStyle-Width="70px" EditText="View Form">
                     <ItemStyle Width="70px"></ItemStyle>
                 </asp:EditCommandColumn>
             </Columns>
