@@ -7,7 +7,8 @@
                 margin-right: 5px; margin-top:7px">
                 <asp:TextBox ID="txtRepairNo" runat="server" Width="120px"></asp:TextBox>
                 &nbsp;
-                <asp:LinkButton ID="btnTrackItem" CssClass="searchbutton" runat="server" OnClick="btnTrackItem_Click">Track</asp:LinkButton>
+                <asp:LinkButton ID="btnTrackItem" CssClass="searchbutton" runat="server" 
+                    OnClick="btnTrackItem_Click" CausesValidation="False">Track</asp:LinkButton>
             </div>
         </asp:Panel>
     </ul>
