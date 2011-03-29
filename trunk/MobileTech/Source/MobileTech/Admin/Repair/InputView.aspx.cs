@@ -72,7 +72,7 @@ namespace MobileTech.Admin.Repair
         {
             Control c = this.FindControl("txtCusDate1");
 
-            //Disable cai nut delete trong cai Edit form doi voi Technician (Enable cai nut len neu la admin)
+            //Disable delete button Edit form if there is Technician
             if (Roles.IsUserInRole(Membership.GetUser().UserName, MyConst.Admin_Role))
             {
                 btnDelete.Visible = true;
@@ -91,18 +91,18 @@ namespace MobileTech.Admin.Repair
                     {
                         mCurrentID = id;
                         SetValue();
-                        btnDelete.Visible = true;
+                        //btnDelete.Visible = true;
                         btnViewForm.Visible = true;
                         ViewState.Add(CurrentIDName, mCurrentID);
                         Session[CurrentIDName] = mCurrentID;
                     }
                 }
-
                 //If insert new value
-                if (btnDelete.Visible == false)
+                else
+                                
                 {
                     txtRepairNo.Text = ProductService.GetProductRepairMaxID();
-
+                    txtCusDate.Value = DateTime.Now.ToString("dd-MM-yyyy");
                     SetContact();
                 }
             }
