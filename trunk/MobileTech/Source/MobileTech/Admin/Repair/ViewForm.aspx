@@ -204,18 +204,21 @@
                                         <td style="width: 25%">
                                             $<asp:Label ID="lblLabourCost" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
-                                        <td style="width: 25%">
+                                        
+                                    </tr>
+                                    <td style="width: 25%">
                                             Parts Code:
                                         </td>
                                         <td style="width: 25%">
                                             $<asp:Label ID="lblPartsCode" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
+                                    <tr>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" style="width: 50%">
+                                        <td style="width: 50%">
                                             Total including GST (Go ahead & Confirmed)
                                         </td>
-                                        <td colspan="2" style="width: 50%">
+                                        <td  style="width: 50%">
                                             $<asp:Label ID="lblTotalIncludingGST" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
                                     </tr>
@@ -223,7 +226,7 @@
                                         <td style="width: 25%">
                                             Deposited:
                                         </td>
-                                        <td colspan="3">
+                                        <td >
                                             $<asp:Label ID="lblDeposited" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
                                     </tr>
@@ -231,7 +234,7 @@
                                         <td style="width: 25%">
                                             Remainder:
                                         </td>
-                                        <td colspan="3">
+                                        <td >
                                             $<asp:Label ID="lblRemainder" runat="server" Font-Bold="true"></asp:Label>
                                         </td>
                                         
@@ -274,7 +277,7 @@
                         <tr>
                             <td colspan="2" align="left">
                                 <b>1. </b>All phones carry an inspection fee of $20 non-refundable at the time of
-                                book-in. 3 months warranty provided for the repaired parts only; but not including
+                                book-in. 30 days warranty provided for the repaired parts only; but not including
                                 physical or liquid damage. We accept no responsibility for any other existing problems.
                                 <br />
                                 <b>2. </b>All information in the phone will be lost due to repairs or unlock, and
@@ -338,7 +341,7 @@
                                 </table>
                                 <br />
                                 Mobile Tech accept non-responsibility for other coming up problems. Mobile Tech
-                                provide 3 months warranty for The repaired parts only, but no including the physical
+                                provide 30 days warranty for The repaired parts only, but no including the physical
                                 or liquid damage.
                                 <br />
                                 <table width="100%">
