@@ -16,7 +16,9 @@
                 
                 <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" BackColor="#F7F7DE" 
                     BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" 
-                    Font-Names="Verdana" Font-Size="10pt">
+                    Font-Names="Verdana" Font-Size="10pt" SubmitButtonText="Send" 
+                    UserNameInstructionText="Enter your Username to receive your password." 
+                    UserNameLabelText="Username:">
                     <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
                 </asp:PasswordRecovery>
                 
