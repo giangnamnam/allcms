@@ -101,6 +101,7 @@ namespace MobileTech.Admin.Repair
                 else
                                 
                 {
+                    btnDelete.Visible = false;
                     txtRepairNo.Text = ProductService.GetProductRepairMaxID();
                     txtCusDate.Value = DateTime.Now.ToString("dd-MM-yyyy");
                     SetContact();
