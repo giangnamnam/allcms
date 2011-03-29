@@ -215,9 +215,9 @@
                                 Total including GST (Go ahead & Confirmed)
                             </td>
                             <td>
-                                $<input id="txtTotal" style="width: 100px"  maxlength="15" value="0.00"
+                                $<input id="txtTotal" style="width: 300px"  maxlength="15" value="0.00"
                                 name="txtTotal" runat="server" readonly="true"/>
-                                = Labour Cost + Parts Cost:
+                               
                             </td>
                         </tr>
                         <tr>
@@ -235,8 +235,8 @@
                                 Remainder:
                             </td>
                             <td>
-                                $<input id="txtRemainder" style="width: 100px"  maxlength="15" value="0.00"
-                                name="txtRemainder" runat="server" readonly="true"/>= Total - Deposited
+                                $<input id="txtRemainder" style="width: 300px"  maxlength="15" value="0.00"
+                                name="txtRemainder" runat="server" readonly="true"/>
                             </td>
                         </tr>
                     </table>
