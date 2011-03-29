@@ -3,7 +3,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div style="margin-left:300px">
-    <asp:ChangePassword ID="ChangePassword1" runat="server" TitleTextStyle-Font-Bold="true">
+    <asp:ChangePassword ID="ChangePassword1" runat="server" 
+            TitleTextStyle-Font-Bold="true" 
+            ContinueDestinationPageUrl="~/Admin/Service/Default.aspx">
+<TitleTextStyle Font-Bold="True"></TitleTextStyle>
     </asp:ChangePassword>
     </div>
 </asp:Content>
