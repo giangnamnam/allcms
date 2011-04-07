@@ -26,37 +26,77 @@
                         <div class="content-news">
                             <asp:Label ID="lblNotes" runat="server" ForeColor="Red" Visible="false"></asp:Label>
                             <table width="100%" id="TableRepairContent" runat="server">
-                                 <tr>
+                                <tr>
                                     <td colspan="2">
                                         <table width="100%" border="0">
                                             <tr>
-                                                <td style="width: 15%">Repair No.:</td>
-                                                <td style="width: 35%"><asp:Label ID="lblRepairNo" runat="server" Font-Bold="true"></asp:Label></td>
-                                                <td style="width: 15%"> Status:</td>
-                                                <td style="width: 35%"><asp:Label ID="lblStatus" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td style="width: 15%">
+                                                    Date:
+                                                </td>
+                                                <td style="width: 35%" colspan="3">
+                                                    <asp:Label ID="lblCusDate" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Shop Name:</td>
-                                                <td><asp:Label ID="lblShopName" runat="server" Font-Bold="true"></asp:Label></td>
-                                                <td> Phone (T):</td>
-                                                <td><asp:Label ID="lblPhoneT" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td style="width: 15%">
+                                                    Repair No.:
+                                                </td>
+                                                <td style="width: 35%">
+                                                    <asp:Label ID="lblRepairNo" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                                <td style="width: 15%">
+                                                    Status:
+                                                </td>
+                                                <td style="width: 35%">
+                                                    <asp:Label ID="lblStatus" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Phone (F):</td>
-                                                <td><asp:Label ID="lblPhoneF" runat="server" Font-Bold="true"></asp:Label></td>
-                                                <td> Phone (M):</td>
-                                                <td><asp:Label ID="lblPhoneM" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td>
+                                                    Shop Name:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblShopName" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    Tax:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblPhoneT" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
                                             </tr>
                                             <tr>
-                                                <td>Email:</td>
-                                                <td><asp:Label ID="lblEmail" runat="server" Font-Bold="true"></asp:Label></td>
-                                                <td> Address:</td>
-                                                <td><asp:Label ID="lbAddress" runat="server" Font-Bold="true"></asp:Label></td>
+                                                <td>
+                                                    Phone:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblPhoneF" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    Mobile phone:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblPhoneM" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Email:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lblEmail" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
+                                                <td>
+                                                    Address:
+                                                </td>
+                                                <td>
+                                                    <asp:Label ID="lbAddress" runat="server" Font-Bold="true"></asp:Label>
+                                                </td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
-                                <tr>
+                                <%--<tr>
                                     <td colspan="2" align="left" style="background-color: Gray; height: 20px;">
                                         <strong style="color: White">Customer Information</strong>
                                     </td>
@@ -88,9 +128,9 @@
                                 <tr>
                                     <td colspan="2" style="height: 10px;">
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="left" style="background-color:Gray; height: 20px;">
+                                </tr>--%>
+                                <tr style="background-color: Gray; height: 20px;">
+                                    <td align="left" colspan="2">
                                         <strong style="color: White">Product Information </strong>
                                     </td>
                                 </tr>
@@ -127,12 +167,12 @@
                                                             <td align="center">
                                                                 WB
                                                                 <br />
-                                                                <asp:CheckBox ID="chkWB" runat="server" Font-Bold="true" Enabled="false"/>
+                                                                <asp:CheckBox ID="chkWB" runat="server" Font-Bold="true" Enabled="false" />
                                                             </td>
                                                             <td align="center">
                                                                 NB
                                                                 <br />
-                                                                <asp:CheckBox ID="chkNB" runat="server" Font-Bold="true" Enabled="false"/>
+                                                                <asp:CheckBox ID="chkNB" runat="server" Font-Bold="true" Enabled="false" />
                                                             </td>
                                                             <td align="center">
                                                                 Memory Card

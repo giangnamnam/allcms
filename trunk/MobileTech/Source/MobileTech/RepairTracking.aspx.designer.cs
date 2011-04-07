@@ -50,6 +50,15 @@ namespace MobileTech {
         protected global::System.Web.UI.HtmlControls.HtmlTable TableRepairContent;
         
         /// <summary>
+        /// lblCusDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCusDate;
+        
+        /// <summary>
         /// lblRepairNo control.
         /// </summary>
         /// <remarks>
@@ -120,33 +129,6 @@ namespace MobileTech {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbAddress;
-        
-        /// <summary>
-        /// lblCusName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCusName;
-        
-        /// <summary>
-        /// lblCusDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCusDate;
-        
-        /// <summary>
-        /// lblCusContact control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCusContact;
         
         /// <summary>
         /// lblProductModel control.
