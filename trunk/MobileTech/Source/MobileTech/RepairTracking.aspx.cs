@@ -51,10 +51,10 @@ namespace MobileTech
             //lblStaffName.Text = repair.StaffName;
             lblStatus.Text = repair.StatusToString;
 
-            lblCusName.Text = repair.CustomerName;
+            //lblCusName.Text = repair.CustomerName;
             if (repair.CustomerDate.HasValue)
                 lblCusDate.Text = repair.CustomerDate.Value.ToString("dd-MM-yyyy");
-            lblCusContact.Text = repair.CustomerContact;
+            //lblCusContact.Text = repair.CustomerContact;
 
             lblProductModel.Text = repair.ProductModel;
             lblProductColour.Text = repair.ProductColor;
